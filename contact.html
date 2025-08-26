@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Evolution Institute - Home</title>
+		<link rel="stylesheet" href="contact.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		
+		<!-- AOS CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	
+	</head>
+	
+<body>
+
+
+<!-- Scroll to Top Button ---------------------------------------------------------------------------------------------------------------------------->
+	<button id="scrollToTopBtn" title="Go to top" style="display: none;">↑</button>
+
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	
+			// Show or hide the button on scroll
+			window.addEventListener("scroll", function () 
+			{
+				if (window.scrollY > 300) 
+				{
+					scrollToTopBtn.style.display = "flex"; // Using flex, not block (as our CSS uses flexbox)
+				} 
+				else 
+				{
+					scrollToTopBtn.style.display = "none";
+				}
+			});
+
+			// Scroll to top on button click
+			scrollToTopBtn.addEventListener("click", function () 
+			{
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		});
+	
+	</script>
+
+
+<!-- Scroll to Top Button ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Top Bar ----------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<div class="top-bar">  <!--  data-aos="fade-up" --> 
+		
+		<!-- Left Section -->
+		<div class="top-left">
+			
+			<span>
+				<i class="fas fa-clock"></i> Open 24/7
+			</span>
+			
+			<span class="email-wrap">
+			
+				<i class="fas fa-envelope"></i>
+				<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="email-link">
+					evolutioncareerinstitute2024@gmail.com
+				</a>
+			</span>
+		
+		</div>
+
+		<!-- Center Section -->
+		<div class="top-center">
+			<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+			<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+		</div>
+
+		<!-- Right Section -->
+		<div class="top-right">
+			<a href="tel:+919999999999" class="call-btn"><i class="fas fa-phone"></i> Call Us</a>
+		</div>
+	
+	</div>
+
+
+<!-- Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Header ------------------------------------------------------------------------------------------------------------------------------------------>
+	<header class="header-container">   <!-- data-aos="fade-up" data-aos-delay="100"  -->
+	
+		<div class="logo-nav-wrapper">
+		
+			<div class="logo">
+
+				<img src="logo.jpg" alt="Evolution Logo" />			
+				<div class="logo-text">
+					<div class="evolution-word">Evolution</div>
+					<div class="career-word">Career Institute Pvt. Ltd.</div>
+				</div>
+			
+			</div>
+
+			<!-- Hamburger Icon -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">☰</button>
+
+			<!-- Desktop Nav -->
+			<nav class="desktop-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				
+				<!-- Courses Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="coursesDropdown">
+						<span class="dropbtn-text">Courses</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="neet_course.html">NEET</a>
+						<a href="pnst_course.html">PNST</a>
+						<a href="cuet_course.html">CUET (Bio)</a>
+						<a href="para-medical_course.html">Para-Medical</a>
+					</div>
+				</div>
+				
+				<a href="about.html">About Us</a>
+				<a href="Selections.html">Selections</a>
+			
+				<!-- Admissions Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="admissionsDropdown">
+						<span class="dropbtn-text">Admissions</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				
+				<a href="contact.html">Contact Us</a>
+			
+			</nav>
+		
+		</div>
+
+		<!-- Mobile Sidebar Nav -->
+		<div class="mobile-nav-overlay" id="mobileNav">
+			
+			<div class="mobile-header">
+
+				<!-- Top row: logo/title (left) and close button (right) -->
+				<div class="top-row">
+					
+					<div class="left-logo-title">
+						<img src="logo.jpg" alt="Logo" />
+					
+						<div class="mobile-title">
+							<div class="evolution-word">Evolution</div>
+							<div class="career-word">Career Institute Pvt. Ltd.</div>
+						</div>
+
+					</div>
+					<button class="close-btn" id="closeBtn">X</button>
+				
+				</div>
+
+				<!-- Centered social icons below -->
+				<div class="center-icons">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+				</div>
+
+			</div>
+
+			<nav class="mobile-nav">
+				
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+
+				<!-------		Courses		------->
+				<div class="mobile-dropdown">
+					<button id="coursesDropdownToggle" class="mobile-dropbtn">
+						Courses <span class="arrow-down rotate-arrow">▼</span>
+					</button>
+
+					<div id="coursesDropdownMenu" class="mobile-dropdown-content">
+						<a href="neet_course.html">NEET</a>
+						<a href="pnst_course.html">PNST</a>
+						<a href="cuet_course.html">CUET (Bio)</a>
+						<a href="para-medical_course.html">Para-Medical</a></div>
+				</div>
+				<!-------		Courses ends		------->
+
+				<a href="about.html">About Us</a>
+				<a href="Selections.html">Selections</a>
+				
+				<!-------		Admissions		------->
+				<div class="mobile-dropdown">	
+					<button id="mobileDropdownToggle" class="mobile-dropbtn">
+						Admissions <span class="arrow-down rotate-arrow">▼</span>
+
+					</button>
+
+					<div id="mobileDropdownMenu" class="mobile-dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				<!-------		Admissions ends		------->
+				
+				<a href="contact.html">Contact Us</a>
+				
+				<a href="tel:+919999999999" class="apply-btn"><i class="fas fa-phone"></i> Call Us</a>
+				
+				<div class="contact-info">
+					<h2> Contact Info </h2><br>
+					<p>
+						<strong>“BHOPAL NAKA”</strong>, in front of P.G College Bhopal road, Sehore, Madhya Pradesh
+					</p>
+					<p class="phone-row">
+						📞 <a href="tel:0157200000" class="phone-link">01572 00000</a>, 
+						📞 <a href="tel:0157200000" class="phone-link">01572 00000</a>
+					</p>
+				</div>
+
+			</nav>
+
+		</div>
+	
+	</header>
+
+	<!-- JavaScript to toggle the hamburger menu -->
+	<script>
+	
+		// Grab elements
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const mobileNav = document.getElementById("mobileNav");
+		const closeBtn = document.getElementById("closeBtn");
+
+		// Track menu state
+		let isMenuOpen = false;
+
+		// Toggle mobile menu when hamburger is clicked
+		hamburgerBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = !isMenuOpen;
+			mobileNav.classList.toggle("show", isMenuOpen);
+			document.body.classList.toggle("menu-open", isMenuOpen);
+		});
+
+		// Close mobile menu on close (X) button
+		closeBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = false;
+			mobileNav.classList.remove("show");
+			document.body.classList.remove("menu-open");
+		});
+
+		// Close mobile menu when a link is clicked
+		const mobileLinks = document.querySelectorAll(".mobile-nav a");
+		mobileLinks.forEach(link => 
+		{
+			link.addEventListener("click", () => 
+			{
+				isMenuOpen = false;
+				mobileNav.classList.remove("show");
+				document.body.classList.remove("menu-open");
+			});
+		});
+
+		// Highlight current page in both navs
+		const currentPage = location.pathname.split("/").pop();
+
+		document.querySelectorAll(".desktop-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+
+		document.querySelectorAll(".mobile-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+	
+
+		// Mobile dropdown toggle  
+		document.addEventListener("DOMContentLoaded", () => 
+		{
+			// for Admissions
+			const mobileToggle = document.getElementById("mobileDropdownToggle");
+			const mobileMenu = document.getElementById("mobileDropdownMenu");
+			const arrowSpan = mobileToggle.querySelector(".arrow-down");
+
+			if (mobileMenu) 
+			{
+				mobileMenu.classList.remove("open");
+			}
+
+			if (mobileToggle && mobileMenu) 
+			{
+				mobileToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					// Toggle submenu
+					mobileMenu.classList.toggle("open");
+
+					// Toggle arrow direction
+					if (mobileMenu.classList.contains("open")) 
+					{
+						arrowSpan.textContent = "►"; // Right arrow
+					} 
+					else 
+					{
+						arrowSpan.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+	
+			// for Courses
+			const coursesToggle = document.getElementById("coursesDropdownToggle");
+			const coursesMenu = document.getElementById("coursesDropdownMenu");
+			const coursesArrow = coursesToggle.querySelector(".arrow-down");
+
+			if (coursesMenu) 
+			{
+			  coursesMenu.classList.remove("open");
+			}
+
+			if (coursesToggle && coursesMenu) 
+			{
+				coursesToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					coursesMenu.classList.toggle("open");
+
+					if (coursesMenu.classList.contains("open")) 
+					{
+						coursesArrow.textContent = "►"; // Right arrow
+					} 
+					else
+					{
+						coursesArrow.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+		});
+
+	</script>
+
+
+<!-- Header ends ------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!-- Hero Section (image) ---------------------------------------------------------------------------------------------------------------------------->
+	<section class="hero-section">  <!-- data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200"  -->
+		
+		<div class="hero-overlay">
+			<h1>Contact Us</h1>
+		</div>
+	
+	</section>
+
+
+<!-- Hero Section (image) ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Information Section ----------------------------------------------------------------------------------------------------------------------------->
+
+	<!-- Contact Info Section -->
+	<section class="contact-info" data-aos="fade-up">    <!-- data-aos-duration="800" -->
+	
+		<p class="contact-subtitle">
+			Contact Our <a >Medical Coaching in Sehore</a>
+		</p>
+	
+		<div class="contact-grid" data-aos="fade-up">   <!--  data-aos-duration="800"  -->
+     
+			<!-- Phone -->
+			<div class="contact-box" data-aos="fade-up">
+			
+				<img src="https://img.icons8.com/ios-filled/100/004f87/phone.png" alt="Phone Icon" />
+				<h2>Phone</h2>
+				<p>+91-xxxxxxxxxx, +91-xxxxxxxxxx</p>
+			
+			</div>
+
+			<!-- Address -->
+			<div class="contact-box" data-aos="fade-up">
+			
+				<img src="https://img.icons8.com/ios-filled/100/004f87/marker.png" alt="Address Icon" />
+				<h2>Address</h2>
+				<p>Bhopal Marg, In front of P.G. College, Sehore, Madhya Pradesh 466001</p>
+			
+			</div>
+
+			<!-- Email -->
+			<div class="contact-box" data-aos="fade-up">
+			
+				<img src="https://img.icons8.com/ios-filled/100/004f87/new-post.png" alt="Email Icon" />
+				<h2>Email</h2>
+				<p><a href="mailto:Evolutioninstitute@gmail.com">Evolutioninstitute@gmail.com</a></p>
+	
+			</div>
+		
+		</div>
+	
+	</section>
+
+
+<!-- Information Section ends ------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Callback Section--------------------------------------------------------------------------------------------------------------------------------->
+
+	<!-- Toast -->
+	<div id="toast" class="toast hidden">
+		<span class="checkmark">✔</span>
+		<span id="toast-message">The form has been submitted.</span>
+	</div>
+
+
+	<section class="callback-section" data-aos="fade-up">  <!--  data-aos-duration="800" -->
+		<div class="callback-content">
+
+			<!-- Left Content -->
+			<div class="callback-left" data-aos="fade-up">   <!--  data-aos-duration="800" -->
+			
+				<h2>Looking to excel in your</h2>
+				<h3><strong>NEET,</strong> PNST, <strong>CUET (Bio), Para-Medical</strong> exams?</h3>
+				<p>Look no further than</p>
+				<h1><strong>EVOLUTION</strong></h1>
+				<h4>CAREER INSTITUTE</h4>
+				
+				<div class="location">
+					<span>📍</span> SEHORE
+				</div>
+			
+			</div>
+
+			<!-- Right Form -->
+			<div class="callback-form-box" data-aos="fade-up">   <!--  data-aos-duration="800" -->
+		
+				<h3>Request a callback</h3>
+				<form class="callback-form">
+				
+					<!-- Row 1 -->
+					<div>
+						<label for="first-name">First Name*</label>
+						<input id="first-name" type="text" placeholder="Enter your First Name" required>
+					</div>
+			
+					<div>
+						<label for="last-name">Last Name*</label>
+						<input id="last-name" type="text" placeholder="Enter your Last Name" required>
+					</div>
+
+					<!-- Row 2 -->
+					<div>
+						<label for="mobile">Mobile No.*</label>
+						<input id="mobile" type="tel" placeholder="Enter 10 digits Mobile Num" required>
+					</div>
+			
+					<div>
+						<label for="email">E-mail*</label>
+						<input id="email" type="email" placeholder="Enter your Email" required>
+					</div>
+
+					<!-- Row 3 -->
+					<div>
+						
+						<label for="gender">Gender*</label>
+						<select id="gender" required>
+							<option disabled selected>Select</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Other</option>
+						</select>
+			
+					</div>
+			
+					<div>
+						
+						<label for="mode">Applying for*</label>
+						<select id="mode" required>
+							<option disabled selected>Select</option>
+							<option>Offline</option>
+							<option>Test - Series</option>
+						</select>
+				
+					</div>
+
+					<!-- Row 4 -->
+					<div>
+					
+						<label for="stream">Stream*</label>
+						<select id="stream" required>
+							<option disabled selected>Select</option>
+							<option>NEET</option>
+							<option>PNST</option>
+							<option>CUET (Bio)</option>
+							<option>Para-Medical</option>
+						</select>
+				
+					</div>
+			
+					<div>
+					
+						<label for="exam">Last Qualified Exam</label>
+						<select id="exam">
+							<option disabled selected>Select</option>
+							<option>10th</option>
+							<option>12th</option>
+							<option>Diploma</option>
+						</select>
+			
+					</div>
+
+					<!-- Row 5 -->
+					<div class="full-width">
+					
+						<label for="calltime">Best time to call you</label>
+						<select id="calltime">
+							<option disabled selected>Select</option>
+							<option>Morning</option>
+							<option>Afternoon</option>
+							<option>Evening</option>
+			  
+						</select>
+					
+					</div>
+
+					<!-- Row 6 -->
+					<div class="full-width">
+						
+						<label for="source">How did you hear about Evolution</label>
+						<select id="source">
+							<option disabled selected>Select</option>
+							<option>Ex-Evolution Students</option>
+							<option>Relatives</option>
+							<option>Newspaper</option>
+							<option>Advertisment</option>
+							<option>YouTube</option>
+							<option>Social Media</option>
+							<option>Friends</option>
+							<option>Other</option>
+						</select>
+			
+					</div>
+
+					<!-- Submit -->
+					<button type="submit">Submit</button>
+				
+				</form>
+			
+			</div>
+		</div>
+	
+	</section>
+
+	<script>
+		
+		const form = document.querySelector('.callback-form');
+
+		const fields = 
+		{
+			firstName: document.getElementById('first-name'),
+			lastName: document.getElementById('last-name'),
+			mobile: document.getElementById('mobile'),
+			email: document.getElementById('email'),
+			gender: document.getElementById('gender'),
+			mode: document.getElementById('mode'),
+			stream: document.getElementById('stream'),
+		};
+
+		const regex = 
+		{
+			name: /^[A-Za-z\s]{2,30}$/,
+			mobile: /^[6-9]\d{9}$/,
+			email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
+		};
+
+		// Toast message utility
+		function showToast(message, success = true) 
+		{
+			const toast = document.getElementById('toast');
+			const toastMsg = document.getElementById('toast-message');
+			const checkIcon = toast.querySelector('.checkmark');
+
+			toastMsg.textContent = message;
+			checkIcon.textContent = success ? '✔' : '✖';
+			toast.style.borderLeftColor = success ? '#4CAF50' : '#FF4136';
+			checkIcon.style.color = success ? '#4CAF50' : '#FF4136';
+
+			toast.classList.remove('hidden');
+			toast.classList.add('show');
+
+			setTimeout(() => 
+			{
+				toast.classList.remove('show');
+				setTimeout(() => toast.classList.add('hidden'), 300);
+			}, 3000);
+		}
+
+		// Border styling
+		function setInvalid(input) 
+		{
+			input.style.border = '2px solid red';
+		}
+		
+		function setValid(input) 
+		{
+			input.style.border = '1px solid #ccc';
+		}
+
+		// Real-time validation
+		fields.firstName.addEventListener('blur', () => 
+		{
+			regex.name.test(fields.firstName.value.trim()) ? setValid(fields.firstName) : setInvalid(fields.firstName);
+		});
+		
+		fields.lastName.addEventListener('blur', () => 
+		{
+			regex.name.test(fields.lastName.value.trim()) ? setValid(fields.lastName) : setInvalid(fields.lastName);
+		});
+		
+		fields.mobile.addEventListener('blur', () => 
+		{
+			regex.mobile.test(fields.mobile.value.trim()) ? setValid(fields.mobile) : setInvalid(fields.mobile);
+		});
+		
+		fields.email.addEventListener('blur', () => 
+		{
+			regex.email.test(fields.email.value.trim()) ? setValid(fields.email) : setInvalid(fields.email);
+		});
+		
+		fields.gender.addEventListener('blur', () => 
+		{
+			fields.gender.value === "Select" ? setInvalid(fields.gender) : setValid(fields.gender);
+		});
+		
+		fields.mode.addEventListener('blur', () => 
+		{
+			fields.mode.value === "Select" ? setInvalid(fields.mode) : setValid(fields.mode);
+		});
+		
+		fields.stream.addEventListener('blur', () => 
+		{
+			fields.stream.value === "Select" ? setInvalid(fields.stream) : setValid(fields.stream);
+		});
+
+		// On submit
+		form.addEventListener('submit', function(e) 
+		{
+			e.preventDefault();
+			let valid = true;
+
+			for (let key in fields) 
+			{
+				const input = fields[key];
+				const value = input.value.trim();
+
+				if (!value || value === 'Select') 
+				{
+					setInvalid(input);
+					valid = false;
+				} 
+				else 
+				{
+					setValid(input);
+					if ((key === 'firstName' || key === 'lastName') && !regex.name.test(value)) 
+					{
+						setInvalid(input);
+						valid = false;
+					}
+
+					if (key === 'mobile' && !regex.mobile.test(value)) 
+					{
+						setInvalid(input);
+						valid = false;
+					}
+
+					if (key === 'email' && !regex.email.test(value)) 
+					{
+						setInvalid(input);
+						valid = false;
+					}
+				}
+			}
+
+			if (valid) 
+			{
+				showToast("The form has been submitted.");
+				form.reset();
+
+				// Reset borders
+				for (let key in fields) setValid(fields[key]);
+			} 
+			else 
+			{
+				showToast("Please fill all required fields correctly.", false);
+			}
+		});
+	
+	</script>
+
+
+<!-- Callback Section ends --------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Google Map paragraph Section -------------------------------------------------------------------------------------------------------------------->
+
+	
+	<section data-aos="fade-up" style="text-align: center; padding: 40px 20px; margin-top: -15px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+		<h1
+			<span class="theme-text" style="color: #003c71; font-size: 35px; margin-bottom: 15px"> Visit </span>
+			<span style="color: #fbc02d; font-size: 35px; margin-bottom: 15px; ">Evolution 
+			<span class="theme-text" style=" color: #003c71; font-size: 35px; margin-bottom: 15px">Career Institute</span>
+			<span class="icon" style="font-size: 50px; vertical-align: middle; margin-left: 8px; margin-bottom: 15px">🏛️</span>
+			
+		</h1>
+
+ 
+		<div class="map-description" style=" text-align: center; max-width: 1500px; margin: 15px auto; font-size: 18px; line-height: 1.6;">
+		
+			<span class="blue-text" style="color: #003c71; font-weight: bold;">Sehore city</span> 
+		
+			, located in Madhya Pradesh, It is known for its historical and cultural significance, as well as 
+			its agricultural prominence, particularly for its "Sharbati" wheat. It is 
+			located 35 km from Bhopal, 156 km from Indore and 350 km from Jabalpur.
+		
+		</div>
+
+	</section>
+
+
+<!-- Google Map paragraph Section ends --------------------------------------------------------------------------------------------------------------->
+
+
+
+<!-- Google Map Section ------------------------------------------------------------------------------------------------------------------------------>
+	<section class="google-map-section" data-aos="fade-up"  style="padding: 15px 20px; background: white; text-align: center" >
+		
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.8224749350177!2d77.0929653!3d23.2054062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397cf300222b9bbb%3A0x31f6a66e053e12a4!2sEvolution%20career%20institute%20sehore!5e0!3m2!1sen!2sin!4v1721129472020!5m2!1sen!2sin"
+			width="100%"
+			height="400"
+			style="border: 0; border-radius: 12px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)"
+			allowfullscreen=""
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+		></iframe>
+		
+		<p style="margin-top: 15px; color: #555"> 📍 Bhopal Naka, In front of PG College, Sehore, Madhya Pradesh 466001 </p>
+		
+	</section>
+
+
+<!-- Google Map Section ends ------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Footer Section ---------------------------------------------------------------------------------------------------------------------------------->
+
+	<footer class="footer" data-aos="fade-up">
+		
+		<div class="footer-links">
+			
+			<div>
+				
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="courses.html">Courses</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			
+			</div>
+			
+			<div>
+			
+				<h4>Important</h4>
+				<ul>
+					<li><a href="scholarship.html">Scholarship</a></li>
+					<li><a href="admissions.html">Admissions</a></li>
+					<li><a href="features.html">Features</a></li>
+				</ul>
+			
+			</div>
+			
+			<div>
+			
+				<h4>Contact Info</h4>
+				<p>Email: evolutioninstitute@gmail.com</p>
+				<p>Phone: +91 96853 36065</p>
+				<p>Address: Sehore, Madhya Pradesh, India</p>
+			
+			</div>
+			
+		</div>
+    
+		<div class="footer-bottom">
+			<p>&copy; 2025 Evolution Institute. All Rights Reserved.</p>
+		</div>
+	
+	</footer>
+
+
+<!-- Footer Section ends ----------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Animation Section js part  ---------------------------------------------------------------------------------------------------------------------->
+
+<!-- Initialize AOS -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+ <script>
+    AOS.init({
+      offset: 120, // trigger animation after scrolling this far (px)
+      duration: 600, // default animation duration
+      easing: 'ease-in-out', // easing function
+      once: true, // ensure animation triggers only once per element
+      mirror: false, // repeat animation on scroll up
+      //disable: 'mobile', // optional: disables animations on mobile if performance is of concern
+    });
+  </script>
+
+
+<!-- Animation Section js part ends ------------------------------------------------------------------------------------------------------------------>
+
+
+</body>
+</html>

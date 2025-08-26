@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request a Callback - Evolution</title>
+  <style>
+    :root {
+      --primary-color: #1e3a8a;     /* Deep blue */
+      --accent-color: #f97316;      /* Orange */
+      --light-bg: #f1f5f9;          /* Light background */
+      --input-border: #cbd5e1;
+      --error-color: #dc2626;
+      --success-color: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0f2fe, #f8fafc);
+      padding: 40px 20px;
+    }
+
+    .callback-form-box {
+      max-width: 720px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 32px 28px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.4s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .callback-form-box h3 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 30px;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .callback-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .callback-form .full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #374151;
+      display: block;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--input-border);
+      font-size: 15px;
+      background-color: #fff;
+      transition: 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent-color);
+      outline: none;
+      box-shadow: 0 0 6px rgba(249, 115, 22, 0.25);
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+.terms-checkbox {
+  font-size: 14px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+}
+
+.terms-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.terms-checkbox a {
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+    button {
+      grid-column: 1 / -1;
+      background: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #172554;
+    }
+
+    /* Toast */
+    #toast {
+      visibility: hidden;
+      min-width: 300px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      color: #333;
+      padding: 14px 20px;
+      border-left: 6px solid;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+      font-weight: 500;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    #toast.show {
+      visibility: visible;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+	
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeout {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-10px); }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .callback-form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="callback-form-box">
+    <h3>Request a Callback</h3>
+    <form class="callback-form" id="callbackForm">
+      <div>
+        <label for="first-name">First Name*</label>
+        <input id="first-name" type="text" required />
+      </div>
+      <div>
+        <label for="last-name">Last Name*</label>
+        <input id="last-name" type="text" required />
+      </div>
+
+      <div>
+        <label for="mobile">Mobile Number*</label>
+        <input id="mobile" type="tel" required />
+      </div>
+      <div>
+        <label for="email">Email Address*</label>
+        <input id="email" type="email" required />
+      </div>
+
+      <div>
+        <label for="gender">Gender*</label>
+        <select id="gender" required>
+          <option disabled selected>Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="mode">Applying For*</label>
+        <select id="mode" required>
+          <option disabled selected>Select</option>
+          <option>Offline Classroom Programme</option>
+          <option>Test - Series</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="stream">Stream*</label>
+        <select id="stream" required>
+          <option disabled selected>Select</option>
+          <option>NEET</option>
+          <option>PNST</option>
+          <option>CUET (Bio)</option>
+          <option>Para-Medical</option>
+        </select>
+      </div>
+      <div>
+        <label for="exam">Last Qualified Exam</label>
+        <select id="exam">
+          <option disabled selected>Select</option>
+          <option>10th</option>
+          <option>12th</option>
+          <option>Diploma</option>
+        </select>
+      </div>
+
+      <div class="full-width">
+        <label for="question">Any questions or concerns?</label>
+        <textarea id="question" placeholder="Write your query here..."></textarea>
+      </div>
+
+      <div class="full-width">
+        <label for="calltime">Best time to call</label>
+        <select id="calltime">
+          <option disabled selected>Select</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+        </select>
+      </div>
+
+      <div class="full-width">
+        <label for="source">How did you hear about us?</label>
+        <select id="source">
+          <option disabled selected>Select</option>
+          <option>Ex-Evolution Students</option>
+          <option>Relatives</option>
+          <option>Newspaper</option>
+          <option>Advertisement</option>
+          <option>YouTube</option>
+          <option>Social Media</option>
+          <option>Friends</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="full-width" id="other-source-field" style="display: none;">
+        <label for="other-source">Please specify</label>
+        <input type="text" id="other-source" />
+      </div>
+
+
+<div class="full-width terms-checkbox">
+  <label for="agree">
+    <input type="checkbox" id="agree" />
+    I agree with the <a href="t&c.html" target="_blank">terms and conditions</a>
+    of the Evolution Career Institute Sehore.
+  </label>
+</div>
+
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"><span class="checkmark">✔</span><span id="toast-message">Message</span></div>
+
+  <script>
+    const form = document.getElementById('callbackForm');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-message');
+    const checkIcon = toast.querySelector('.checkmark');
+
+    const fields = {
+      firstName: document.getElementById('first-name'),
+      lastName: document.getElementById('last-name'),
+      mobile: document.getElementById('mobile'),
+      email: document.getElementById('email'),
+      gender: document.getElementById('gender'),
+      mode: document.getElementById('mode'),
+      stream: document.getElementById('stream')
+    };
+
+    const sourceSelect = document.getElementById('source');
+    const otherSourceField = document.getElementById('other-source-field');
+    const otherSourceInput = document.getElementById('other-source');
+
+    const regex = {
+      name: /^[A-Za-z\s]{2,30}$/,
+      mobile: /^[6-9]\d{9}$/,
+      email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+    };
+
+    sourceSelect.addEventListener('change', () => {
+      otherSourceField.style.display = sourceSelect.value === 'Other' ? 'block' : 'none';
+      if (sourceSelect.value !== 'Other') {
+        otherSourceInput.value = '';
+        setValid(otherSourceInput);
+      }
+    });
+
+    function showToast(message, success = true) {
+      toastMsg.textContent = message;
+      checkIcon.textContent = success ? '✔' : '✖';
+      toast.style.borderLeftColor = success ? 'var(--success-color)' : 'var(--error-color)';
+      checkIcon.style.color = success ? 'var(--success-color)' : 'var(--error-color)';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function setInvalid(input) {
+      input.style.border = '2px solid var(--error-color)';
+    }
+
+    function setValid(input) {
+      input.style.border = `1px solid var(--input-border)`;
+    }
+
+    Object.keys(fields).forEach(key => {
+      fields[key].addEventListener('blur', () => {
+        const value = fields[key].value.trim();
+        if (!value || value === 'Select') {
+          setInvalid(fields[key]);
+        } else {
+          if (key === 'firstName' || key === 'lastName') {
+            regex.name.test(value) ? setValid(fields[key]) : setInvalid(fields[key]);
+          } else if (key === 'mobile') {
+            regex.mobile.test(value) ? setValid(fields[key]) : setInvalid(fields[key]);
+          } else if (key === 'email') {
+            regex.email.test(value) ? setValid(fields[key]) : setInvalid(fields[key]);
+          } else {
+            setValid(fields[key]);
+          }
+        }
+      });
+    });
+
+    otherSourceInput.addEventListener('blur', () => {
+      if (sourceSelect.value === 'Other') {
+        const val = otherSourceInput.value.trim();
+        val ? setValid(otherSourceInput) : setInvalid(otherSourceInput);
+      } else {
+        setValid(otherSourceInput);
+      }
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let valid = true;
+
+      // Validate all required fields
+      Object.keys(fields).forEach(key => {
+        const input = fields[key];
+        const value = input.value.trim();
+
+        if (!value || value === 'Select') {
+          setInvalid(input);
+          valid = false;
+        } else {
+          // Specific validations
+          if ((key === 'firstName' || key === 'lastName') && !regex.name.test(value)) {
+            setInvalid(input);
+            valid = false;
+          }
+          if (key === 'mobile' && !regex.mobile.test(value)) {
+            setInvalid(input);
+            valid = false;
+          }
+          if (key === 'email' && !regex.email.test(value)) {
+            setInvalid(input);
+            valid = false;
+          }
+        }
+      });
+
+      // Additional required check for 'Other source' field if visible
+      if (sourceSelect.value === 'Other') {
+        const otherValue = otherSourceInput.value.trim();
+        if (!otherValue) {
+          setInvalid(otherSourceInput);
+          valid = false;
+        } else {
+          setValid(otherSourceInput);
+        }
+      }
+  
+    const agreeCheckbox = document.getElementById('agree');
+if (!agreeCheckbox.checked) {
+  showToast('You must agree to the terms and conditions.', false);
+  return;
+}
+
+
+
+      if (valid) {
+  showToast('The form has been submitted.');
+  form.reset();
+  otherSourceField.style.display = 'none';
+  Object.values(fields).forEach(setValid);
+  setValid(otherSourceInput);
+
+  // Redirect to home page after 3 seconds (when toast disappears)
+  setTimeout(() => {
+    window.location.href = 'index.html';  // change '/' to your actual home page URL if needed
+  }, 3000);
+} else {
+  showToast('Please fill all required fields correctly.', false);
+}
+
+    });
+  </script>
+</body>
+</html>

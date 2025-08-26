@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Evolution Institute - Home</title>
+		<link rel="stylesheet" href="about.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	</head>
+	
+<body>
+
+<!-- Scroll to Top Button ---------------------------------------------------------------------------------------------------------------------------->
+	<button id="scrollToTopBtn" title="Go to top" style="display: none;">↑</button>
+
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	
+			// Show or hide the button on scroll
+			window.addEventListener("scroll", function () 
+			{
+				if (window.scrollY > 300) 
+				{
+					scrollToTopBtn.style.display = "flex"; // Use flex, not block (as your CSS uses flexbox)
+				} 
+				else 
+				{
+					scrollToTopBtn.style.display = "none";
+				}
+			});
+
+			// Scroll to top on button click
+			scrollToTopBtn.addEventListener("click", function () 
+			{
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		});
+	
+	</script>
+
+
+<!-- Scroll to Top Button ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Top Bar ----------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<div class="top-bar">
+		
+		<!-- Left Section -->
+		<div class="top-left">
+			
+			<span>
+				<i class="fas fa-clock"></i> Open 24/7
+			</span>
+			
+			<span class="email-wrap">
+			
+				<i class="fas fa-envelope"></i>
+				<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="email-link">
+					evolutioncareerinstitute2024@gmail.com
+				</a>
+			</span>
+		
+		</div>
+
+		<!-- Center Section -->
+		<div class="top-center">
+			<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+			<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+		</div>
+
+		<!-- Right Section -->
+		<div class="top-right">
+			<a href="tel:+919999999999" class="call-btn"><i class="fas fa-phone"></i> Call Us</a>
+		</div>
+	
+	</div>
+
+
+<!-- Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Header ------------------------------------------------------------------------------------------------------------------------------------------>
+	<header class="header-container">
+	
+		<div class="logo-nav-wrapper">
+		
+			<div class="logo">
+
+				<img src="logo.jpg" alt="Evolution Logo" />			
+				<div class="logo-text">
+					<div class="evolution-word">Evolution</div>
+					<div class="career-word">Career Institute Pvt. Ltd.</div>
+				</div>
+			
+			</div>
+
+			<!-- Hamburger Icon -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">☰</button>
+
+			<!-- Desktop Nav -->
+			<nav class="desktop-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				
+				<!-- Courses Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="coursesDropdown">
+						<span class="dropbtn-text">Courses</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="neet_course.html">NEET</a>
+						<a href="pnst_course.html">PNST</a>
+						<a href="cuet_course.html">CUET (Bio)</a>
+						<a href="para-medical_course.html">Para-Medical</a>
+					</div>
+				</div>
+				
+				<a href="about.html">About Us</a>
+			
+				<!-- Admissions Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="admissionsDropdown">
+						<span class="dropbtn-text">Admissions</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				
+				<a href="contact.html">Contact Us</a>
+			
+			</nav>
+		
+		</div>
+
+		<!-- Mobile Sidebar Nav -->
+		<div class="mobile-nav-overlay" id="mobileNav">
+			
+			<div class="mobile-header">
+
+				<!-- Top row: logo/title (left) and close button (right) -->
+				<div class="top-row">
+					
+					<div class="left-logo-title">
+						<img src="logo.jpg" alt="Logo" />
+					
+						<div class="mobile-title">
+							<div class="evolution-word">Evolution</div>
+							<div class="career-word">Career Institute Pvt. Ltd.</div>
+						</div>
+
+					</div>
+					<button class="close-btn" id="closeBtn">X</button>
+				
+				</div>
+
+				<!-- Centered social icons below -->
+				<div class="center-icons">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+				</div>
+
+			</div>
+
+			<nav class="mobile-nav">
+				
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+
+				<!-------		Courses		------->
+				<div class="mobile-dropdown">
+					<button id="coursesDropdownToggle" class="mobile-dropbtn">
+						Courses <span class="arrow-down rotate-arrow">▼</span>
+					</button>
+
+					<div id="coursesDropdownMenu" class="mobile-dropdown-content">
+						<a href="neet_course.html">NEET</a>
+						<a href="pnst_course.html">PNST</a>
+						<a href="cuet_course.html">CUET (Bio)</a>
+						<a href="para-medical_course.html">Para-Medical</a></div>
+				</div>
+				<!-------		Courses ends		------->
+
+				<a href="about.html">About Us</a>
+				
+				<!-------		Admissions		------->
+				<div class="mobile-dropdown">	
+					<button id="mobileDropdownToggle" class="mobile-dropbtn">
+						Admissions <span class="arrow-down rotate-arrow">▼</span>
+
+					</button>
+
+					<div id="mobileDropdownMenu" class="mobile-dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				<!-------		Admissions ends		------->
+				
+				<a href="contact.html">Contact Us</a>
+				
+				<a href="tel:+919999999999" class="apply-btn"><i class="fas fa-phone"></i> Call Us</a>
+				
+				<div class="contact-info">
+					<h2> Contact Info </h2><br>
+					<p>
+						<strong>“BHOPAL NAKA”</strong>, in front of P.G College Bhopal road, Sehore, Madhya Pradesh
+					</p>
+					<p class="phone-row">
+						📞 <a href="tel:0157200000" class="phone-link">01572 00000</a>, 
+						📞 <a href="tel:0157200000" class="phone-link">01572 00000</a>
+					</p>
+				</div>
+
+			</nav>
+
+		</div>
+	
+	</header>
+
+	<!-- JavaScript to toggle the hamburger menu -->
+	<script>
+	
+		// Grab elements
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const mobileNav = document.getElementById("mobileNav");
+		const closeBtn = document.getElementById("closeBtn");
+
+		// Track menu state
+		let isMenuOpen = false;
+
+		// Toggle mobile menu when hamburger is clicked
+		hamburgerBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = !isMenuOpen;
+			mobileNav.classList.toggle("show", isMenuOpen);
+			document.body.classList.toggle("menu-open", isMenuOpen);
+		});
+
+		// Close mobile menu on close (X) button
+		closeBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = false;
+			mobileNav.classList.remove("show");
+			document.body.classList.remove("menu-open");
+		});
+
+		// Close mobile menu when a link is clicked
+		const mobileLinks = document.querySelectorAll(".mobile-nav a");
+		mobileLinks.forEach(link => 
+		{
+			link.addEventListener("click", () => 
+			{
+				isMenuOpen = false;
+				mobileNav.classList.remove("show");
+				document.body.classList.remove("menu-open");
+			});
+		});
+
+		// Highlight current page in both navs
+		const currentPage = location.pathname.split("/").pop();
+
+		document.querySelectorAll(".desktop-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+
+		document.querySelectorAll(".mobile-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+	
+
+		// Mobile dropdown toggle  
+		document.addEventListener("DOMContentLoaded", () => 
+		{
+			// for Admissions
+			const mobileToggle = document.getElementById("mobileDropdownToggle");
+			const mobileMenu = document.getElementById("mobileDropdownMenu");
+			const arrowSpan = mobileToggle.querySelector(".arrow-down");
+
+			if (mobileMenu) 
+			{
+				mobileMenu.classList.remove("open");
+			}
+
+			if (mobileToggle && mobileMenu) 
+			{
+				mobileToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					// Toggle submenu
+					mobileMenu.classList.toggle("open");
+
+					// Toggle arrow direction
+					if (mobileMenu.classList.contains("open")) 
+					{
+						arrowSpan.textContent = "►"; // Right arrow
+					} 
+					else 
+					{
+						arrowSpan.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+	
+			// for Courses
+			const coursesToggle = document.getElementById("coursesDropdownToggle");
+			const coursesMenu = document.getElementById("coursesDropdownMenu");
+			const coursesArrow = coursesToggle.querySelector(".arrow-down");
+
+			if (coursesMenu) 
+			{
+			  coursesMenu.classList.remove("open");
+			}
+
+			if (coursesToggle && coursesMenu) 
+			{
+				coursesToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					coursesMenu.classList.toggle("open");
+
+					if (coursesMenu.classList.contains("open")) 
+					{
+						coursesArrow.textContent = "►"; // Right arrow
+					} 
+					else
+					{
+						coursesArrow.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+		});
+
+	</script>
+
+
+<!-- Header ends ------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Hero Section (image) ---------------------------------------------------------------------------------------------------------------------------->
+
+   <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay">
+      <h1>About Us</h1>
+    </div>
+  </section>
+
+  <!-- Contact Info Section -->
+  <section class="contact-info">
+    <p class="contact-subtitle">
+      Contact Our <a href="#">Medical Coaching in Sehore</a>
+    </p>
+ </section>
+
+
+<!-- Hero Section (image) ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Director Information Section -------------------------------------------------------------------------------------------------------------------->
+
+<section class="about-evolution-section">
+  <div class="about-evolution-wrapper">
+
+    <!-- Left Side Image -->
+    <div class="about-evolution-left">
+      <img src="teeno.png" alt="Founders of Evolution Institute" />
+    </div>
+
+    <!-- Right Side Content -->
+    <div class="about-evolution-right">
+      <h3>A Few Words About Evolution</h3>
+      <p>
+        Evolution Institute stands as a leading hub for NEET, PNST, and CUET (Bio) preparation in Sehore, 
+        offering a result-driven academic environment guided by experienced mentors and a structured learning approach.
+      </p>
+      <p>
+        We are committed to nurturing every student with clarity of concepts, unwavering confidence, and consistent performance throughout their medical entrance journey. 
+        With a legacy of excellence and personalized guidance, Evolution Institute ensures that every aspirant moves forward with purpose and precision.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Director Information Section ends --------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Evolution Paragraph Section --------------------------------------------------------------------------------------------------------------------->
+
+  <section class="about-section">
+    <div class="container">
+      <p>
+        Evolution, recognized as the best coaching institute in Sehore, offers unparalleled preparation for NEET, CUET (Bio), Olympiads, PNST, and CBSE/RBSE schooling. Established in May 2024, we have quickly risen as a beacon of educational excellence, boasting a dedicated, visionary faculty team. In a short span, our success-oriented approach has earned the trust of hundreds of parents and students.
+      </p>
+
+      <p>
+        At Evolution, our exceptional management system fosters a supportive learning environment where every student receives personalized attention. Our result-driven methodology, backed by a progressive vision, reaffirms our strong commitment to student success in NEET, CUET, PNST, Olympiads, and CBSE/RBSE schooling.
+      </p>
+
+      <p>
+        We prioritize safety and security in our educational ecosystem, providing complete peace of mind to students and parents alike. Our holistic educational approach prepares students not only for competitive exams but also for life beyond the classroom, ensuring long-term growth and success.
+      </p>
+
+      <p>
+        Be a part of the Evolution journey and witness the difference of being in an institution that stands for integrity, innovation, and student-centered learning. Let’s shape a future filled with academic success and boundless opportunities. Welcome to Evolution — where the top coaching experience in Sehore awaits you for NEET, CUET, PNST, Olympiads, and CBSE/RBSE schooling.
+      </p>
+
+      <p class="tagline">
+        Evolution believes in disciplined hard work and values-based education with the tagline…
+      </p>
+
+      <h2 class="hindi-tagline">“Evolution जहाँ सफलता के सपने सच होते हैं संस्कारों के साथ ।”</h2>
+    </div>
+  </section>
+
+
+<!-- Evolution Paragraph Section ends ---------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Mission Vision Section -------------------------------------------------------------------------------------------------------------------------->
+
+  <section class="vision-mission-section">
+    <div class="container">
+      <div class="box">
+        <h2>Our Vision</h2>
+        <p>
+          To be accessible to every student in India through affordable quality education in both, offline and online modes and to transform into a world class organization consisting of talented, committed individuals with a deep passion for educating children.
+        </p>
+      </div>
+      <div class="box">
+        <h2>Our Mission</h2>
+        <p>
+          Every Child is Unique! Develop and transform every child with special care irrespective of his/ her capability through our teaching and pedagogy, to train students to compete and succeed not just in exams, but in career and life!
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Mission Vision Section ends --------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Campus Library image Section -------------------------------------------------------------------------------------------------------------------->
+
+  <section class="campus-library-section">
+    <div class="container">
+      <div class="box">
+        <h2>Our Campus</h2>
+        <img src="building.jpg" alt="Campus Image" class="section-image" />
+      </div>
+      <div class="box">
+        <h2>Our Library</h2>
+        <img src="library.jpg" alt="Library Image" class="section-image" />
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Campus Library image Section ends --------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Footer Section ---------------------------------------------------------------------------------------------------------------------------------->
+
+	<footer class="footer">
+		
+		<div class="footer-links">
+			
+			<div>
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="courses.html">Courses</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			
+			<div>
+				<h4>Important</h4>
+				<ul>
+					<li><a href="scholarship.html">Scholarship</a></li>
+					<li><a href="admissions.html">Admissions</a></li>
+					<li><a href="features.html">Features</a></li>
+				</ul>
+			</div>
+			
+			<div>
+				<h4>Contact Info</h4>
+				<p>Email: evolutioninstitute@gmail.com</p>
+				<p>Phone: +91 96853 36065</p>
+				<p>Address: Sehore, Madhya Pradesh, India</p>
+			</div>
+			
+		</div>
+    
+		<div class="footer-bottom">
+			<p>&copy; 2025 Evolution Institute. All Rights Reserved.</p>
+		</div>
+	
+	</footer>
+
+
+<!-- Footer Section ends ----------------------------------------------------------------------------------------------------------------------------->
+
+
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Evolution Institute - Home</title>
+		<link rel="stylesheet" href="t&c.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		
+		<!-- AOS CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	
+	</head>
+	
+<body>
+
+
+<!-- Scroll to Top Button ---------------------------------------------------------------------------------------------------------------------------->
+	<button id="scrollToTopBtn" title="Go to top" style="display: none;">↑</button>
+
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	
+			// Show or hide the button on scroll
+			window.addEventListener("scroll", function () 
+			{
+				if (window.scrollY > 300) 
+				{
+					scrollToTopBtn.style.display = "flex"; // Using flex, not block (as our CSS uses flexbox)
+				} 
+				else 
+				{
+					scrollToTopBtn.style.display = "none";
+				}
+			});
+
+			// Scroll to top on button click
+			scrollToTopBtn.addEventListener("click", function () 
+			{
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		});
+	
+	</script>
+
+
+<!-- Scroll to Top Button ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Top Bar ----------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<div class="top-bar">
+		
+		<!-- Left Section -->
+		<div class="top-left">
+			
+			<span>
+				<i class="fas fa-clock"></i> Open 24/7
+			</span>
+			
+			<span class="email-wrap">
+			
+				<i class="fas fa-envelope"></i>
+				<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="email-link">
+					evolutioncareerinstitute2024@gmail.com
+				</a>
+			</span>
+		
+		</div>
+
+		<!-- Center Section -->
+		<div class="top-center">
+			<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+			<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+		</div>
+
+		<!-- Right Section -->
+		<div class="top-right">
+			<a href="tel:+919999999999" class="call-btn"><i class="fas fa-phone"></i> Call Us</a>
+		</div>
+	
+	</div>
+
+
+<!-- Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Header ------------------------------------------------------------------------------------------------------------------------------------------>
+	<header class="header-container">
+	
+		<div class="logo-nav-wrapper">
+		
+			<div class="logo">
+
+				<img src="logo.jpg" alt="Evolution Logo" />			
+				<div class="logo-text">
+					<div class="evolution-word">Evolution</div>
+					<div class="career-word">Career Institute Pvt. Ltd.</div>
+				</div>
+			
+			</div>
+
+			<!-- Hamburger Icon -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">☰</button>
+
+			<!-- Desktop Nav -->
+			<nav class="desktop-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				
+				<!-- Courses Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="coursesDropdown">
+						<span class="dropbtn-text">Courses</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="neet_course.html">NEET</a>
+						<a href="pnst_course.html">PNST</a>
+						<a href="cuet_course.html">CUET (Bio)</a>
+						<a href="para-medical_course.html">Para-Medical</a>
+					</div>
+				</div>
+				
+				<a href="about.html">About Us</a>
+			
+				<!-- Admissions Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="admissionsDropdown">
+						<span class="dropbtn-text">Admissions</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				
+				<a href="contact.html">Contact Us</a>
+			
+			</nav>
+		
+		</div>
+
+		<!-- Mobile Sidebar Nav -->
+		<div class="mobile-nav-overlay" id="mobileNav">
+			
+			<div class="mobile-header">
+
+				<!-- Top row: logo/title (left) and close button (right) -->
+				<div class="top-row">
+					
+					<div class="left-logo-title">
+						<img src="logo.jpg" alt="Logo" />
+					
+						<div class="mobile-title">
+							<div class="evolution-word"> Evolution</div>
+							<div class="career-word">Career Institute Pvt. Ltd.</div>
+						</div>
+
+					</div>
+					<button class="close-btn" id="closeBtn">X</button>
+				
+				</div>
+
+				<!-- Centered social icons below -->
+				<div class="center-icons">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+				</div>
+
+			</div>
+
+			<nav class="mobile-nav">
+				
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+
+				<!-------		Courses		------->
+				<div class="mobile-dropdown">
+					<button id="coursesDropdownToggle" class="mobile-dropbtn">
+						Courses <span class="arrow-down rotate-arrow">▼</span>
+					</button>
+
+					<div id="coursesDropdownMenu" class="mobile-dropdown-content">
+						<a href="neet_course.html">NEET</a>
+						<a href="pnst_course.html">PNST</a>
+						<a href="cuet_course.html">CUET (Bio)</a>
+						<a href="para-medical_course.html">Para-Medical</a></div>
+				</div>
+				<!-------		Courses ends		------->
+
+				<a href="about.html">About Us</a>
+				
+				<!-------		Admissions		------->
+				<div class="mobile-dropdown">	
+					<button id="mobileDropdownToggle" class="mobile-dropbtn">
+						Admissions <span class="arrow-down rotate-arrow">▼</span>
+
+					</button>
+
+					<div id="mobileDropdownMenu" class="mobile-dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				<!-------		Admissions ends		------->
+				
+				<a href="contact.html">Contact Us</a>
+				
+				<a href="tel:+919999999999" class="apply-btn"><i class="fas fa-phone"></i> Call Us</a>
+				
+				<div class="contact-info">
+					<h2> Contact Info </h2><br>
+					<p>
+						<strong>“BHOPAL NAKA”</strong>, in front of P.G College Bhopal road, Sehore, Madhya Pradesh
+					</p>
+					<p class="phone-row">
+						📞 <a href="tel:0157200000" class="phone-link">01572 00000</a>, 
+						📞 <a href="tel:0157200000" class="phone-link">01572 00000</a>
+					</p>
+				</div>
+
+			</nav>
+
+		</div>
+	
+	</header>
+
+	<!-- JavaScript to toggle the hamburger menu -->
+	<script>
+	
+		// Grab elements
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const mobileNav = document.getElementById("mobileNav");
+		const closeBtn = document.getElementById("closeBtn");
+
+		// Track menu state
+		let isMenuOpen = false;
+
+		// Toggle mobile menu when hamburger is clicked
+		hamburgerBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = !isMenuOpen;
+			mobileNav.classList.toggle("show", isMenuOpen);
+			document.body.classList.toggle("menu-open", isMenuOpen);
+		});
+
+		// Close mobile menu on close (X) button
+		closeBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = false;
+			mobileNav.classList.remove("show");
+			document.body.classList.remove("menu-open");
+		});
+
+		// Close mobile menu when a link is clicked
+		const mobileLinks = document.querySelectorAll(".mobile-nav a");
+		mobileLinks.forEach(link => 
+		{
+			link.addEventListener("click", () => 
+			{
+				isMenuOpen = false;
+				mobileNav.classList.remove("show");
+				document.body.classList.remove("menu-open");
+			});
+		});
+
+		// Highlight current page in both navs
+		const currentPage = location.pathname.split("/").pop();
+
+		document.querySelectorAll(".desktop-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+
+		document.querySelectorAll(".mobile-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+	
+
+		// Mobile dropdown toggle  
+		document.addEventListener("DOMContentLoaded", () => 
+		{
+			// for Admissions
+			const mobileToggle = document.getElementById("mobileDropdownToggle");
+			const mobileMenu = document.getElementById("mobileDropdownMenu");
+			const arrowSpan = mobileToggle.querySelector(".arrow-down");
+
+			if (mobileMenu) 
+			{
+				mobileMenu.classList.remove("open");
+			}
+
+			if (mobileToggle && mobileMenu) 
+			{
+				mobileToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					// Toggle submenu
+					mobileMenu.classList.toggle("open");
+
+					// Toggle arrow direction
+					if (mobileMenu.classList.contains("open")) 
+					{
+						arrowSpan.textContent = "►"; // Right arrow
+					} 
+					else 
+					{
+						arrowSpan.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+	
+			// for Courses
+			const coursesToggle = document.getElementById("coursesDropdownToggle");
+			const coursesMenu = document.getElementById("coursesDropdownMenu");
+			const coursesArrow = coursesToggle.querySelector(".arrow-down");
+
+			if (coursesMenu) 
+			{
+			  coursesMenu.classList.remove("open");
+			}
+
+			if (coursesToggle && coursesMenu) 
+			{
+				coursesToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					coursesMenu.classList.toggle("open");
+
+					if (coursesMenu.classList.contains("open")) 
+					{
+						coursesArrow.textContent = "►"; // Right arrow
+					} 
+					else
+					{
+						coursesArrow.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+		});
+
+	</script>
+
+
+<!-- Header ends ------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Admission Process Section ----------------------------------------------------------------------------------------------------------------------->
+
+<h2 class="main-title center-underline" data-aos="fade-up">Terms and Conditions</h2>
+
+<section class="apply-section" data-aos="fade-up">
+
+  <ul class="steps" data-aos="fade-up">
+    <li>Evolution reserves the rights to deny any admission without giving any reason whatsoever it may be.</li>
+    <li>Confirm your age, eligibility & domicile for next coming NEET/ PNST Exam. Evolution will not be responsible for any matter regarding age, eligibility & domicile.</li>
+    <li>If original I-card is lost, duplicate I-card will be issued on depositing Rs. 100/- only for each.</li>
+    <li>Evolution reserves the right to make any change in Study hours, time table etc.</li>
+    <li>If any information given by candidate is found incorrect or false, his/her admission will be cancelled without any refund.</li>
+    <li>Use of mobile phone for a student in CLC campus is strictly prohibited. The student shall be imposed monetary punishment, debarment from class or termination.</li>
+  </ul>
+<br>
+
+
+
+    <div class="container" data-aos="fade-up">
+        <h1>Refund Rules</h1>
+        <ul class="top-note" data-aos="fade-up">
+            <li>Refund of any amount if payable shall be refunded by cheque only after deducting the following amount + GST on it :-</li>
+        </ul>
+
+        <div class="table-container" data-aos="fade-up">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Days After Admission</th>
+                        <th>Deducted ₹ (NEET • JEE)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>Upto 7 Days</td>
+                        <td>₹ 5000 + GST</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>Upto 14 Days</td>
+                        <td>₹ 10000 + GST</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>Upto 21 Days</td>
+                        <td>₹ 15000 + GST</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>Upto 30 Days</td>
+                        <td>₹ 20000 + GST</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ul class="rules" data-aos="fade-up">
+            <li>After 30 days of admission, there will be <strong>No Fee Refund</strong>.</li>
+            <li>If the Course fee is refunded in that case only parents of ward will be eligible to take the amount.</li>
+            <li>To receive refundable amount, the parents of ward should apply in written.</li>
+            <li>Refund request through Email / Fax / Telephone / Mobile / SMS will not be entertained.</li>
+            <li>A student will be eligible for a refund only if the first installment of the fee has been deposited according to the norms outlined by the institute.</li>
+            <li>In special cases where any student gets admission in Govt. Medical Colleges / AIIMS may get a refund of 50% of the deposited Tuition fee, even after 28 days of Admission.</li>
+            <li>Original fee deposit receipt and student I-card must be attached with the refund request.</li>
+            <li>There will be no refund after deposition of second installment.</li>
+        </ul>
+
+        <div class="note" data-aos="fade-up">
+            <h2>Note</h2>
+            <ul>
+                <li>There will be no refund if complete payment of the first installment has not been made at the time of admission.</li>
+                <li>No refund of any amount shall be done to any student if rusticated from the Institute on disciplinary grounds.</li>
+            </ul>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+<!-- Footer Section ---------------------------------------------------------------------------------------------------------------------------------->
+
+	<footer class="footer" data-aos="fade-up">
+		
+		<div class="footer-links">
+			
+			<div>
+				
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="courses.html">Courses</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			
+			</div>
+			
+			<div>
+			
+				<h4>Important</h4>
+				<ul>
+					<li><a href="scholarship.html">Scholarship</a></li>
+					<li><a href="admissions.html">Admissions</a></li>
+					<li><a href="features.html">Features</a></li>
+				</ul>
+			
+			</div>
+			
+			<div>
+			
+				<h4>Contact Info</h4>
+				<p>Email: evolutioninstitute@gmail.com</p>
+				<p>Phone: +91 96853 36065</p>
+				<p>Address: Sehore, Madhya Pradesh, India</p>
+			
+			</div>
+			
+		</div>
+    
+		<div class="footer-bottom">
+			<p>&copy; 2025 Evolution Institute. All Rights Reserved.</p>
+		</div>
+	
+	</footer>
+
+
+<!-- Footer Section ends ----------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Animation Section js part  ---------------------------------------------------------------------------------------------------------------------->
+
+<!-- Initialize AOS -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+ <script>
+    AOS.init({
+      offset: 120, // trigger animation after scrolling this far (px)
+      duration: 600, // default animation duration
+      easing: 'ease-in-out', // easing function
+      once: true, // ensure animation triggers only once per element
+      mirror: false, // repeat animation on scroll up
+      //disable: 'mobile', // optional: disables animations on mobile if performance is of concern
+    });
+  </script>
+
+
+<!-- Animation Section js part ends ------------------------------------------------------------------------------------------------------------------>
+
+
+</body>
+</html>

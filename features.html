@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Evolution Institute - Home</title>
+		<link rel="stylesheet" href="features.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	
+	</head>
+	
+<body>
+
+
+<!-- Scroll to Top Button ---------------------------------------------------------------------------------------------------------------------------->
+	<button id="scrollToTopBtn" title="Go to top" style="display: none;">↑</button>
+
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	
+			// Show or hide the button on scroll
+			window.addEventListener("scroll", function () 
+			{
+				if (window.scrollY > 300) 
+				{
+					scrollToTopBtn.style.display = "flex"; // Use flex, not block (as your CSS uses flexbox)
+				} 
+				else 
+				{
+					scrollToTopBtn.style.display = "none";
+				}
+			});
+
+			// Scroll to top on button click
+			scrollToTopBtn.addEventListener("click", function () 
+			{
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		});
+	
+	</script>
+
+
+<!-- Scroll to Top Button ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Top Bar ----------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<div class="top-bar">
+		
+		<!-- Left Section -->
+		<div class="top-left">
+			
+			<span>
+				<i class="fas fa-clock"></i> Open 24/7
+			</span>
+			
+			<span class="email-wrap">
+			
+				<i class="fas fa-envelope"></i>
+				<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="email-link">
+					evolutioncareerinstitute2024@gmail.com
+				</a>
+			</span>
+		
+		</div>
+
+		<!-- Center Section -->
+		<div class="top-center">
+			<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+			<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+		</div>
+
+		<!-- Right Section -->
+		<div class="top-right">
+			<a href="tel:+919999999999" class="call-btn"><i class="fas fa-phone"></i> Call Us</a>
+		</div>
+	
+	</div>
+
+
+<!-- Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Header ------------------------------------------------------------------------------------------------------------------------------------------>
+	<header class="header-container">
+	
+		<div class="logo-nav-wrapper">
+		
+			<div class="logo">
+
+				<img src="logo.jpg" alt="Evolution Logo" />			
+				<div class="logo-text">
+					<div class="evolution-word">Evolution</div>
+					<div class="career-word">Career Institute Pvt. Ltd.</div>
+				</div>
+			
+			</div>
+
+			<!-- Hamburger Icon -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">☰</button>
+
+			<!-- Desktop Nav -->
+			<nav class="desktop-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="selections.html">Selections</a>
+				<a href="admissions.html">Admissions</a>
+				<a href="contact.html">Contact Us</a>
+			</nav>
+		
+		</div>
+
+		<!-- Mobile Sidebar Nav -->
+		<div class="mobile-nav-overlay" id="mobileNav">
+			
+			<div class="mobile-header">
+
+				<!-- Top row: logo/title (left) and close button (right) -->
+				<div class="top-row">
+					
+					<div class="left-logo-title">
+						<img src="logo.jpg" alt="Logo" />
+					
+						<div class="mobile-title">
+							<div class="evolution-word">Evolution</div>
+							<div class="career-word">Career Institute Pvt. Ltd.</div>
+						</div>
+
+					</div>
+					<button class="close-btn" id="closeBtn">X</button>
+				
+				</div>
+
+				<!-- Centered social icons below -->
+				<div class="center-icons">
+					<a href="#" class="fb-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="insta-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+					<a href="#" class="yt-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+				</div>
+
+			</div>
+
+			<nav class="mobile-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="selections.html">Selections</a>
+				<a href="admissions.html">Admissions</a>
+				<a href="contact.html">Contact Us</a>
+				<a href="contact.html" class="apply-btn">Need Enquiry</a>
+
+				<div class="contact-info">
+					<h2> Contact Info </h2><br>
+					<p><strong>“BHOPAL NAKA”</strong>, in front of P.G College<br>Bhopal road, Sehore, Madhya Pradesh</p>
+					<p>📞 01572-255-500</p>
+					<p>✉️ chsisodiya@gmail.com</p>
+				</div>
+			
+			</nav>
+
+		</div>
+	
+	</header>
+
+	<!-- JavaScript to toggle the hamburger menu -->
+	<script>
+	
+		// Grab elements
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const mobileNav = document.getElementById("mobileNav");
+		const closeBtn = document.getElementById("closeBtn");
+
+		// Track menu state
+		let isMenuOpen = false;
+
+		// Toggle mobile menu when hamburger is clicked
+		hamburgerBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = !isMenuOpen;
+			mobileNav.classList.toggle("show", isMenuOpen);
+			document.body.classList.toggle("menu-open", isMenuOpen);
+		});
+
+		// Close mobile menu on close (X) button
+		closeBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = false;
+			mobileNav.classList.remove("show");
+			document.body.classList.remove("menu-open");
+		});
+
+		// Close mobile menu when a link is clicked
+		const mobileLinks = document.querySelectorAll(".mobile-nav a");
+		mobileLinks.forEach(link => 
+		{
+			link.addEventListener("click", () => 
+			{
+				isMenuOpen = false;
+				mobileNav.classList.remove("show");
+				document.body.classList.remove("menu-open");
+			});
+		});
+
+		// Highlight current page in both navs
+		const currentPage = location.pathname.split("/").pop();
+
+		document.querySelectorAll(".desktop-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+
+		document.querySelectorAll(".mobile-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+	
+	</script>
+
+
+<!-- Header ends ------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Hero Section (image) ---------------------------------------------------------------------------------------------------------------------------->
+	<section class="hero-section">
+		
+		<div class="hero-overlay">
+			<h1>Features</h1>
+		</div>
+	
+	</section>
+
+	<section class="features-heading">
+		<div class="container">
+			<h2>Why Choose Evolution ?</h2>
+			<hr>
+		</div>
+	</section>
+
+<!-- Hero Section (image) ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Features Sections ------------------------------------------------------------------------------------------------------------------------------->
+  
+
+<section class="feature-section">
+  <!-- Block 1 test-series -->
+  <div class="feature-block">
+    <div class="feature-img">
+      <img src="test-series.jpg" alt="Test Series">
+    </div>
+    <div class="feature-text">
+      <h2>Test Series</h2>
+      <p>Test Series for AIIMS/NEET is specially designed for students aiming to crack the AIIMS/NEET exams...</p>
+      <div class="btn-group">
+        <a href="#" class="btn join">Let's Join</a>
+        <a href="#" class="btn enquiry">Get Enquiry</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Block 2 smart-classes -->
+  <div class="feature-block reverse">
+    <div class="feature-img">
+      <img src="smart-classes.jpg" alt="Doubt Classes">
+    </div>
+    <div class="feature-text">
+      <h2>Smart Classes</h2>
+      <p>The main aim is to train AIIMS/NEET aspirants in the best possible ways by clearing concepts and removing doubts.</p>
+      <div class="btn-group">
+        <a href="#" class="btn join">Let's Join</a>
+        <a href="#" class="btn enquiry">Get Enquiry</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Block 3 study-package -->
+  <div class="feature-block">
+    <div class="feature-img">
+      <img src="study-package.jpg" alt="Test Series">
+    </div>
+    <div class="feature-text">
+      <h2>Study Package</h2>
+      <p>Test Series for AIIMS/NEET is specially designed for students aiming to crack the AIIMS/NEET exams...</p>
+      <div class="btn-group">
+        <a href="#" class="btn join">Let's Join</a>
+        <a href="#" class="btn enquiry">Get Enquiry</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Block 4 features-library -->
+  <div class="feature-block reverse">
+    <div class="feature-img">
+      <img src="features-library.jpg" alt="Doubt Classes">
+    </div>
+    <div class="feature-text">
+      <h2>Library</h2>
+      <p>The main aim is to train AIIMS/NEET aspirants in the best possible ways by clearing concepts and removing doubts.</p>
+      <div class="btn-group">
+        <a href="#" class="btn join">Let's Join</a>
+        <a href="#" class="btn enquiry">Get Enquiry</a>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Block 5 doubt-classes -->
+  <div class="feature-block">
+    <div class="feature-img">
+      <img src="doubt-classes.jpg" alt="Test Series">
+    </div>
+    <div class="feature-text">
+      <h2>Doubt Classes</h2>
+      <p>Test Series for AIIMS/NEET is specially designed for students aiming to crack the AIIMS/NEET exams...</p>
+      <div class="btn-group">
+        <a href="#" class="btn join">Let's Join</a>
+        <a href="#" class="btn enquiry">Get Enquiry</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Block 6 Mentorship -->
+  <div class="feature-block reverse">
+    <div class="feature-img">
+      <img src="Mentorship.jpg" alt="Doubt Classes">
+    </div>
+    <div class="feature-text">
+      <h2>Mentorship</h2>
+      <p>The main aim is to train AIIMS/NEET aspirants in the best possible ways by clearing concepts and removing doubts.</p>
+      <div class="btn-group">
+        <a href="#" class="btn join">Let's Join</a>
+        <a href="#" class="btn enquiry">Get Enquiry</a>
+      </div>
+    </div>
+  </div>
+  
+      <!-- Block 7 Scholarship -->
+  <div class="feature-block">
+    <div class="feature-img">
+      <img src="Scholarship.jpg" alt="Test Series">
+    </div>
+    <div class="feature-text">
+      <h2>Scholarship</h2>
+      <p>Test Series for AIIMS/NEET is specially designed for students aiming to crack the AIIMS/NEET exams...</p>
+      <div class="btn-group">
+        <a href="#" class="btn join">Let's Join</a>
+        <a href="#" class="btn enquiry">Get Enquiry</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+    
+<!-- Features Sections ends -------------------------------------------------------------------------------------------------------------------------->
+  
+
+<!-- Footer Section ---------------------------------------------------------------------------------------------------------------------------------->
+
+	<footer class="footer">
+		
+		<div class="footer-links">
+			
+			<div>
+				
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="courses.html">Courses</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			
+			</div>
+			
+			<div>
+			
+				<h4>Important</h4>
+				<ul>
+					<li><a href="scholarship.html">Scholarship</a></li>
+					<li><a href="admissions.html">Admissions</a></li>
+					<li><a href="features.html">Features</a></li>
+				</ul>
+			
+			</div>
+			
+			<div>
+			
+				<h4>Contact Info</h4>
+				<p>Email: evolutioninstitute@gmail.com</p>
+				<p>Phone: +91 96853 36065</p>
+				<p>Address: Sehore, Madhya Pradesh, India</p>
+			
+			</div>
+			
+		</div>
+    
+		<div class="footer-bottom">
+			<p>&copy; 2025 Evolution Institute. All Rights Reserved.</p>
+		</div>
+	
+	</footer>
+
+
+<!-- Footer Section ends ----------------------------------------------------------------------------------------------------------------------------->
+
+
+</body>
+</html>
