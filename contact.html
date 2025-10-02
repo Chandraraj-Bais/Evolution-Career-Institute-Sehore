@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Evolution Institute - Home</title>
+		<link rel="stylesheet" href="contact.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		
+		<!-- AOS CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	
+	</head>
+	
+<body>
+
+
+<!-- Scroll to Top Button ---------------------------------------------------------------------------------------------------------------------------->
+	<button id="scrollToTopBtn" title="Go to top" style="display: none;">↑</button>
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	
+			// Show or hide the button on scroll
+			window.addEventListener("scroll", function () 
+			{
+				if (window.scrollY > 300) 
+				{
+					scrollToTopBtn.style.display = "flex"; // Using flex, not block (as our CSS uses flexbox)
+				} 
+				else 
+				{
+					scrollToTopBtn.style.display = "none";
+				}
+			});
+
+			// Scroll to top on button click
+			scrollToTopBtn.addEventListener("click", function () 
+			{
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		});
+	
+	</script>
+
+
+<!-- Scroll to Top Button ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Top Bar ----------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<div class="top-bar">  <!--  data-aos="fade-up" --> 
+		
+		<!-- Left Section -->
+		<div class="top-left">
+			
+			<span>
+				<i class="fas fa-clock"></i> Open 24/7
+			</span>
+			
+			<!-- Email block -->
+			<span class="email-wrap">
+			
+				<!-- Desktop email text -->
+				<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="email-link desktop-email">
+					<i class="fas fa-envelope"></i>
+					evolutioncareerinstitute2024@gmail.com
+				</a>
+			</span>
+
+		</div>
+
+		<!-- Center Section -->
+		<div class="top-center">			
+			<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://wa.me/919685336065" target="_blank" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+			<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+			<a href="Evolution-brochure.pdf" class="download-icon" target="_blank">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+					<path d="M12 16a1 1 0 0 1-.707-.293l-5-5a1 1 0 1 1 1.414-1.414L11 12.586V3a1 1 0 1 1 2 0v9.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-5 5A1 1 0 0 1 12 16ZM4 20a1 1 0 1 1 0-2h16a1 1 0 1 1 0 2H4Z"/>
+				</svg>
+				<span class="tooltip-text">Evolution institute brochure</span>
+			</a>
+
+			<!-- Mobile/Tablet icon-only email -->
+			<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="icon gmail-icon-link desktop-hidden">
+				<svg class="gmail-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+					<path fill="#f1f1f1" d="M4 12a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+					<path fill="#d93025" d="M44 12v2.3L24 26.5 4 14.3V12a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4z"/>
+					<path fill="#a50e0e" d="M4 14.3l20 12.2 20-12.2v21.7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+				</svg>
+			</a>
+		</div>
+
+		<!-- Right Section -->
+		<div class="top-right">
+			<a href="tel:+919685336065" class="call-btn"><i class="fas fa-phone"></i> Call Us</a>
+		</div>
+	
+	</div>
+
+	<script>
+	  document.addEventListener("DOMContentLoaded", function () {
+		const downloadIcon = document.querySelector(".download-icon");
+		const tooltip = downloadIcon.querySelector(".tooltip-text");
+		const fileURL = downloadIcon.getAttribute("href");
+
+		// For mobile/touch and desktop click
+		downloadIcon.addEventListener("click", function (e) {
+		  // Stop instant download
+		  e.preventDefault();
+
+		  // Show tooltip text
+		  tooltip.classList.add("show");
+
+		  // After 1s → hide tooltip & auto-download file
+		  setTimeout(() => {
+			tooltip.classList.remove("show");
+
+			// Force file download
+			const tempLink = document.createElement("a");
+			tempLink.href = fileURL;
+			tempLink.setAttribute("download", "");
+			document.body.appendChild(tempLink);
+			tempLink.click();
+			document.body.removeChild(tempLink);
+		  }, 1000);
+		});
+	  });
+	</script>
+
+	<script>
+	const downloadLink = document.querySelector('.download-icon');
+
+	downloadLink.addEventListener('click', function(e) {
+	  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+		// Mobile: open in new tab
+		e.preventDefault();
+		window.open(downloadLink.href, '_blank');
+	  }
+	  // Desktop: let the download attribute work normally
+	});
+	</script>
+
+
+<!-- Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Header ------------------------------------------------------------------------------------------------------------------------------------------>
+	<header class="header-container">   <!-- data-aos="fade-up" data-aos-delay="100"  -->
+	
+		<div class="logo-nav-wrapper">
+		
+			<div class="logo">
+
+				<img src="logo.jpg" alt="Evolution Logo" />			
+				<div class="logo-text">
+					<div class="evolution-word">Evolution</div>
+					<div class="career-word">Career Institute Pvt. Ltd.</div>
+				</div>
+			
+			</div>
+
+			<!-- Hamburger Icon -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">☰</button>
+
+			<!-- Desktop Nav -->
+			<nav class="desktop-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>	
+				<a href="courses.html">Courses</a>	
+				<a href="about.html">About Us</a>
+				<a href="gallery.html">Gallery</a>
+			
+				<!-- Admissions Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="admissionsDropdown">
+						<span class="dropbtn-text">Admissions</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				
+				<a href="contact.html">Contact Us</a>
+			
+			</nav>
+		
+		</div>
+
+		<!-- Mobile Sidebar Nav -->
+		<div class="mobile-nav-overlay" id="mobileNav">
+			
+			<div class="mobile-header">
+
+				<!-- Top row: logo/title (left) and close button (right) -->
+				<div class="top-row">
+					
+					<div class="left-logo-title">
+						<img src="logo.jpg" alt="Logo" />
+					
+						<div class="mobile-title">
+							<div class="evolution-word">Evolution</div>
+							<div class="career-word">Career Institute Pvt. Ltd.</div>
+						</div>
+
+					</div>
+					<button class="close-btn" id="closeBtn">X</button>
+				
+				</div>
+
+				<!-- Centered social icons below -->
+				<div class="center-icons">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+					<a href="https://wa.me/919685336065" target="_blank" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+				</div>
+
+			</div>
+
+			<nav class="mobile-nav">
+				
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="gallery.html">Gallery</a>				
+				
+				<!-------		Admissions		------->
+				<div class="mobile-dropdown">	
+					<button id="mobileDropdownToggle" class="mobile-dropbtn">
+						Admissions <span class="arrow-down rotate-arrow">▼</span>
+
+					</button>
+
+					<div id="mobileDropdownMenu" class="mobile-dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				<!-------		Admissions ends		------->
+				
+				<a href="contact.html">Contact Us</a>
+				
+				<a href="tel:+919685336065" class="apply-btn"><i class="fas fa-phone"></i> Call Us</a>
+				
+				<div class="contact-info">
+					<h2> Contact Info </h2><br>
+					<p>
+						<strong>“BHOPAL NAKA”</strong>, in front of P.G College Bhopal road, Sehore, Madhya Pradesh
+					</p>
+					<p class="phone-row">
+						📞 <a href="tel:9685336065&nbsp;" class="phone-link">96853 36065</a>, 
+						📞 <a href="tel:9131386065" class="phone-link">91313 86065</a>
+						<br>
+						<br>
+					</p>
+				</div>
+
+			</nav>
+
+		</div>
+	
+	</header>
+
+	<!-- JavaScript to toggle the hamburger menu -->
+	<script>
+	
+		// Grab elements
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const mobileNav = document.getElementById("mobileNav");
+		const closeBtn = document.getElementById("closeBtn");
+
+		// Track menu state
+		let isMenuOpen = false;
+
+		// Toggle mobile menu when hamburger is clicked
+		hamburgerBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = !isMenuOpen;
+			mobileNav.classList.toggle("show", isMenuOpen);
+			document.body.classList.toggle("menu-open", isMenuOpen);
+		});
+
+		// Close mobile menu on close (X) button
+		closeBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = false;
+			mobileNav.classList.remove("show");
+			document.body.classList.remove("menu-open");
+		});
+
+		// Close mobile menu when a link is clicked
+		const mobileLinks = document.querySelectorAll(".mobile-nav a");
+		mobileLinks.forEach(link => 
+		{
+			link.addEventListener("click", () => 
+			{
+				isMenuOpen = false;
+				mobileNav.classList.remove("show");
+				document.body.classList.remove("menu-open");
+			});
+		});
+
+		// Highlight current page in both navs
+		const currentPage = location.pathname.split("/").pop();
+
+		document.querySelectorAll(".desktop-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+
+		document.querySelectorAll(".mobile-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+	
+
+		// Mobile dropdown toggle  
+		document.addEventListener("DOMContentLoaded", () => 
+		{
+			// for Admissions
+			const mobileToggle = document.getElementById("mobileDropdownToggle");
+			const mobileMenu = document.getElementById("mobileDropdownMenu");
+			const arrowSpan = mobileToggle.querySelector(".arrow-down");
+
+			if (mobileMenu) 
+			{
+				mobileMenu.classList.remove("open");
+			}
+
+			if (mobileToggle && mobileMenu) 
+			{
+				mobileToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					// Toggle submenu
+					mobileMenu.classList.toggle("open");
+
+					// Toggle arrow direction
+					if (mobileMenu.classList.contains("open")) 
+					{
+						arrowSpan.textContent = "►"; // Right arrow
+					} 
+					else 
+					{
+						arrowSpan.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+	
+			// for Courses
+			const coursesToggle = document.getElementById("coursesDropdownToggle");
+			const coursesMenu = document.getElementById("coursesDropdownMenu");
+			const coursesArrow = coursesToggle.querySelector(".arrow-down");
+
+			if (coursesMenu) 
+			{
+			  coursesMenu.classList.remove("open");
+			}
+
+			if (coursesToggle && coursesMenu) 
+			{
+				coursesToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					coursesMenu.classList.toggle("open");
+
+					if (coursesMenu.classList.contains("open")) 
+					{
+						coursesArrow.textContent = "►"; // Right arrow
+					} 
+					else
+					{
+						coursesArrow.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+		});
+
+	</script>
+
+
+<!-- Header ends ------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Hero Section (image) ---------------------------------------------------------------------------------------------------------------------------->
+	<section class="hero-section">  <!-- data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200"  -->
+		
+		<div class="hero-overlay">
+			<h1>Contact Us</h1>
+		</div>
+	
+	</section>
+
+
+<!-- Hero Section (image) ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Information Section ----------------------------------------------------------------------------------------------------------------------------->
+
+	<!-- Contact Info Section -->
+	<section class="contact-info" data-aos="fade-up">    <!-- data-aos-duration="800" -->
+	
+		<p class="contact-subtitle">
+			Contact Our <a >Medical Coaching in Sehore</a>
+		</p>
+	
+		<div class="contact-grid" data-aos="fade-up">   <!--  data-aos-duration="800"  -->
+			
+			<!-- Phone -->
+			<div class="contact-box" data-aos="fade-up">
+				<img src="https://img.icons8.com/ios-filled/100/004f87/phone.png" alt="Phone Icon" />
+				<h2 data-aos="fade-up">Phone</h2>
+				<p data-aos="fade-up">
+					<a href="tel:+919685336065" "tel:+919131386065">+91-9685336065, +91-9131386065</a>
+				</p>
+			</div>
+
+			<!-- Address -->
+			<div class="contact-box" data-aos="fade-up">
+				<img src="https://img.icons8.com/ios-filled/100/004f87/marker.png" alt="Address Icon" />
+				<h2 data-aos="fade-up">Address</h2>
+				<p data-aos="fade-up">
+					<a href="https://maps.google.com/?q=Bhopal Marg, In front of P.G. College, Sehore, Madhya Pradesh 466001" target="_blank">
+						Bhopal Marg, In front of P.G. College, Bhopal Naka Sehore, Madhya Pradesh 466001
+					</a>
+				</p>
+			</div>
+
+			<!-- Email -->
+			<div class="contact-box" data-aos="fade-up">
+				<img src="https://img.icons8.com/ios-filled/100/004f87/new-post.png" alt="Email Icon" />
+				<h2 data-aos="fade-up">Email</h2>
+				<p data-aos="fade-up">
+					<a href="mailto:evolutioninstitute@gmail.com">evolutioncareerinstitute2024@gmail.com</a>
+				</p>
+			</div>
+
+		</div>
+	
+	</section>
+
+
+<!-- Information Section ends ------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Callback Section--------------------------------------------------------------------------------------------------------------------------------->
+
+	<section class="callback-section" data-aos="fade-up">
+		
+		<div class="callback-content" data-aos="fade-up">
+
+			<!-- Left Content -->
+			<div class="callback-left" data-aos="fade-up">
+				<h2 data-aos="fade-up">Looking to excel in your</h2>
+				<h3 data-aos="fade-up"><strong>NEET,</strong> PNST, <strong>CUET (Bio), Para-Medical</strong> exams?</h3>
+				<p data-aos="fade-up">Look no further than</p>
+				<h1 data-aos="fade-up"><strong>EVOLUTION</strong></h1>
+				<h4 data-aos="fade-up">CAREER INSTITUTE</h4>
+				<div class="location" data-aos="fade-up"><span>📍</span> SEHORE</div>
+			</div>
+
+			<!-- Right Form -->
+			<div class="callback-form-box" data-aos="fade-up">
+			
+				<h3 data-aos="fade-up">Request a callback</h3>
+				<form class="callback-form" id="callbackForm">
+
+					<!-- Row 1 -->
+					<div data-aos="fade-up">
+						<label for="first-name">First Name*</label>
+						<input id="first-name" type="text" placeholder="Enter your First Name" required>
+						<span class="error-message" id="error-first-name"></span>
+					</div>
+
+					<div data-aos="fade-up">
+						<label for="last-name">Last Name*</label>
+						<input id="last-name" type="text" placeholder="Enter your Last Name" required>
+						<span class="error-message" id="error-last-name"></span>
+					</div>
+
+					<!-- Row 2 -->
+					<div data-aos="fade-up">
+						<label for="mobile">Mobile No.*</label>
+						<input id="mobile" name="mobile" type="text" placeholder="Enter 10 digits Mobile Num" required>
+						<span class="error-message" id="error-mobile"></span>
+					</div>
+
+					<div data-aos="fade-up">
+						<label for="email">E-mail*</label>
+						<input id="email" type="email" placeholder="Enter your Email" required>
+						<span class="error-message" id="error-email"></span>
+					</div>
+
+					<!-- Row 3 -->
+					<div data-aos="fade-up">
+						
+						<label for="gender">Gender*</label>
+						<select id="gender" required>
+							<option disabled selected value="">Select</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Other</option>
+						</select>
+					  <span class="error-message" id="error-gender"></span>
+					
+					</div>
+
+					<div data-aos="fade-up">
+						<label for="mode">Applying for*</label>
+						
+						<select id="mode" required>
+							<option disabled selected value="">Select</option>
+							<option>Offline</option>
+							<option>Test - Series</option>
+						</select>
+					  <span class="error-message" id="error-mode"></span>
+					
+					</div>
+
+					<!-- Row 4 -->
+					<div data-aos="fade-up">
+						<label for="stream">Stream*</label>
+						
+						<select id="stream" required>
+							<option disabled selected value="">Select</option>
+							<option>NEET</option>
+							<option>PNST</option>
+							<option>CUET (Bio)</option>
+							<option>Para-Medical</option>
+						</select>
+						<span class="error-message" id="error-stream"></span>
+						
+					</div>
+
+					<div data-aos="fade-up">
+						<label for="exam">Last Qualified Exam</label>
+						
+						<select id="exam">
+							<option disabled selected value="">Select</option>
+							<option>10th</option>
+							<option>12th</option>
+							<option>Diploma</option>
+						</select>
+					
+					</div>
+
+					<!-- Row 5 -->
+					<div class="full-width" data-aos="fade-up">
+						<label for="calltime">Best time to call you</label>
+						
+						<select id="calltime">
+							<option disabled selected value="">Select</option>
+							<option>Morning</option>
+							<option>Afternoon</option>
+							<option>Evening</option>
+						</select>
+					
+					</div>
+
+					<!-- Row 6 -->
+					<div class="full-width" data-aos="fade-up">
+						<label for="source">How did you hear about Evolution</label>
+						
+						<select id="source">
+							<option disabled selected value="">Select</option>
+							<option>Ex-Evolution Students</option>
+							<option>Relatives</option>
+							<option>Newspaper</option>
+							<option>Advertisment</option>
+							<option>YouTube</option>
+							<option>Social Media</option>
+							<option>Friends</option>
+							<option>Other</option>
+						</select>
+					
+					</div>
+
+					<!-- Hidden Other Source Input -->
+					<div id="other-source-field" class="full-width" style="display:none;">
+						<label for="other-source">Please specify</label>
+						<input id="other-source" type="text" placeholder="Enter source detail">
+						<span class="error-message" id="error-other-source"></span>
+					</div>
+
+					<!-- Submit -->
+					<button type="submit" data-aos="fade-up">Submit</button>
+					<div id="form-success" style="margin-top:10px; font-weight:bold; color:green;"></div>
+				</form>
+			</div>
+		
+		</div>
+	
+	</section>
+
+
+	<script>
+	const namePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+	const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+	const phonePattern = /^[6-9][0-9]{9}$/;
+
+	function showError(id, message) 
+	{
+	  document.getElementById(id).innerText = message;
+	}
+
+	function clearError(id) 
+	{
+	  document.getElementById(id).innerText = "";
+	}
+
+	function validateField(id) 
+	{
+	  let value = document.getElementById(id).value.trim();
+	  switch (id) {
+		case "first-name":
+		  if (!value || !namePattern.test(value) || value.length < 2 || value.length > 20) {
+			showError("error-first-name", "Valid name (2–20 chars, letters & spaces).");
+			return false;
+		  } else clearError("error-first-name");
+		  break;
+
+		case "last-name":
+		  if (!value || !namePattern.test(value) || value.length < 2 || value.length > 20) {
+			showError("error-last-name", "Valid name (2–20 chars, letters & spaces).");
+			return false;
+		  } else clearError("error-last-name");
+		  break;
+
+		case "mobile":
+		  if (!value || !phonePattern.test(value)) {
+			showError("error-mobile", "Enter valid 10-digit number starting with 6–9.");
+			return false;
+		  } else clearError("error-mobile");
+		  break;
+
+		case "email":
+		  if (!value || !emailPattern.test(value)) {
+			showError("error-email", "Must be a valid Gmail address ending with @gmail.com.");
+			return false;
+		  } else clearError("error-email");
+		  break;
+
+		case "gender":
+		  if (!value) {
+			showError("error-gender", "Please select a gender.");
+			return false;
+		  } else clearError("error-gender");
+		  break;
+
+		case "mode":
+		  if (!value) {
+			showError("error-mode", "Please select a mode.");
+			return false;
+		  } else clearError("error-mode");
+		  break;
+
+		case "stream":
+		  if (!value) {
+			showError("error-stream", "Please select a stream.");
+			return false;
+		  } else clearError("error-stream");
+		  break;
+	  }
+	  return true;
+	}
+
+	function validateForm() 
+	{
+	  let fields = ["first-name", "last-name", "mobile", "email", "gender", "mode", "stream"];
+	  return fields.every(f => validateField(f));
+	}
+
+	document.addEventListener("DOMContentLoaded", () => 
+	{
+	  ["first-name", "last-name", "mobile", "email", "gender", "mode", "stream"].forEach(id => {
+		document.getElementById(id).addEventListener("input", () => {
+		  if (id === "mobile") {
+			let inp = document.getElementById("mobile");
+			inp.value = inp.value.replace(/[^0-9]/g, "").slice(0, 10);
+		  }
+		  validateField(id);
+		  document.querySelector("#callbackForm button[type='submit']").disabled = !validateForm();
+		});
+		document.getElementById(id).addEventListener("change", () => {
+		  validateField(id);
+		  document.querySelector("#callbackForm button[type='submit']").disabled = !validateForm();
+		});
+	  });
+
+	  document.querySelector("#callbackForm button[type='submit']").disabled = true;
+
+	  document.getElementById("callbackForm").addEventListener("submit", function (e) {
+		e.preventDefault();
+		if (validateForm()) {
+		  document.getElementById("form-success").innerText = "✅ Form has been submitted successfully!";
+		  this.reset();
+		  document.querySelector("#callbackForm button[type='submit']").disabled = true;
+		  setTimeout(() => document.getElementById("form-success").innerText = "", 4000);
+		}
+	  });
+	});
+	</script>
+
+
+<!-- Callback Section ends --------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Google Map paragraph Section -------------------------------------------------------------------------------------------------------------------->
+
+	
+	<section data-aos="fade-up" style="text-align: center; padding: 40px 20px; margin-top: -15px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+		<h1
+			<span class="theme-text" data-aos="fade-up"  style="color: #003c71; font-size: 35px; margin-bottom: 15px"> Visit </span>
+			<span data-aos="fade-up"  style="color: #fbc02d; font-size: 35px; margin-bottom: 15px; ">Evolution 
+			<span class="theme-text" data-aos="fade-up"  style=" color: #003c71; font-size: 35px; margin-bottom: 15px">Career Institute</span>
+			<span class="icon" data-aos="fade-up"  style="font-size: 50px; vertical-align: middle; margin-left: 8px; margin-bottom: 15px">🏛️</span>
+			
+		</h1>
+
+ 
+		<div class="map-description" style=" text-align: center; max-width: 1500px; margin: 15px auto; font-size: 18px; line-height: 1.6;">
+		
+			<span class="blue-text" style="color: #003c71; font-weight: bold;">Sehore city</span> 
+		
+			, located in Madhya Pradesh, It is known for its historical and cultural significance, as well as 
+			its agricultural prominence, particularly for its "Sharbati" wheat. It is 
+			located 35 km from Bhopal, 156 km from Indore and 350 km from Jabalpur.
+		
+		</div>
+
+	</section>
+
+
+<!-- Google Map paragraph Section ends --------------------------------------------------------------------------------------------------------------->
+
+
+
+<!-- Google Map Section ------------------------------------------------------------------------------------------------------------------------------>
+	<section class="google-map-section" data-aos="fade-up"  style="padding: 15px 20px; background: white; text-align: center" >
+		
+		<iframe 
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.8224749350177!2d77.0929653!3d23.2054062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397cf300222b9bbb%3A0x31f6a66e053e12a4!2sEvolution%20career%20institute%20sehore!5e0!3m2!1sen!2sin!4v1721129472020!5m2!1sen!2sin"
+			width="100%"
+			height="400"
+			style="border: 0; border-radius: 12px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)"
+			allowfullscreen=""
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+		></iframe>
+		
+		<p data-aos="fade-up"  style="margin-top: 15px; color: #555"> 📍 Bhopal Naka, In front of PG College, Sehore, Madhya Pradesh 466001 </p>
+		
+	</section>
+
+
+<!-- Google Map Section ends ------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Footer Section ---------------------------------------------------------------------------------------------------------------------------------->
+	<footer class="footer" data-aos="fade-up">
+		
+		<div class="footer-container">
+
+			<!-- Left: Logo + Name -->
+			<div class="footer-col footer-left">
+				<div class="footer-brand" data-aos="fade-up">
+					
+					<img src="logo-footer.png" alt="Institute Logo" class="footer-logo" data-aos="fade-up"/>
+					<h2>
+						<span class="brand-main" data-aos="fade-up">Evolution</span>
+						<span class="brand-sub" data-aos="fade-up">Career Institute Pvt. Ltd.</span>
+					</h2>
+				
+				</div>
+				<p data-aos="fade-up">
+					Evolution Institute is dedicated to providing quality education and fostering innovation.
+					Join us in shaping the future through knowledge and growth.
+				</p>
+			</div>
+
+			<!-- Admissions -->
+			<div class="footer-col" data-aos="fade-up">
+				<h3 data-aos="fade-up">Admissions</h3>
+					
+				<ul data-aos="fade-up">
+					<li data-aos="fade-up"><a href="how-to-apply.html">How to Apply</a></li>
+					<li data-aos="fade-up"><a href="faq.html">FAQs</a></li>
+				</ul>
+				<br>
+			
+				<h3 data-aos="fade-up">Courses</h3>
+				
+				<ul>
+					<li data-aos="fade-up"><a href="neet_course.html">NEET</a></li>
+					<li data-aos="fade-up"><a href="cuet_course.html">CUET</a></li>
+					<li data-aos="fade-up"><a href="pnst_course.html">PNST</a></li>
+					<li data-aos="fade-up"><a href="para-medical_course.html">Para-Medical</a></li>
+				</ul>
+			</div>
+	
+			<!-- Useful Links -->
+			<div class="footer-col" data-aos="fade-up">
+			
+				<h3 data-aos="fade-up">Useful Links</h3>
+				<ul data-aos="fade-up">
+					<li data-aos="fade-up"><a href="tel:+919999999999">Get Enquiry</a></li>
+					<li data-aos="fade-up"><a href="admission-enquiry.html">Join Now</a></li>
+					<li data-aos="fade-up"><a href="features.html">Why Evolution</a></li>
+					<li data-aos="fade-up"><a href="scholarship.html">Scholarship</a></li>
+					<li data-aos="fade-up"><a href="t&c.html">Terms & Conditions</a></li>
+					<li data-aos="fade-up"><a href="gallery.html">Gallery</a></li>
+				</ul>
+			
+			</div>
+
+			<!-- Address / Contact -->
+			<div class="footer-col footer-right" data-aos="fade-up">
+				
+				<h3 data-aos="fade-up">Address</h3>
+				<p data-aos="fade-up">
+					<a href="https://www.google.com/maps?q=Evolution+career+institute+sehore+In+Front+of+P.G.+College+Bhopal+Naka,+Sehore,+Madhya+Pradesh+466001" target="_blank" style="color: inherit; text-decoration: none;">
+						Evolution career institute In Front of P.G. College Bhopal Naka
+						Sehore, Madhya Pradesh - 466001
+					</a>
+				</p>
+
+				<p>
+					<i class="fas fa-phone" data-aos="fade-up"></i>
+					<a href="tel:+919685336065" style="color: inherit; text-decoration: none;">
+						Admission Support: +91 96853 36065
+					</a>
+				</p>
+
+				<p>
+					<i class="fas fa-globe" data-aos="fade-up"></i>
+					<a href="https://evolutioncareerinstitute.in" target="_blank" style="color: inherit; text-decoration: none;">
+						info@evolutioncareerinstitute.in
+					</a>
+				</p>
+
+				<div class="footer-socials" data-aos="fade-up">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://wa.me/919685336065" target="_blank"><i class="fab fa-whatsapp"></i></a>
+					<a href="mailto:evolutioncareerinstitute2024@gmail.com"><i class="fas fa-envelope"></i></a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Bottom -->
+		<div class="footer-bottom" data-aos="fade-up">
+			<p data-aos="fade-up">&copy; 2025 Evolution Institute. All Rights Reserved.</p>
+			<p class="designed-by" data-aos="fade-up">Designed and powered by Chandraraj Bais</p>
+		</div>
+
+	</footer>
+
+
+<!-- Footer Section ends ----------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Animation Section js part  ---------------------------------------------------------------------------------------------------------------------->
+
+<!-- Initialize AOS -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+ <script>
+    AOS.init({
+      offset: 120, // trigger animation after scrolling this far (px)
+      duration: 600, // default animation duration
+      easing: 'ease-in-out', // easing function
+      once: true, // ensure animation triggers only once per element
+      mirror: false, // repeat animation on scroll up
+      //disable: 'mobile', // optional: disables animations on mobile if performance is of concern
+    });
+  </script>
+
+
+<!-- Animation Section js part ends ------------------------------------------------------------------------------------------------------------------>
+
+
+</body>
+</html>

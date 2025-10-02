@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Evolution Institute - Home</title>
+		<link rel="stylesheet" href="faq.css" />
+		
+		<!-- AOS CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+	</head>
+	
+<body>
+
+
+<!-- Scroll to Top Button ---------------------------------------------------------------------------------------------------------------------------->
+	<button id="scrollToTopBtn" title="Go to top" style="display: none;">↑</button>
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	
+			// Show or hide the button on scroll
+			window.addEventListener("scroll", function () 
+			{
+				if (window.scrollY > 300) 
+				{
+					scrollToTopBtn.style.display = "flex"; // Using flex, not block (as our CSS uses flexbox)
+				} 
+				else 
+				{
+					scrollToTopBtn.style.display = "none";
+				}
+			});
+
+			// Scroll to top on button click
+			scrollToTopBtn.addEventListener("click", function () 
+			{
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		});
+	
+	</script>
+
+
+<!-- Scroll to Top Button ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Top Bar ----------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<div class="top-bar">  <!--  data-aos="fade-up" --> 
+		
+		<!-- Left Section -->
+		<div class="top-left">
+			
+			<span>
+				<i class="fas fa-clock"></i> Open 24/7
+			</span>
+			
+			<!-- Email block -->
+			<span class="email-wrap">
+			
+				<!-- Desktop email text -->
+				<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="email-link desktop-email">
+					<i class="fas fa-envelope"></i>
+					evolutioncareerinstitute2024@gmail.com
+				</a>
+			</span>
+
+		</div>
+
+		<!-- Center Section -->
+		<div class="top-center">			
+			<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://wa.me/919685336065" target="_blank" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+			<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+			<a href="Evolution-brochure.pdf" class="download-icon" target="_blank">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+					<path d="M12 16a1 1 0 0 1-.707-.293l-5-5a1 1 0 1 1 1.414-1.414L11 12.586V3a1 1 0 1 1 2 0v9.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-5 5A1 1 0 0 1 12 16ZM4 20a1 1 0 1 1 0-2h16a1 1 0 1 1 0 2H4Z"/>
+				</svg>
+				<span class="tooltip-text">Evolution institute brochure</span>
+			</a>
+
+			<!-- Mobile/Tablet icon-only email -->
+			<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="icon gmail-icon-link desktop-hidden">
+				<svg class="gmail-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+					<path fill="#f1f1f1" d="M4 12a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+					<path fill="#d93025" d="M44 12v2.3L24 26.5 4 14.3V12a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4z"/>
+					<path fill="#a50e0e" d="M4 14.3l20 12.2 20-12.2v21.7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+				</svg>
+			</a>
+		</div>
+
+		<!-- Right Section -->
+		<div class="top-right">
+			<a href="tel:+919685336065" class="call-btn"><i class="fas fa-phone"></i> Call Us</a>
+		</div>
+	
+	</div>
+
+	<script>
+	  document.addEventListener("DOMContentLoaded", function () {
+		const downloadIcon = document.querySelector(".download-icon");
+		const tooltip = downloadIcon.querySelector(".tooltip-text");
+		const fileURL = downloadIcon.getAttribute("href");
+
+		// For mobile/touch and desktop click
+		downloadIcon.addEventListener("click", function (e) {
+		  // Stop instant download
+		  e.preventDefault();
+
+		  // Show tooltip text
+		  tooltip.classList.add("show");
+
+		  // After 1s → hide tooltip & auto-download file
+		  setTimeout(() => {
+			tooltip.classList.remove("show");
+
+			// Force file download
+			const tempLink = document.createElement("a");
+			tempLink.href = fileURL;
+			tempLink.setAttribute("download", "");
+			document.body.appendChild(tempLink);
+			tempLink.click();
+			document.body.removeChild(tempLink);
+		  }, 1000);
+		});
+	  });
+	</script>
+
+	<script>
+	const downloadLink = document.querySelector('.download-icon');
+
+	downloadLink.addEventListener('click', function(e) {
+	  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+		// Mobile: open in new tab
+		e.preventDefault();
+		window.open(downloadLink.href, '_blank');
+	  }
+	  // Desktop: let the download attribute work normally
+	});
+	</script>
+
+
+<!-- Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Header ------------------------------------------------------------------------------------------------------------------------------------------>
+	<header class="header-container">   <!-- data-aos="fade-up" data-aos-delay="100"  -->
+	
+		<div class="logo-nav-wrapper">
+		
+			<div class="logo">
+
+				<img src="logo.jpg" alt="Evolution Logo" />			
+				<div class="logo-text">
+					<div class="evolution-word">Evolution</div>
+					<div class="career-word">Career Institute Pvt. Ltd.</div>
+				</div>
+			
+			</div>
+
+			<!-- Hamburger Icon -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">☰</button>
+
+			<!-- Desktop Nav -->
+			<nav class="desktop-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="gallery.html">Gallery</a>
+			
+				<!-- Admissions Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="admissionsDropdown">
+						<span class="dropbtn-text">Admissions</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				
+				<a href="contact.html">Contact Us</a>
+			
+			</nav>
+		
+		</div>
+
+		<!-- Mobile Sidebar Nav -->
+		<div class="mobile-nav-overlay" id="mobileNav">
+			
+			<div class="mobile-header">
+
+				<!-- Top row: logo/title (left) and close button (right) -->
+				<div class="top-row">
+					
+					<div class="left-logo-title">
+						<img src="logo.jpg" alt="Logo" />
+					
+						<div class="mobile-title">
+							<div class="evolution-word">Evolution</div>
+							<div class="career-word">Career Institute Pvt. Ltd.</div>
+						</div>
+
+					</div>
+					<button class="close-btn" id="closeBtn">X</button>
+				
+				</div>
+
+				<!-- Centered social icons below -->
+				<div class="center-icons">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+					<a href="https://wa.me/919685336065" target="_blank" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+				</div>
+
+			</div>
+
+			<nav class="mobile-nav">
+				
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="gallery.html">Gallery</a>
+				
+				<!-------		Admissions		------->
+				<div class="mobile-dropdown">	
+					<button id="mobileDropdownToggle" class="mobile-dropbtn">
+						Admissions <span class="arrow-down rotate-arrow">▼</span>
+
+					</button>
+
+					<div id="mobileDropdownMenu" class="mobile-dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				<!-------		Admissions ends		------->
+				
+				<a href="contact.html">Contact Us</a>
+				
+				<a href="tel:+919685336065" class="apply-btn"><i class="fas fa-phone"></i> Call Us</a>
+				
+				<div class="contact-info">
+					<h2> Contact Info </h2><br>
+					<p>
+						<strong>“BHOPAL NAKA”</strong>, in front of P.G College Bhopal road, Sehore, Madhya Pradesh
+					</p>
+					<p class="phone-row">
+						📞 <a href="tel:9685336065&nbsp;" class="phone-link">96853 36065</a>, 
+						📞 <a href="tel:9131386065" class="phone-link">91313 86065</a>
+						<br>
+						<br>
+					</p>
+				</div>
+
+			</nav>
+
+		</div>
+	
+	</header>
+
+	<!-- JavaScript to toggle the hamburger menu -->
+	<script>
+	
+		// Grab elements
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const mobileNav = document.getElementById("mobileNav");
+		const closeBtn = document.getElementById("closeBtn");
+
+		// Track menu state
+		let isMenuOpen = false;
+
+		// Toggle mobile menu when hamburger is clicked
+		hamburgerBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = !isMenuOpen;
+			mobileNav.classList.toggle("show", isMenuOpen);
+			document.body.classList.toggle("menu-open", isMenuOpen);
+		});
+
+		// Close mobile menu on close (X) button
+		closeBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = false;
+			mobileNav.classList.remove("show");
+			document.body.classList.remove("menu-open");
+		});
+
+		// Close mobile menu when a link is clicked
+		const mobileLinks = document.querySelectorAll(".mobile-nav a");
+		mobileLinks.forEach(link => 
+		{
+			link.addEventListener("click", () => 
+			{
+				isMenuOpen = false;
+				mobileNav.classList.remove("show");
+				document.body.classList.remove("menu-open");
+			});
+		});
+
+		// Highlight current page in both navs
+		const currentPage = location.pathname.split("/").pop();
+
+		document.querySelectorAll(".desktop-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+
+		document.querySelectorAll(".mobile-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+	
+
+		// Mobile dropdown toggle  
+		document.addEventListener("DOMContentLoaded", () => 
+		{
+			// for Admissions
+			const mobileToggle = document.getElementById("mobileDropdownToggle");
+			const mobileMenu = document.getElementById("mobileDropdownMenu");
+			const arrowSpan = mobileToggle.querySelector(".arrow-down");
+
+			if (mobileMenu) 
+			{
+				mobileMenu.classList.remove("open");
+			}
+
+			if (mobileToggle && mobileMenu) 
+			{
+				mobileToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					// Toggle submenu
+					mobileMenu.classList.toggle("open");
+
+					// Toggle arrow direction
+					if (mobileMenu.classList.contains("open")) 
+					{
+						arrowSpan.textContent = "►"; // Right arrow
+					} 
+					else 
+					{
+						arrowSpan.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+	
+			// for Courses
+			const coursesToggle = document.getElementById("coursesDropdownToggle");
+			const coursesMenu = document.getElementById("coursesDropdownMenu");
+			const coursesArrow = coursesToggle.querySelector(".arrow-down");
+
+			if (coursesMenu) 
+			{
+			  coursesMenu.classList.remove("open");
+			}
+
+			if (coursesToggle && coursesMenu) 
+			{
+				coursesToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					coursesMenu.classList.toggle("open");
+
+					if (coursesMenu.classList.contains("open")) 
+					{
+						coursesArrow.textContent = "►"; // Right arrow
+					} 
+					else
+					{
+						coursesArrow.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+		});
+
+	</script>
+
+
+<!-- Header ends ------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!--
+
+Logical Order Explanation:
+
+We’ll follow this sequence:-
+
+1) Admission Process
+2) Courses Offered & Medium
+3) Facilities (Library, Demo Classes, Test Series)
+4) Exam Structure & Preparation
+5) Performance Tracking & Support
+6) Parent Interaction & Discipline
+
+
+-->
+  <section class="faq-container" id="faq-section" data-aos="fade-up">
+    <h2 class="faq-heading">What People Ask to Us</h2>
+    <div class="underline"></div>
+
+    <div class="faq fade-up" data-aos="fade-up">
+      <!-- Q1 -->
+      <button class="accordion active" data-aos="fade-up">
+        <span class="question">1. How can I take admission at Evolution Career Institute Sehore?</span>
+        <span class="icon">−</span>
+      </button>
+      <div class="panel show">
+        <p>You can take admission directly at the institute or through the Evolution Scholarship Admission Test (ESAT) conducted every year for NEET, PNST, CUET (Bio), and Para-Medical courses.</p>
+      </div>
+
+
+<!-- Q2 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">2. Is there any entrance test for admission and how do I register for it ?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, students can appear for the ESAT (Evolution Scholarship Admission Test) to qualify for merit-based admission.
+     You can register offline by visiting the campus or online by submitting Request a callback form in how to apply Admission Section on this website.
+  </p>
+</div>
+
+<!-- Q3 -->
+<button class="accordion" data-aos="fade-up" >
+  <span class="question">3. Are entrance exams like ESAT held offline or online?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>ESAT (Evolution Scholarship Admission Test) is conducted in offline mode only for student convenience.</p>
+</div>
+
+<!-- Q4 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">4. What courses are offered at Evolution Career Institute, Sehore?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Evolution offers coaching for NEET, PNST, CUET (Bio group), and Para-Medical entrance exams. Foundation batches for school students are also available.</p>
+</div>
+
+<!-- Q5 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">5. Does Evolution offer separate coaching for PNST and CUET (Bio)?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, we offer individual programs for PNST and CUET (Bio), with subject-specific mentors and tailored test series.</p>
+</div>
+
+<!-- Q6 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">6. Is the NEET coaching available for both Hindi and English medium students?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, Evolution conducts separate batches/classes for Hindi and English medium students to ensure complete understanding and comfort.</p>
+</div>
+
+<!-- Q7 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">7. Who all can join or use Evolution library facility?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Only Evolution students can join or use the library facility.</p>
+</div>
+
+<!-- Q8 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">8. Can students take trial classes before admission?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, students may attend demo classes to experience the teaching style and learning environment.</p>
+</div>
+
+<!-- Q9 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">9. Is test series facility available for both Evolution and non-Evolution students?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, Evolution offers an open test series facility that is available to both enrolled students and students from other institutes who wish to practice with NEET-level mock tests.</p>
+</div>
+
+<!-- Q10 - Related to Q9 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">10. Is there any scholarship refund policy for high-performing students in the Test-Series?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, if a student scores 400+ marks in two consecutive NEET-format tests, Evolution offers a refund amount of his/her Test-Series charges as a reward for consistent high performance.</p>
+</div>
+
+<!-- Q11 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">11. Does Evolution prepare students for board exams as well?</span>
+  <span class="icon">+</span> 
+</button>
+<div class="panel">
+  <p>Yes, Evolution integrates board preparation with competitive exams to ensure strong academic performance.</p>
+</div>
+
+<!-- Q12 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">12. Is the CUET Biology course aligned with NCERT?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, CUET preparation is entirely based on NCERT syllabus, with special focus on application-based questions and past papers.</p>
+</div>
+
+<!-- Q13 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">13. What is the format of NEET mock tests at Evolution?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Mock tests follow exact NEET exam patterns with negative marking, subject-wise difficulty balance, and OMR evaluation.</p>
+</div>
+
+<!-- Q14 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">14. How often are unit tests and revisions held?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Unit tests are held weekly, and syllabus revisions are conducted after each major topic is covered.</p>
+</div>
+
+<!-- Q15 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">15. Are any additional practice materials given to students?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, students receive regular practice sheets, model papers, and previous year questions for complete preparation.</p>
+</div>
+
+<!-- Q16 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">16. Is there any guidance for time management and exam strategy?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, expert faculty conduct regular sessions on time management, stress handling, and smart exam strategies.</p>
+</div>
+
+<!-- Q17 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">17. What is the daily class schedule like?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Classes are held 6 days a week with subject-wise rotations, test slots, and regular revision sessions.</p>
+</div>
+
+<!-- Q18 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">18. Are doubt-solving sessions available regularly?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, Evolution conducts scheduled doubt-clearing sessions and provides personal academic mentoring.</p>
+</div>
+
+<!-- Q19 --> 
+<button class="accordion" data-aos="fade-up">
+  <span class="question">19. How does Evolution track student performance?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Regular tests, detailed analysis, personal mentoring, and parent interactions help track and improve student performance.</p>
+</div>
+
+<!-- Q20 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">20. Are parents kept informed about student progress?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, regular parent meetings and performance updates are provided to ensure transparency and involvement.</p>
+</div>
+
+<!-- Q21 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">21. What is the academic discipline like at Evolution?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Evolution is known for its disciplined environment, attendance tracking, and zero tolerance for irregularity.</p>
+</div>
+
+<!-- Q22 -->
+<button class="accordion" data-aos="fade-up">
+  <span class="question">22. Does Evolution offer guidance for career counseling?</span>
+  <span class="icon">+</span>
+</button>
+<div class="panel">
+  <p>Yes, career guidance seminars and counseling sessions are organized for students and parents periodically.</p>
+</div>
+
+
+
+
+   </div>
+  </section>
+
+
+
+
+
+<script>
+ // Accordion toggle functionality
+const accordions = document.querySelectorAll(".accordion");
+const panels = document.querySelectorAll(".panel");
+
+accordions.forEach((acc, index) => {
+  acc.addEventListener("click", function () {
+    const panel = this.nextElementSibling;
+    const icon = this.querySelector(".icon");
+
+    // Close other panels
+    accordions.forEach((a, i) => {
+      if (index !== i) {
+        a.classList.remove("active");
+        a.querySelector(".icon").textContent = "+";
+        panels[i].classList.remove("show");
+      }
+    });
+
+    // Toggle current panel
+    this.classList.toggle("active");
+    if (panel.classList.contains("show")) {
+      panel.classList.remove("show");
+      icon.textContent = "+";
+    } else {
+      panel.classList.add("show");
+      icon.textContent = "−";
+    }
+  });
+});
+
+// Intersection Observer for fade-up animation
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.05 } // Trigger earlier for mobile
+);
+
+// Apply to all fade-up elements
+document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+</script>
+
+
+<!-- Footer Section ---------------------------------------------------------------------------------------------------------------------------------->
+	<footer class="footer" data-aos="fade-up">
+		
+		<div class="footer-container">
+
+			<!-- Left: Logo + Name -->
+			<div class="footer-col footer-left">
+				<div class="footer-brand" data-aos="fade-up">
+					
+					<img src="logo-footer.png" alt="Institute Logo" class="footer-logo" data-aos="fade-up"/>
+					<h2>
+						<span class="brand-main" data-aos="fade-up">Evolution</span>
+						<span class="brand-sub" data-aos="fade-up">Career Institute Pvt. Ltd.</span>
+					</h2>
+				
+				</div>
+				<p data-aos="fade-up">
+					Evolution Institute is dedicated to providing quality education and fostering innovation.
+					Join us in shaping the future through knowledge and growth.
+				</p>
+			</div>
+
+			<!-- Admissions -->
+			<div class="footer-col" data-aos="fade-up">
+				<h3 data-aos="fade-up">Admissions</h3>
+					
+				<ul data-aos="fade-up">
+					<li data-aos="fade-up"><a href="how-to-apply.html">How to Apply</a></li>
+					<li data-aos="fade-up"><a href="faq.html">FAQs</a></li>
+				</ul>
+				<br>
+			
+				<h3 data-aos="fade-up">Courses</h3>
+				
+				<ul>
+					<li data-aos="fade-up"><a href="neet_course.html">NEET</a></li>
+					<li data-aos="fade-up"><a href="cuet_course.html">CUET</a></li>
+					<li data-aos="fade-up"><a href="pnst_course.html">PNST</a></li>
+					<li data-aos="fade-up"><a href="para-medical_course.html">Para-Medical</a></li>
+				</ul>
+			</div>
+	
+			<!-- Useful Links -->
+			<div class="footer-col" data-aos="fade-up">
+			
+				<h3 data-aos="fade-up">Useful Links</h3>
+				<ul data-aos="fade-up">
+					<li data-aos="fade-up"><a href="tel:+919999999999">Get Enquiry</a></li>
+					<li data-aos="fade-up"><a href="admission-enquiry.html">Join Now</a></li>
+					<li data-aos="fade-up"><a href="features.html">Why Evolution</a></li>
+					<li data-aos="fade-up"><a href="scholarship.html">Scholarship</a></li>
+					<li data-aos="fade-up"><a href="t&c.html">Terms & Conditions</a></li>
+					<li data-aos="fade-up"><a href="gallery.html">Gallery</a></li>
+				</ul>
+			
+			</div>
+
+			<!-- Address / Contact -->
+			<div class="footer-col footer-right" data-aos="fade-up">
+				
+				<h3 data-aos="fade-up">Address</h3>
+				<p data-aos="fade-up">
+					<a href="https://www.google.com/maps?q=Evolution+career+institute+sehore+In+Front+of+P.G.+College+Bhopal+Naka,+Sehore,+Madhya+Pradesh+466001" target="_blank" style="color: inherit; text-decoration: none;">
+						Evolution career institute In Front of P.G. College Bhopal Naka
+						Sehore, Madhya Pradesh - 466001
+					</a>
+				</p>
+
+				<p>
+					<i class="fas fa-phone" data-aos="fade-up"></i>
+					<a href="tel:+919685336065" style="color: inherit; text-decoration: none;">
+						Admission Support: +91 96853 36065
+					</a>
+				</p>
+
+				<p>
+					<i class="fas fa-globe" data-aos="fade-up"></i>
+					<a href="https://evolutioncareerinstitute.in" target="_blank" style="color: inherit; text-decoration: none;">
+						info@evolutioncareerinstitute.in
+					</a>
+				</p>
+
+				<div class="footer-socials" data-aos="fade-up">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://wa.me/919685336065" target="_blank"><i class="fab fa-whatsapp"></i></a>
+					<a href="mailto:evolutioncareerinstitute2024@gmail.com"><i class="fas fa-envelope"></i></a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Bottom -->
+		<div class="footer-bottom" data-aos="fade-up">
+			<p data-aos="fade-up">&copy; 2025 Evolution Institute. All Rights Reserved.</p>
+			<p class="designed-by" data-aos="fade-up">Designed and powered by Chandraraj Bais</p>
+		</div>
+
+	</footer>
+
+
+<!-- Footer Section ends ----------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Animation Section js part  ---------------------------------------------------------------------------------------------------------------------->
+
+<!-- Initialize AOS -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+ <script>
+    AOS.init({
+      offset: 120, // trigger animation after scrolling this far (px)
+      duration: 600, // default animation duration
+      easing: 'ease-in-out', // easing function
+      once: true, // ensure animation triggers only once per element
+      mirror: false, // repeat animation on scroll up
+      //disable: 'mobile', // optional: disables animations on mobile if performance is of concern
+    });
+  </script>
+
+
+<!-- Animation Section js part ends ------------------------------------------------------------------------------------------------------------------>
+
+
+</body>
+</html>
+
+
+
+

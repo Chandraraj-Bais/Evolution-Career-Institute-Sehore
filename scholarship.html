@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Evolution Institute - Home</title>
+		<link rel="stylesheet" href="scholarship.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+		<!-- AOS CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+	</head>
+	
+<body>
+
+
+<!-- Scroll to Top Button ---------------------------------------------------------------------------------------------------------------------------->
+	<button id="scrollToTopBtn" title="Go to top" style="display: none;">↑</button>
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	
+			// Show or hide the button on scroll
+			window.addEventListener("scroll", function () 
+			{
+				if (window.scrollY > 300) 
+				{
+					scrollToTopBtn.style.display = "flex"; // Using flex, not block (as our CSS uses flexbox)
+				} 
+				else 
+				{
+					scrollToTopBtn.style.display = "none";
+				}
+			});
+
+			// Scroll to top on button click
+			scrollToTopBtn.addEventListener("click", function () 
+			{
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		});
+	
+	</script>
+
+
+<!-- Scroll to Top Button ends ----------------------------------------------------------------------------------------------------------------------->
+
+<!-- Top Bar ----------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<div class="top-bar">  <!--  data-aos="fade-up" --> 
+		
+		<!-- Left Section -->
+		<div class="top-left">
+			
+			<span>
+				<i class="fas fa-clock"></i> Open 24/7
+			</span>
+			
+			<!-- Email block -->
+			<span class="email-wrap">
+			
+				<!-- Desktop email text -->
+				<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="email-link desktop-email">
+					<i class="fas fa-envelope"></i>
+					evolutioncareerinstitute2024@gmail.com
+				</a>
+			</span>
+
+		</div>
+
+		<!-- Center Section -->
+		<div class="top-center">			
+			<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://wa.me/919685336065" target="_blank" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+			<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+			<a href="Evolution-brochure.pdf" class="download-icon" target="_blank">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+					<path d="M12 16a1 1 0 0 1-.707-.293l-5-5a1 1 0 1 1 1.414-1.414L11 12.586V3a1 1 0 1 1 2 0v9.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-5 5A1 1 0 0 1 12 16ZM4 20a1 1 0 1 1 0-2h16a1 1 0 1 1 0 2H4Z"/>
+				</svg>
+				<span class="tooltip-text">Evolution institute brochure</span>
+			</a>
+
+			<!-- Mobile/Tablet icon-only email -->
+			<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="icon gmail-icon-link desktop-hidden">
+				<svg class="gmail-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+					<path fill="#f1f1f1" d="M4 12a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+					<path fill="#d93025" d="M44 12v2.3L24 26.5 4 14.3V12a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4z"/>
+					<path fill="#a50e0e" d="M4 14.3l20 12.2 20-12.2v21.7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+				</svg>
+			</a>
+		</div>
+
+		<!-- Right Section -->
+		<div class="top-right">
+			<a href="tel:+919685336065" class="call-btn"><i class="fas fa-phone"></i> Call Us</a>
+		</div>
+	
+	</div>
+
+	<script>
+	  document.addEventListener("DOMContentLoaded", function () {
+		const downloadIcon = document.querySelector(".download-icon");
+		const tooltip = downloadIcon.querySelector(".tooltip-text");
+		const fileURL = downloadIcon.getAttribute("href");
+
+		// For mobile/touch and desktop click
+		downloadIcon.addEventListener("click", function (e) {
+		  // Stop instant download
+		  e.preventDefault();
+
+		  // Show tooltip text
+		  tooltip.classList.add("show");
+
+		  // After 1s → hide tooltip & auto-download file
+		  setTimeout(() => {
+			tooltip.classList.remove("show");
+
+			// Force file download
+			const tempLink = document.createElement("a");
+			tempLink.href = fileURL;
+			tempLink.setAttribute("download", "");
+			document.body.appendChild(tempLink);
+			tempLink.click();
+			document.body.removeChild(tempLink);
+		  }, 1000);
+		});
+	  });
+	</script>
+
+	<script>
+	const downloadLink = document.querySelector('.download-icon');
+
+	downloadLink.addEventListener('click', function(e) {
+	  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+		// Mobile: open in new tab
+		e.preventDefault();
+		window.open(downloadLink.href, '_blank');
+	  }
+	  // Desktop: let the download attribute work normally
+	});
+	</script>
+
+
+<!-- Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Header ------------------------------------------------------------------------------------------------------------------------------------------>
+	<header class="header-container">   <!-- data-aos="fade-up" data-aos-delay="100"  -->
+	
+		<div class="logo-nav-wrapper">
+		
+			<div class="logo">
+
+				<img src="logo.jpg" alt="Evolution Logo" />			
+				<div class="logo-text">
+					<div class="evolution-word">Evolution</div>
+					<div class="career-word">Career Institute Pvt. Ltd.</div>
+				</div>
+			
+			</div>
+
+			<!-- Hamburger Icon -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">☰</button>
+
+			<!-- Desktop Nav -->
+			<nav class="desktop-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="gallery.html">Gallery</a>
+			
+				<!-- Admissions Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="admissionsDropdown">
+						<span class="dropbtn-text">Admissions</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				
+				<a href="contact.html">Contact Us</a>
+			
+			</nav>
+		
+		</div>
+
+		<!-- Mobile Sidebar Nav -->
+		<div class="mobile-nav-overlay" id="mobileNav">
+			
+			<div class="mobile-header">
+
+				<!-- Top row: logo/title (left) and close button (right) -->
+				<div class="top-row">
+					
+					<div class="left-logo-title">
+						<img src="logo.jpg" alt="Logo" />
+					
+						<div class="mobile-title">
+							<div class="evolution-word">Evolution</div>
+							<div class="career-word">Career Institute Pvt. Ltd.</div>
+						</div>
+
+					</div>
+					<button class="close-btn" id="closeBtn">X</button>
+				
+				</div>
+
+				<!-- Centered social icons below -->
+				<div class="center-icons">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+					<a href="https://wa.me/919685336065" target="_blank" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+				</div>
+
+			</div>
+
+			<nav class="mobile-nav">
+				
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="gallery.html">Gallery</a>
+				
+				<!-------		Admissions		------->
+				<div class="mobile-dropdown">	
+					<button id="mobileDropdownToggle" class="mobile-dropbtn">
+						Admissions <span class="arrow-down rotate-arrow">▼</span>
+
+					</button>
+
+					<div id="mobileDropdownMenu" class="mobile-dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				<!-------		Admissions ends		------->
+				
+				<a href="contact.html">Contact Us</a>
+				
+				<a href="tel:+919685336065" class="apply-btn"><i class="fas fa-phone"></i> Call Us</a>
+				
+				<div class="contact-info">
+					<h2> Contact Info </h2><br>
+					<p>
+						<strong>“BHOPAL NAKA”</strong>, in front of P.G College Bhopal road, Sehore, Madhya Pradesh
+					</p>
+					<p class="phone-row">
+						📞 <a href="tel:9685336065&nbsp;" class="phone-link">96853 36065</a>, 
+						📞 <a href="tel:9131386065" class="phone-link">91313 86065</a>
+						<br>
+						<br>
+					</p>
+				</div>
+
+			</nav>
+
+		</div>
+	
+	</header>
+
+	<!-- JavaScript to toggle the hamburger menu -->
+	<script>
+	
+		// Grab elements
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const mobileNav = document.getElementById("mobileNav");
+		const closeBtn = document.getElementById("closeBtn");
+
+		// Track menu state
+		let isMenuOpen = false;
+
+		// Toggle mobile menu when hamburger is clicked
+		hamburgerBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = !isMenuOpen;
+			mobileNav.classList.toggle("show", isMenuOpen);
+			document.body.classList.toggle("menu-open", isMenuOpen);
+		});
+
+		// Close mobile menu on close (X) button
+		closeBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = false;
+			mobileNav.classList.remove("show");
+			document.body.classList.remove("menu-open");
+		});
+
+		// Close mobile menu when a link is clicked
+		const mobileLinks = document.querySelectorAll(".mobile-nav a");
+		mobileLinks.forEach(link => 
+		{
+			link.addEventListener("click", () => 
+			{
+				isMenuOpen = false;
+				mobileNav.classList.remove("show");
+				document.body.classList.remove("menu-open");
+			});
+		});
+
+		// Highlight current page in both navs
+		const currentPage = location.pathname.split("/").pop();
+
+		document.querySelectorAll(".desktop-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+
+		document.querySelectorAll(".mobile-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+	
+
+		// Mobile dropdown toggle  
+		document.addEventListener("DOMContentLoaded", () => 
+		{
+			// for Admissions
+			const mobileToggle = document.getElementById("mobileDropdownToggle");
+			const mobileMenu = document.getElementById("mobileDropdownMenu");
+			const arrowSpan = mobileToggle.querySelector(".arrow-down");
+
+			if (mobileMenu) 
+			{
+				mobileMenu.classList.remove("open");
+			}
+
+			if (mobileToggle && mobileMenu) 
+			{
+				mobileToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					// Toggle submenu
+					mobileMenu.classList.toggle("open");
+
+					// Toggle arrow direction
+					if (mobileMenu.classList.contains("open")) 
+					{
+						arrowSpan.textContent = "►"; // Right arrow
+					} 
+					else 
+					{
+						arrowSpan.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+	
+			// for Courses
+			const coursesToggle = document.getElementById("coursesDropdownToggle");
+			const coursesMenu = document.getElementById("coursesDropdownMenu");
+			const coursesArrow = coursesToggle.querySelector(".arrow-down");
+
+			if (coursesMenu) 
+			{
+			  coursesMenu.classList.remove("open");
+			}
+
+			if (coursesToggle && coursesMenu) 
+			{
+				coursesToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					coursesMenu.classList.toggle("open");
+
+					if (coursesMenu.classList.contains("open")) 
+					{
+						coursesArrow.textContent = "►"; // Right arrow
+					} 
+					else
+					{
+						coursesArrow.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+		});
+
+	</script>
+
+
+<!-- Header ends ------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Discount Section -------------------------------------------------------------------------------------------------------------------------------->
+
+	<div class="container animate-on-scroll">
+		
+		<h1 data-aos="fade-up">Evolution Scholarship Admission Test</h1>
+		<div class="underline" data-aos="fade-up"></div>
+		<h2 data-aos="fade-up">Scholarship for Classroom Programme  <span></span></h2>
+
+		<!-- Block 1 -->
+		<div class="block" data-aos="fade-up">
+			<div class="block-label" data-aos="fade-up">Based on NEET Marks</div>
+			<button class="view-btn" data-aos="fade-up">👁️ View</button>
+		</div>
+		
+		<div class="details" data-aos="fade-up">
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Marks<br><span>In NEET Exam</span></th>
+						<th>scholarship<br><span>GEN | EWS | MBC</span></th>
+						<th>scholarship<br><span>OBC</span></th>
+						<th>scholarship<br><span>ST/SC</span></th>
+					</tr>
+				</thead>
+					
+				<tbody>
+					<tr><td>> 575 </td><td> 95% </td><td> NIL </td><td>NIL</td></tr>
+					<tr><td>> 525 </td><td> 85% </td><td> 90% </td><td> 95%</td></tr>
+					<tr><td>> 475 </td><td> 80% </td><td> 85% </td><td> 90%</td></tr>	
+					<tr><td>> 400 </td><td> 75% </td><td> 80% </td><td> 85%</td></tr>	
+					<tr><td>> 350 </td><td> 60% </td><td> 70% </td><td> 80%</td></tr>	
+					<tr><td>> 300 </td><td> 55% </td><td> 65% </td><td> 75% </td></tr>	
+					<tr><td>> 275 </td><td> 45% </td><td> 55% </td><td> 70%</td></tr>	
+					<tr><td>> 250 </td><td> 33% </td><td> 45% </td><td> 65%</td></tr>	
+					<tr><td>> 225 </td><td> 27% </td><td> 33% </td><td> 55%</td></tr>	
+					<tr><td>> 200 </td><td> 22% </td><td> 27% </td><td> 45%</td></tr>	
+				</tbody>
+			</table>
+				
+		</div>
+		
+		<!-- Block 2 -->
+		<div class="block" data-aos="fade-up">
+			<div class="block-label" data-aos="fade-up">Based on PNST Result</div>
+			<button class="view-btn" data-aos="fade-up">👁️ View</button>
+		</div>
+		
+		<div class="details" data-aos="fade-up">
+		
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Marks<br><span>In PNST Exam</span></th>
+						<th>scholarship<br><span>GEN | EWS | MBC</span></th>
+						<th>scholarship<br><span>OBC</span></th>
+						<th>scholarship<br><span>ST/SC</span></th>
+					</tr>
+				</thead>
+					
+				<tbody>
+					<tr><td>> 85 </td><td> 95% </td><td> NIL </td><td>NIL</td></tr>
+					<tr><td>> 80 </td><td> 85% </td><td> 90% </td><td> 95%</td></tr>
+					<tr><td>> 75 </td><td> 80% </td><td> 85% </td><td> 90%</td></tr>	
+					<tr><td>> 70 </td><td> 75% </td><td> 80% </td><td> 85%</td></tr>	
+					<tr><td>> 65 </td><td> 60% </td><td> 70% </td><td> 80%</td></tr>	
+					<tr><td>> 60 </td><td> 55% </td><td> 65% </td><td> 75% </td></tr>	
+					<tr><td>> 55 </td><td> 45% </td><td> 55% </td><td> 70%</td></tr>	
+					<tr><td>> 50 </td><td> 45% </td><td> 55% </td><td> 70%</td></tr>	
+					<tr><td>> 45 </td><td> 33% </td><td> 45% </td><td> 65%</td></tr>	
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Block 3 -->
+		<div class="block" data-aos="fade-up">
+			<div class="block-label" data-aos="fade-up">Based on Board %age</div>
+			<button class="view-btn" data-aos="fade-up">👁️ View</button>
+		</div>
+    
+		<div class="details" data-aos="fade-up">
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Percentage<br><span>In 10th</span></th>
+						<th>scholarship<br><span>GEN | EWS | MBC</span></th>
+						<th>scholarship<br><span>OBC</span></th>
+						<th>scholarship<br><span>ST/SC</span></th>
+					</tr>
+				</thead>
+					
+				<tbody>
+					<tr><td>> 95% </td><td> 55% </td><td> 58% </td><td> 60%</td></tr>
+					<tr><td>> 90% </td><td> 50% </td><td> 52% </td><td> 55%</td></tr>
+					<tr><td>> 85%</td><td>  40% </td><td> 45% </td><td> 50%</td></tr>	
+					<tr><td>> 80% </td><td> 35% </td><td> 40% </td><td> 45%</td></tr>	
+					<tr><td>> 75% </td><td> 30% </td><td> 35% </td><td> 40%</td></tr>	
+					<tr><td>> 70% </td><td> 25% </td><td> 30% </td><td> 35% </td></tr>	
+					<tr><td>> 65% </td><td> 20% </td><td> 25% </td><td> 30% </td></tr>	
+				</tbody>
+			</table>
+			<br>
+			<br>
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Percentage<br><span>In 12th</span></th>
+						<th>scholarship<br><span>GEN | EWS | MBC</span></th>
+						<th>scholarship<br><span>OBC</span></th>
+						<th>scholarship<br><span>ST/SC</span></th>
+					</tr>
+				</thead>
+					
+				<tbody>
+					<tr><td>> 95% </td><td> 58% </td><td> 62% </td><td> 65%</td></tr>
+					<tr><td>> 90% </td><td> 50% </td><td> 55% </td><td> 60%</td></tr>
+					<tr><td>> 85%</td><td>  45% </td><td> 50% </td><td> 55%</td></tr>	
+					<tr><td>> 80% </td><td> 40% </td><td> 45% </td><td> 50%</td></tr>	
+					<tr><td>> 75% </td><td> 35% </td><td> 40% </td><td> 45%</td></tr>	
+					<tr><td>> 70% </td><td> 30% </td><td> 35% </td><td> 40% </td></tr>	
+					<tr><td>> 65% </td><td> 25% </td><td> 30% </td><td> 35% </td></tr>	
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Block 4 -->
+		<div class="block" data-aos="fade-up">
+			<div class="block-label" data-aos="fade-up">Based on Evolution Entrance Exam</div>
+			<button class="view-btn" data-aos="fade-up">👁️ View</button>
+		</div>
+			
+		<div class="details" data-aos="fade-up">
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Percentage<br><span>In 12th</span></th>
+						<th>scholarship<br><span>GEN | EWS | MBC</span></th>
+						<th>scholarship<br><span>OBC</span></th>
+						<th>scholarship<br><span>ST/SC</span></th>
+					</tr>
+				</thead>
+					
+				<tbody>
+					<tr><td>> 95% </td><td> 58% </td><td> 62% </td><td> 65%</td></tr>
+					<tr><td>> 90% </td><td> 50% </td><td> 55% </td><td> 60%</td></tr>
+					<tr><td>> 85%</td><td>  45% </td><td> 50% </td><td> 55%</td></tr>	
+					<tr><td>> 80% </td><td> 40% </td><td> 45% </td><td> 50%</td></tr>	
+					<tr><td>> 75% </td><td> 35% </td><td> 40% </td><td> 45%</td></tr>	
+					<tr><td>> 70% </td><td> 30% </td><td> 35% </td><td> 40% </td></tr>	
+					<tr><td>> 65% </td><td> 25% </td><td> 30% </td><td> 35% </td></tr>	
+				</tbody>
+			</table>
+		</div>
+		
+		<!-- Block 5 -->
+		<div class="block" data-aos="fade-up">
+			<div class="block-label" data-aos="fade-up">Based on Government school / GS kota / K.V. School / Navodaya vidyalaya ( from 10th to 12th )</div>
+			<button class="view-btn" data-aos="fade-up">👁️ View</button>
+		</div>
+			
+		<div class="details" data-aos="fade-up">
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<th>scholarship<br><span>GEN | EWS | MBC</span></th>
+						<th>scholarship<br><span>OBC</span></th>
+						<th>scholarship<br><span>ST/SC</span></th>
+					</tr>
+				</thead>
+					
+				<tbody>
+					<tr><td> 30% </td><td> 40% </td><td> 45%</td></tr>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>
+
+	<script>
+	
+		// Toggle show/hide of details
+		document.querySelectorAll('.block').forEach(block => 
+		{
+			const btn = block.querySelector('.view-btn');
+			const details = block.nextElementSibling;
+
+			btn.addEventListener('click', () => 
+			{
+				const isOpen = details.classList.contains('show');
+				// Close all open details first
+				
+				document.querySelectorAll('.details.show').forEach(openDetails => 
+				{
+					openDetails.classList.remove('show');
+					openDetails.previousElementSibling.querySelector('.view-btn').textContent = '👁️ View';
+				});
+
+				if (!isOpen) 
+				{
+					details.classList.add('show');
+					btn.textContent = '👁️ Hide';
+					// Smooth scroll to block
+					block.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+				}
+			});
+		});
+
+		// Scroll animation: from bottom to top on container
+
+		function animateOnScroll() 
+		{
+			const container = document.querySelector('.container.animate-on-scroll');
+			const rect = container.getBoundingClientRect();
+			const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+			if (rect.top <= windowHeight - 100) 
+			{
+				container.classList.add('visible');
+				window.removeEventListener('scroll', animateOnScroll);
+			}
+		}
+
+		// Run on scroll and on load
+		window.addEventListener('scroll', animateOnScroll);
+		window.addEventListener('load', animateOnScroll);
+
+  </script>
+
+
+<!-- Discount Section ends --------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Document Section -------------------------------------------------------------------------------------------------------------------------------->
+
+	<section class="documents-section animate-on-scroll" data-aos="fade-up">
+		
+		<h2>Documents Required</h2>
+		<ul>
+			<li data-aos="fade-up">10th &amp; 12th Marksheet Copy</li>
+			<li data-aos="fade-up">Aadhaar Card Copy of Parent &amp; Student</li>
+			<li data-aos="fade-up">Proof of above result (Bring all above copy along with original documents)</li>
+			<li data-aos="fade-up">2 Passport Size Coloured Photograph</li>
+		</ul>
+	</section>
+
+	<script>
+		// Animate on scroll (down-to-top effect)
+		function animateDocumentsOnScroll() 
+		{
+			const section = document.querySelector('.documents-section');
+			const rect = section.getBoundingClientRect();
+			const windowHeight = window.innerHeight;
+
+			if (rect.top <= windowHeight - 100) 
+			{
+				section.classList.add('visible');
+				window.removeEventListener('scroll', animateDocumentsOnScroll);
+			}
+		}
+
+		window.addEventListener('scroll', animateDocumentsOnScroll);
+		window.addEventListener('load', animateDocumentsOnScroll);
+
+	</script>
+
+
+<!-- Document Section ends --------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Footer Section ---------------------------------------------------------------------------------------------------------------------------------->
+	<footer class="footer" data-aos="fade-up">
+		
+		<div class="footer-container">
+
+			<!-- Left: Logo + Name -->
+			<div class="footer-col footer-left">
+				<div class="footer-brand" data-aos="fade-up">
+					
+					<img src="logo-footer.png" alt="Institute Logo" class="footer-logo" data-aos="fade-up"/>
+					<h2>
+						<span class="brand-main" data-aos="fade-up">Evolution</span>
+						<span class="brand-sub" data-aos="fade-up">Career Institute Pvt. Ltd.</span>
+					</h2>
+				
+				</div>
+				<p data-aos="fade-up">
+					Evolution Institute is dedicated to providing quality education and fostering innovation.
+					Join us in shaping the future through knowledge and growth.
+				</p>
+			</div>
+
+			<!-- Admissions -->
+			<div class="footer-col" data-aos="fade-up">
+				<h3 data-aos="fade-up">Admissions</h3>
+					
+				<ul data-aos="fade-up">
+					<li data-aos="fade-up"><a href="how-to-apply.html">How to Apply</a></li>
+					<li data-aos="fade-up"><a href="faq.html">FAQs</a></li>
+				</ul>
+				<br>
+			
+				<h3 data-aos="fade-up">Courses</h3>
+				
+				<ul>
+					<li data-aos="fade-up"><a href="neet_course.html">NEET</a></li>
+					<li data-aos="fade-up"><a href="cuet_course.html">CUET</a></li>
+					<li data-aos="fade-up"><a href="pnst_course.html">PNST</a></li>
+					<li data-aos="fade-up"><a href="para-medical_course.html">Para-Medical</a></li>
+				</ul>
+			</div>
+	
+			<!-- Useful Links -->
+			<div class="footer-col" data-aos="fade-up">
+			
+				<h3 data-aos="fade-up">Useful Links</h3>
+				<ul data-aos="fade-up">
+					<li data-aos="fade-up"><a href="tel:+919999999999">Get Enquiry</a></li>
+					<li data-aos="fade-up"><a href="admission-enquiry.html">Join Now</a></li>
+					<li data-aos="fade-up"><a href="features.html">Why Evolution</a></li>
+					<li data-aos="fade-up"><a href="scholarship.html">Scholarship</a></li>
+					<li data-aos="fade-up"><a href="t&c.html">Terms & Conditions</a></li>
+					<li data-aos="fade-up"><a href="gallery.html">Gallery</a></li>
+				</ul>
+			
+			</div>
+
+			<!-- Address / Contact -->
+			<div class="footer-col footer-right" data-aos="fade-up">
+				
+				<h3 data-aos="fade-up">Address</h3>
+				<p data-aos="fade-up">
+					<a href="https://www.google.com/maps?q=Evolution+career+institute+sehore+In+Front+of+P.G.+College+Bhopal+Naka,+Sehore,+Madhya+Pradesh+466001" target="_blank" style="color: inherit; text-decoration: none;">
+						Evolution career institute In Front of P.G. College Bhopal Naka
+						Sehore, Madhya Pradesh - 466001
+					</a>
+				</p>
+
+				<p>
+					<i class="fas fa-phone" data-aos="fade-up"></i>
+					<a href="tel:+919685336065" style="color: inherit; text-decoration: none;">
+						Admission Support: +91 96853 36065
+					</a>
+				</p>
+
+				<p>
+					<i class="fas fa-globe" data-aos="fade-up"></i>
+					<a href="https://evolutioncareerinstitute.in" target="_blank" style="color: inherit; text-decoration: none;">
+						info@evolutioncareerinstitute.in
+					</a>
+				</p>
+
+				<div class="footer-socials" data-aos="fade-up">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://wa.me/919685336065" target="_blank"><i class="fab fa-whatsapp"></i></a>
+					<a href="mailto:evolutioncareerinstitute2024@gmail.com"><i class="fas fa-envelope"></i></a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Bottom -->
+		<div class="footer-bottom" data-aos="fade-up">
+			<p data-aos="fade-up">&copy; 2025 Evolution Institute. All Rights Reserved.</p>
+			<p class="designed-by" data-aos="fade-up">Designed and powered by Chandraraj Bais</p>
+		</div>
+
+	</footer>
+
+
+<!-- Footer Section ends ----------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Animation Section js part  ---------------------------------------------------------------------------------------------------------------------->
+
+<!-- Initialize AOS -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+ <script>
+    AOS.init({
+      offset: 120, // trigger animation after scrolling this far (px)
+      duration: 600, // default animation duration
+      easing: 'ease-in-out', // easing function
+      once: true, // ensure animation triggers only once per element
+      mirror: false, // repeat animation on scroll up
+      //disable: 'mobile', // optional: disables animations on mobile if performance is of concern
+    });
+  </script>
+
+
+<!-- Animation Section js part ends ------------------------------------------------------------------------------------------------------------------>
+
+
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request a Callback</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --accent-color: #f97316;
+      --light-bg: #f1f5f9;
+      --input-border: #cbd5e1;
+      --error-color: #dc2626;
+      --success-color: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0f2fe, #f8fafc);
+      padding: 40px 20px;
+    }
+
+    .callback-form-box {
+      max-width: 720px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 32px 28px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .callback-form-box h3 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 30px;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    form.callback-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    form.callback-form .full-width {
+      grid-column: 1 / -1;
+    }
+	
+	/* Add this in your existing CSS */
+.callback-form select {
+  /* Ensure dropdown width is 100% and z-index is high enough */
+  width: 100%;
+  position: relative;
+  z-index: 10; /* in case of dropdown clipping */
+}
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #374151;
+      display: block;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--input-border);
+      font-size: 15px;
+      background-color: #fff;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent-color);
+      outline: none;
+      box-shadow: 0 0 6px rgba(249, 115, 22, 0.25);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      grid-column: 1 / -1;
+      background: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #172554;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      grid-column: 1 / -1;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--accent-color);
+    }
+
+    .checkbox-container label {
+      margin: 0;
+      color: #1e3a8a;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .checkbox-container a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    /* Validation error message style */
+    .error-message {
+      color: var(--error-color);
+      font-size: 12px;
+      margin-top: 4px;
+      display: none;
+    }
+
+    /* Input border red on error */
+    input.error,
+    select.error,
+    textarea.error {
+      border-color: var(--error-color) !important;
+      box-shadow: 0 0 5px var(--error-color);
+    }
+
+    #toast {
+      visibility: hidden;
+      min-width: 300px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      color: #333;
+      padding: 14px 20px;
+      border-left: 6px solid;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+      font-weight: 500;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    #toast.show {
+      visibility: visible;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeout {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-10px); }
+    }
+
+    @media (max-width: 768px) {
+      form.callback-form {
+        grid-template-columns: 1fr;
+      }
+
+      .checkbox-container {
+        flex-direction: row;
+        align-items: center;
+      }
+	  
+	  /* Add on smaller screens to prevent overflow clipping */
+	.callback-form-box 
+	{
+		overflow: visible;
+	}
+ }
+ 
+ </style>
+</head>
+<body>
+  <div class="callback-form-box" data-aos="fade-up">
+    <h3>Request a Callback</h3>
+    <form class="callback-form" id="callbackForm" novalidate>
+      <div data-aos="fade-up">
+        <label for="first-name">First Name*</label>
+        <input id="first-name" type="text" required />
+        <div class="error-message" id="error-first-name"></div>
+      </div>
+
+      <div data-aos="fade-up">
+        <label for="last-name">Last Name*</label>
+        <input id="last-name" type="text" required />
+        <div class="error-message" id="error-last-name"></div>
+      </div>
+<div data-aos="fade-up">
+  <label for="mobile">Mobile Number*</label>
+  <input id="mobile" name="mobile" type="text" />
+  <div class="error-message" id="error-mobile"></div>
+  <div id="error-mobile-length" class="error-message" style="display:none; color: red; font-size: 0.9em;"></div>
+</div>
+
+      <div data-aos="fade-up">
+        <label for="email">Email Address*</label>
+        <input id="email" type="email" required />
+        <div class="error-message" id="error-email"></div>
+      </div>
+
+      <div data-aos="fade-up">
+        <label for="gender">Gender*</label>
+        <select id="gender" required>
+          <option disabled selected value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+        <div class="error-message" id="error-gender"></div>
+      </div>
+
+      <div data-aos="fade-up">
+        <label for="mode">Applying For*</label>
+        <select id="mode" required>
+          <option disabled selected value="">Select</option>
+          <option>Offline Classroom Programme</option>
+          <option>Test - Series</option>
+        </select>
+        <div class="error-message" id="error-mode"></div>
+      </div>
+
+      <div data-aos="fade-up">
+        <label for="mode">Batch*</label>
+        <select id="mode" required>
+          <option disabled selected value="">Select</option>
+          <option>11th Foundation (2 Year)</option>
+          <option>12th Foundation (1 Year)</option>
+          <option>Dropper Batch (1 Year)</option>
+          <option>Target Batch (Crash Course)</option>
+        </select>
+        <div class="error-message" id="error-mode"></div>
+      </div>
+
+      <div data-aos="fade-up">
+        <label for="stream">Stream*</label>
+        <select id="stream" required>
+          <option disabled selected value="">Select</option>
+          <option>NEET</option>
+          <option>PNST</option>
+          <option>CUET (Bio)</option>
+          <option>Para-Medical</option>
+        </select>
+        <div class="error-message" id="error-stream"></div>
+      </div>
+
+      <div data-aos="fade-up">
+        <label for="exam">Last Qualified Exam</label>
+        <select id="exam">
+          <option disabled selected value="">Select</option>
+          <option>10th Board</option>
+          <option>12th Board</option>
+          <option>Diploma</option>
+        </select>
+      </div>
+
+      <div class="full-width" data-aos="fade-up">
+        <label for="question">Any questions or concerns?</label>
+        <textarea id="question" placeholder="Write your query here..."></textarea>
+      </div>
+
+      <div class="full-width" data-aos="fade-up">
+        <label for="calltime">Best time to call</label>
+        <select id="calltime">
+          <option disabled selected value="">Select</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+        </select>
+      </div>
+
+      <div class="full-width" data-aos="fade-up">
+        <label for="source">How did you hear about us?</label>
+        <select id="source">
+          <option disabled selected value="">Select</option>
+          <option>Ex-Evolution Students</option>
+          <option>Relatives</option>
+          <option>Newspaper</option>
+          <option>Advertisement</option>
+          <option>YouTube</option>
+          <option>Social Media</option>
+          <option>Friends</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="full-width" data-aos="fade-up" id="other-source-field" style="display:none;">
+        <label for="other-source">Please specify</label>
+        <input id="other-source" type="text" />
+        <div class="error-message" id="error-other-source"></div>
+      </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="terms" />
+        <label for="terms">I agree to the <a href="t&c.html">Terms and Conditions</a> of Evolution Career Insititute Sehore*</label>
+      </div>
+      <div class="error-message full-width" id="error-terms" style="margin-top: 6px; display:none;"></div>
+
+      <button type="submit" data-aos="fade-up">Submit</button>
+    </form>
+  </div>
+
+  <div id="toast"><span class="checkmark">✔</span><span id="toast-message">Message</span></div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>    
+AOS.init({ once: true });
+
+const form = document.getElementById('callbackForm');
+const toast = document.getElementById('toast');
+const toastMsg = document.getElementById('toast-message');
+const checkIcon = toast.querySelector('.checkmark');
+
+const fields = {
+  firstName: document.getElementById('first-name'),
+  lastName: document.getElementById('last-name'),
+  mobile: document.getElementById('mobile'),
+  email: document.getElementById('email'),
+  gender: document.getElementById('gender'),
+  mode: document.getElementById('mode'),
+  stream: document.getElementById('stream'),
+};
+
+const sourceSelect = document.getElementById('source');
+const otherSourceField = document.getElementById('other-source-field');
+const otherSourceInput = document.getElementById('other-source');
+const termsCheckbox = document.getElementById('terms');
+
+const errors = {
+  firstName: document.getElementById('error-first-name'),
+  lastName: document.getElementById('error-last-name'),
+  mobile: document.getElementById('error-mobile'),
+  email: document.getElementById('error-email'),
+  gender: document.getElementById('error-gender'),
+  mode: document.getElementById('error-mode'),
+  stream: document.getElementById('error-stream'),
+  otherSource: document.getElementById('error-other-source'),
+  terms: document.getElementById('error-terms'),
+};
+
+// Regex patterns
+const regex = {
+  // Name: Alphabets only, single spaces allowed between words, no leading/trailing/consecutive spaces, 2-30 chars
+  name: /^[A-Za-z]+(?: [A-Za-z]+)*$/,
+  // Mobile: 10 digits, starting with 6-9
+  mobile: /^[6-9]\d{9}$/,
+  // Email: Basic format, no spaces, single '@', domain parts valid
+  email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+  // Other source: alphabets and spaces only, 2-50 chars
+  otherSource: /^[A-Za-z ]{2,50}$/,
+};
+
+// Show/hide Other source input based on selection
+sourceSelect.addEventListener('change', () => {
+  if (sourceSelect.value === 'Other') {
+    otherSourceField.style.display = 'block';
+  } else {
+    otherSourceField.style.display = 'none';
+    otherSourceInput.value = '';
+    clearError(otherSourceInput, errors.otherSource);
+  }
+});
+
+function showToast(message, success = true) {
+  toastMsg.textContent = message;
+  checkIcon.textContent = success ? '✔' : '✖';
+  toast.style.borderLeftColor = success ? 'var(--success-color)' : 'var(--error-color)';
+  checkIcon.style.color = success ? 'var(--success-color)' : 'var(--error-color)';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+function setError(input, errorElem, message) {
+  input.classList.add('error');
+  errorElem.textContent = message;
+  errorElem.style.display = 'block';
+}
+
+function clearError(input, errorElem) {
+  input.classList.remove('error');
+  errorElem.textContent = '';
+  errorElem.style.display = 'none';
+}
+
+// Extra email validation for single .com at end and no duplicates
+function isValidComEmail(email) {
+  if (!email.endsWith('.com')) return false;
+
+  const comMatches = email.match(/\.com/g);
+  if (!comMatches || comMatches.length !== 1) return false;
+
+  // Ensure single '@' and no spaces already checked by regex.email
+
+  return true;
+}
+
+// Additional mobile check: no repeated digit sequence like 9999999999 or 8888888888
+function isRepeatedDigits(mobile) {
+  return /^(\d)\1{9}$/.test(mobile);
+}
+
+// Validate each field separately
+function validateField(key) {
+  const input = fields[key];
+  const errorElem = errors[key];
+  const value = input.value.trim();
+
+  clearError(input, errorElem);
+
+  if (!value) {
+    setError(input, errorElem, 'This field is required.');
+    return false;
+  }
+
+  if (key === 'firstName' || key === 'lastName') {
+    if (value.length < 2 || value.length > 30) {
+      setError(input, errorElem, 'Must be between 2 and 30 characters.');
+      return false;
+    }
+    if (!regex.name.test(value)) {
+      setError(input, errorElem, 'Only alphabets and single spaces allowed; no leading/trailing spaces.');
+      return false;
+    }
+  }
+
+  if (key === 'mobile') {
+    if (!regex.mobile.test(value)) {
+      setError(input, errorElem, 'Enter a valid 10-digit mobile number starting with 6-9.');
+      return false;
+    }
+    if (isRepeatedDigits(value)) {
+      setError(input, errorElem, 'Mobile number cannot have all digits the same.');
+      return false;
+    }
+  }
+
+  if (key === 'email') {
+    if (!regex.email.test(value)) {
+      setError(input, errorElem, 'Enter a valid email address.');
+      return false;
+    }
+    if (!isValidComEmail(value)) {
+      setError(input, errorElem, 'Email must end with a single .com');
+      return false;
+    }
+  }
+
+  if (key === 'gender' || key === 'mode' || key === 'stream') {
+    if (value === '' || value === 'Select') {
+      setError(input, errorElem, 'Please select an option.');
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function validateOtherSource() {
+  clearError(otherSourceInput, errors.otherSource);
+  if (otherSourceField.style.display === 'block') {
+    const val = otherSourceInput.value.trim();
+    if (!val) {
+      setError(otherSourceInput, errors.otherSource, 'Please specify how you heard about us.');
+      return false;
+    }
+    if (!regex.otherSource.test(val)) {
+      setError(otherSourceInput, errors.otherSource, 'Only alphabets and spaces allowed (2-50 chars).');
+      return false;
+    }
+  }
+  return true;
+}
+
+function validateTerms() {
+  errors.terms.style.display = 'none';
+  if (!termsCheckbox.checked) {
+    errors.terms.textContent = 'You must agree to the Terms and Conditions.';
+    errors.terms.style.display = 'block';
+    return false;
+  }
+  return true;
+}
+
+// Add blur and input event listeners for live validation feedback
+Object.keys(fields).forEach(key => {
+  const input = fields[key];
+  input.addEventListener('blur', () => validateField(key));
+  input.addEventListener('input', () => {
+    if (input.classList.contains('error')) validateField(key);
+  });
+});
+
+
+const mobileLengthError = document.getElementById('error-mobile-length');
+
+fields.mobile.addEventListener('input', () => {
+  const cleaned = fields.mobile.value.replace(/\D/g, '');
+  if (cleaned.length > 10) {
+    mobileLengthError.textContent = 'Mobile number can only be 10 digits.';
+    mobileLengthError.style.display = 'block';
+  } else {
+    mobileLengthError.textContent = '';
+    mobileLengthError.style.display = 'none';
+  }
+  fields.mobile.value = cleaned.slice(0, 10);
+});
+
+
+
+otherSourceInput.addEventListener('blur', validateOtherSource);
+otherSourceInput.addEventListener('input', () => {
+  if (otherSourceInput.classList.contains('error')) validateOtherSource();
+});
+
+termsCheckbox.addEventListener('change', validateTerms);
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  let formValid = true;
+
+  // Validate all required fields
+  Object.keys(fields).forEach(key => {
+    if (!validateField(key)) formValid = false;
+  });
+
+  if (!validateOtherSource()) formValid = false;
+  if (!validateTerms()) formValid = false;
+
+  if (formValid) {
+    showToast('The form has been submitted successfully.');
+    form.reset();
+    otherSourceField.style.display = 'none';
+
+    Object.keys(fields).forEach(key => clearError(fields[key], errors[key]));
+    clearError(otherSourceInput, errors.otherSource);
+    errors.terms.style.display = 'none';
+  } else {
+    showToast('Please fix the errors before submitting.', false);
+  }
+});
+
+  </script>
+</body>
+</html>

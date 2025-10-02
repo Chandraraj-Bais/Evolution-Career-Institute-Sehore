@@ -1,0 +1,1440 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+
+/* Scroll to Top Button -----------------------------------------------------------------------------------------------------------------------------*/
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: none;
+
+    width: 50px;
+    height: 50px;
+	
+    background-color: #0a559c; /* Deep blue from image */
+    color: #d0e7ff; /* Light arrow color */
+    border: none;
+    border-radius: 10px;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #084a85; /* Slightly darker blue */
+    transform: scale(1.08);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 769px) {
+    #scrollToTopBtn {
+        width: 60px;
+        height: 60px;
+        font-size: 35px;
+        bottom: 20px;
+        right: 20px;
+		border-radius:15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #scrollToTopBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        bottom: 15px;
+        right: 15px;
+		border-radius:10px;
+    }
+}
+
+
+/* Scroll to Top Button ends ------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Top Bar ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+.top-bar {
+  background: #003c71;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 20px;
+  font-size: 15px;
+  font-family: 'Segoe UI', sans-serif;
+  flex-wrap: wrap;
+  overflow: visible; /* allow tooltip to appear outside */
+}
+
+/* Sections */
+.top-left,
+.top-center,
+.top-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.top-left {
+  flex: 1;
+  justify-content: flex-start;
+  gap: 30px;
+  padding-left: 125px;
+}
+
+.top-center {
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+}
+
+
+/* Download Icon */
+.download-icon {
+  position: relative; /* anchor for tooltip */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: visible; /* let tooltip escape */
+  margin-left: -7px;
+}
+
+.download-icon:hover {
+  transform: scale(1.2);
+}
+
+.download-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+
+/* Base tooltip style */
+.tooltip-text {
+  position: absolute;
+  background: #fff;          /* white background */
+  color: #000;               /* black text */
+  font-weight: 500;
+  border-radius: 4px;        /* slightly rounded corners */
+  white-space: nowrap;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+/* Desktop: slightly above right-bottom of the icon */
+@media (min-width: 1026px) {
+  .tooltip-text {
+    top: 15px;             /* slightly above icon */
+    left: 100%;             /* to the right of icon */
+    padding: 3px 10px;         /* rectangular padding */
+	transform: translateY(-100%);  /* move above */
+    font-size: 10px;
+    min-width: 30px;
+  }
+}
+
+/* Mobile/Tablet: directly below the icon */
+@media (max-width: 1025px) {
+  .tooltip-text {
+    top: 15px;              /* below icon */
+    left: -100%;              /* center */
+    transform: translateX(0px);
+    font-size: 7px;        /* smaller font */
+	padding: 2px 4px;       /* small padding */
+    min-width: 30px;
+	margin-top: 11px;
+  }
+}
+
+/* Show tooltip on hover / via JS */
+.download-icon:hover .tooltip-text,
+.tooltip-text.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) translateY(0);
+}
+
+
+
+.top-right {
+  flex: 1;
+  justify-content: flex-end;
+  padding-right: 125px;
+}
+
+/* Email block */
+.email-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  font-size: 14.5px;
+  text-align: center;
+}
+
+/* Email link */
+.email-link {
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.email-link:hover {
+  transform: scale(1.01);
+}
+
+/* Hide mobile email icon on desktop */
+.gmail-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  vertical-align: middle;
+  transform: translateY(1px); /* fine-tuned vertical alignment */
+}
+
+.gmail-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+}
+
+/* Show full email by default (desktop) */
+.desktop-email {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Hide Gmail icon on desktop */
+.desktop-hidden {
+  display: none;
+}
+
+/* Spacing */
+.top-left span {
+  font-size: 14.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Social Icons */
+.icon {
+  font-size: 25px;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.icon.instagram { color: #E4405F; }
+.icon.youtube { color: #FF0000; }
+.icon.facebook { color: #1877F2; }
+.icon.whatsapp { color: #25d366; }   /* WhatsApp green */
+
+/* Call Us Button */
+.call-btn {
+  background-color: #e53935;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 14.7px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.call-btn:hover {
+  background-color: #c62828;
+}
+
+/* Tablet and Below (≤1024px) */
+@media (max-width: 1025px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 10px;
+  }
+
+  .top-left,
+  .top-center,
+  .top-right {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin: 2px 0;
+    padding: 0;
+  }
+
+  .top-left {
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 0;
+  }
+
+  .top-center {
+    order: 1;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+
+  .gmail-icon {
+    width: 28px;
+    height: 28px;
+	margin-left: -4px;
+    transform: translateY(1px); /* still keep alignment fix */
+  }
+  
+  
+ .gmail-icon-link {
+    width: 25px;
+    height: 25px;
+  }
+
+  .email-wrap {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .top-right,
+  .top-left span:first-child {
+    display: none; /* Hide Call Now & 24/7 */
+  }
+
+  
+  .desktop-email {
+    display: none; /* Hide full email */
+  }
+ 
+ .desktop-hidden {
+    display: inline-flex; /* or block/flex depending on your layout */
+  }
+ 
+ .icon {
+    font-size: 21px;
+  }
+}
+
+/* Mobile (≤576px) */
+@media (max-width: 576px) {
+  .top-bar {
+    flex-direction: column;
+    padding: 8px 5px;
+  }
+
+  .top-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top-center {
+    flex-direction: row;
+    justify-content: center;
+    order: 1;
+    gap: 15px;
+  }
+
+  .email-wrap {
+    order: 2;
+    justify-content: center;
+    font-size: 13.8px;
+  }
+
+  .top-right,
+  .top-left span:first-child {
+    display: none !important;
+  }
+
+  .call-btn {
+    display: none;
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+  
+}
+
+
+/* Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* Header ------------------------------------------------------------------------------------------------------------------------------------------ */
+
+/* ----- Header Container ----- */
+.header-container {
+  background: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- Flex Row: Logo + Nav ----- */
+.logo-nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* ----- Logo Area ----- */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 35px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text .evolution-word {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #fbc02d;
+  line-height: 1.2;
+}
+
+.logo-text .career-word {
+  font-size: 1.0rem;
+  color: #003c71;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: -1.5px;
+}
+
+/* ----- Desktop Nav Inline ----- */
+.desktop-nav {
+  display: flex;
+  gap: 45px;
+  align-items: center;
+  margin-right: 150px;
+  position: relative;
+}
+
+.desktop-nav a {
+  color: #003c71;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.3rem;
+  padding: 6px 0;
+  transition: 0.3s ease;
+}
+
+/* Active link style */
+.desktop-nav a.active,
+.mobile-nav a.active {
+  color: #e53935;
+  font-weight: bold;
+}
+
+/* Hover style */
+.desktop-nav a:hover/* ,
+.mobile-nav a:hover */{
+  color: #e53935;
+  transform:translateY(-1.0px);
+}
+
+
+/* -------------------- Desktop Dropdown Menu (Courses & Admissions) -------------------- */
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropbtn {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003366;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.dropdown:hover > .dropbtn {
+  color: #e53935;
+}
+
+.arrow-down {
+  font-size: 0.7rem;
+  margin-left: 5px;
+  color: #003366;
+  transition: transform 0.3s ease, color 0.3s ease;
+  transform:translateY(2px);
+}
+
+/* Arrow changes to red on hover */
+.dropdown:hover .arrow-down {
+  color: #e53935;
+  transform: rotate(0deg);
+}
+
+/* Default ▼ arrow via pseudo-element */
+.arrow-down.desktop-arrow::before {
+  content: "▼";
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate on hover (make it look like ►) */
+.dropdown:hover .arrow-down.desktop-arrow::before {
+ transform: translateY(4px) rotate(-90deg); /* right arrow */
+}
+
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  top: 36px;
+  left: 0;
+  padding: 10px 0;
+  flex-direction: column;
+  border-radius: 3px;
+}
+
+.dropdown-content a {
+  color: #003366;
+  padding: 10px 20px;
+  display: block;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+/* -------------------- Desktop Dropdown Menu ends (Courses & Admissions) -------------------- */
+
+
+/* ----- Hamburger Icon (Mobile) ----- */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2.03rem;
+  color: #003c71;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 8.5px;
+  
+}
+
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+
+/* ----- Mobile Sidebar ----- */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  max-width: 325px;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;        /* Enable vertical scroll */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.mobile-nav-overlay.show {
+  left: 0;
+}
+
+/* ----- Mobile Header Fix ----- */
+.mobile-header {
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 7px;
+  margin-left: -1px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+  margin-top: 2.5px;
+}
+
+.left-logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust for tighter layout */
+}
+
+.left-logo-title img {
+  height: 55px;
+  margin: 0;
+  margin-top:25px;
+}
+
+.mobile-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  margin-top:25px;
+}
+
+.mobile-title .evolution-word {
+  font-size: 1.9rem;
+  color: #fbc02d;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 0; /* KEY: remove spacing */
+}
+
+.mobile-title .career-word {
+  font-size: 1rem;
+  color: #003c71;
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1.1;
+  margin-top: 0; /* KEY: remove spacing */
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: 1px solid #aaa;
+  font-size: 1.2rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: -5px;
+  margin-left: -15px;
+}
+
+/* Centered social icons */
+.center-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.center-icons a {
+  font-size: 1.7rem;
+  transition: transform 0.3s ease;
+}
+
+.center-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Brand Colors */
+.fb-icon i {
+  color: #1877f2;
+}
+
+.insta-icon i {
+  color: #e1306c;
+}
+
+.yt-icon i {
+  color: #ff0000;
+}
+
+/* ----- Mobile Navigation Links (Buttons Design) ----- */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 35px;
+}
+
+.mobile-nav a {
+  font-size: 1.2rem; /* currently 1.2rem but does not affect mobile view bcz it is overridden in media 480 etc... */
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  padding: 14px 0;
+  width: 100%;
+  text-align: center;
+  background-color: #003c71;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Call Us button gap fix */
+.mobile-nav .apply-btn {
+  background-color: #e53935;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 2px solid white;
+  width: 60%;
+  text-align: center;
+  margin-top: 20px;
+
+  display: inline-flex; /* Ensures icon and text align properly */
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+.mobile-nav .apply-btn:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+
+/* Contact info better alignment */
+.mobile-nav .contact-info {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: black;
+  line-height: 1.6;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: justify; /* Center content horizontally */
+  text-align: justify;  /* Center text for uniform look */
+
+  margin-bottom: 0; /* no extra space at bottom */
+  padding-bottom: 25px;
+}
+
+
+.mobile-nav .contact-info p {
+  
+  margin: 2px 0; /* minimal vertical spacing */
+  line-height: 1.4; /* tighter line height */
+}
+
+.mobile-nav .contact-info h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Space above phone number row */
+.mobile-nav .contact-info .phone-row {
+  margin-top: 8px; /* adjust gap as needed */
+  white-space: nowrap; /* keep on one line */
+}
+
+/* Keep phone links inline without box style */
+.mobile-nav .contact-info .phone-link {
+  all: unset !important;
+  cursor: pointer !important;
+  color: inherit !important;
+  display: inline !important;
+}
+
+.mobile-nav .contact-info .phone-link:hover {
+  text-decoration: underline !important;
+}
+
+.mobile-nav a:hover {
+  background-color: #e53935;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav a.active {
+  background-color: #fbc02d;
+  color: #003c71;
+}
+
+.mobile-nav .arrow {
+  font-size: 0.9rem;
+  margin-left: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+
+/* ------------------------- Mobile Dropdown Container (Courses & Admissions) ------------------------- */
+
+.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #eee;
+  margin-top: 4px;
+}
+
+
+/* --- Courses & Admissions Button --- */
+.mobile-dropbtn {
+  background-color: #003c71 !important; /* Always this blue */
+  color: white;
+  padding: 14px 0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  display: flex;
+  justify-content: center; /*  center text & arrow */
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* Ensure open state doesn't change background */
+.mobile-dropbtn.open {
+  background-color: #003c71 !important;
+  color: white;
+}
+
+/* Optional: style the arrow icon */
+.mobile-dropbtn .arrow-down {
+  margin-left: 6px;
+  color: white;
+}
+
+/* --- Submenu Container --- */
+.mobile-dropdown-content {
+  display: none;
+  flex-direction: column;
+  background-color: transparent;
+  padding-left: 0;
+  border-left: none;
+  margin-top: 0;
+}
+
+.mobile-dropdown-content.open {
+  display: flex;
+}
+
+/* Arrow rotation inside humburger menu */
+
+.rotate-arrow {
+  transition: transform 0.3s ease;
+}
+
+.rotate-arrow.open {
+  transform: rotate(90deg); /* Arrow points right */
+}
+
+
+/* --- Submenu Items --- */
+.mobile-dropdown-content a {
+  background-color: transparent !important;
+  color: #003366;
+  text-align: left;         /*  Align text to left */
+  padding-left: 20px;       /*  Add some left padding */
+  padding-right: 20px;
+  font-size: 1rem;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+  width: 100%;              /* Make link take full width */
+  box-sizing: border-box;   /* Prevent overflow */
+  display: block;           /* Ensure it's a block element */
+}
+
+
+.mobile-dropdown-content a:hover {
+  background-color: #f5f5f5;
+}
+
+
+/* Hover effect on submenu */
+.mobile-dropdown-content a:hover {
+  background-color: #f5f5f5;
+}
+
+
+/* -------------------- Mobile Dropdown Container ends (Courses & Admissions) -------------------- */
+
+
+/* ----- Responsive Rules ----- */
+@media (max-width: 1281px) 
+{
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .logo-nav-wrapper {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .logo-text .evolution-word {
+    font-size: 2.3rem;
+  }
+
+  .logo-text .career-word {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) 
+{
+  .logo img {
+    height: 50px;
+  }
+
+  .logo-text .evolution-word {
+    font-size: 2.0rem;
+  }
+
+  .logo-text .career-word {
+    font-size: 0.9rem;
+  }
+
+  .mobile-nav a {
+    font-size: 1.2rem;
+  }
+
+  .mobile-nav {
+    padding-top: 30px;
+  }
+    
+}
+
+
+@media (max-width: 600px) 
+{
+  .logo img {
+    height: 45px;
+  }
+
+  .logo-text .evolution-word {
+    font-size: 1.9rem;
+  }
+
+  .logo-text .career-word {
+    font-size: 0.9rem;
+	margin-top: -1.5px;
+  }
+
+  .mobile-nav a {
+    font-size: 1.2rem;
+  }
+
+  .mobile-nav {
+    padding-top: 30px;
+  }
+  
+}
+
+
+@media (max-width: 480px) 
+{
+  .logo img {
+    height: 50px;
+  }
+
+  .logo-text .evolution-word {
+    font-size: 1.9rem;
+  }
+
+  .logo-text .career-word {
+    font-size: 0.9rem;
+	margin-top: -1.5px;
+  }
+
+  .mobile-nav a {
+    font-size: 1.3rem;
+  }
+
+  .mobile-nav {
+    padding-top: 20px;
+  }
+}
+
+
+/* Header ends ------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Hero Section (image) ---------------------------------------------------------------------------------------------------------------------------- */
+ 
+.hero-section {
+  position: relative;
+  height: 250px;
+  background: url(bg-img-contact.jpg) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* This line makes it stay fixed */
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(25, 15, 97, 0.8); /* extracted color from your image */
+  display: flex;
+  align-items: flex-end;
+  padding: 40px 60px;
+  box-sizing: border-box;
+}
+
+.hero-overlay h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Responsive: Mobile Fix for Contact Us */
+@media (max-width: 576px) {
+  .hero-overlay {
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 20px 25px;
+    text-align: left;
+  }
+
+  .hero-overlay h1 {
+    font-size: 36px; /* Slightly larger than usual mobile size */
+    text-align: left;
+  }
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px 15px;
+}
+
+/* Heading */
+.features-heading h2 {
+    font-size: 2.8rem;           /* Desktop size */
+    font-weight: bold;
+    color: #150079;            /* Deep blue */
+    margin-bottom: 8px;
+}
+
+/* Horizontal Line */
+.features-heading hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .features-heading h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .features-heading h2 {
+        font-size: 1.6rem;
+        text-align: left; /* stays aligned like screenshot */
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .features-heading h2 {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* Hero Section (image) ends ----------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Features Sections ------------------------------------------------------------------------------------------------------------------------------- */
+
+.feature-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.feature-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.feature-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-img {
+  aspect-ratio: 16 / 9;   /* Keep 16:9 ratio */
+  overflow: hidden;       /* Hide overflow */
+  border-radius: 8px;
+  max-width: 500px;       /* Optional: keep your max-width */
+}
+
+.feature-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* Makes the image fill while preserving ratio */
+  display: block;
+}
+
+.feature-text {
+  flex: 1;
+  text-align: justify;
+}
+
+.feature-text h2 {
+  color: #002366;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.feature-text p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  display: flex;
+  background: #c80000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn:hover {
+  background: #a50000;
+}
+
+/* Tablet and below */
+@media (max-width: 992px) {
+  .feature-block {
+    flex-direction: column;
+    text-align: justify;
+  }
+  .feature-block.reverse {
+    flex-direction: column;
+  }
+  .feature-img img {
+    max-width: 100%;
+  }
+}
+
+
+/* Features Sections ends -------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Footer Section ---------------------------------------------------------------------------------------------------------------------------------- */
+.footer {
+  background: #111;
+  color: #eee;
+  padding: 40px 20px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+/* Logo + Name side by side */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo {
+  max-height: 65px;
+}
+
+/* Branding text */
+.footer-left h2 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.footer-left h2 .brand-main {
+  font-size: 38px;   /* Bigger font for "Evolution" */
+  font-weight: bold;
+  color: #f39c12;
+  display: block;
+}
+
+.footer-left h2 .brand-sub {
+  font-size: 18px;   /* Smaller font for "Career Institute Pvt. Ltd." */
+  color: #eee;
+  display: block;
+}
+
+.footer-left p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #bbb;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px dotted #444;
+}
+
+
+.footer-col ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #f39c12;
+}
+
+.footer-right p {
+  font-size: 14px;
+  margin: 10px 0;   /* added more gap */
+  line-height: 1.5; /* better readability */
+}
+
+
+.footer-right i {
+  margin-right: 6px;
+  color: #f39c12;
+}
+
+.footer-socials {
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  color: #bbb;
+  margin-right: 12px;
+  font-size: 23px;
+  transition: 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #f39c12;
+}
+
+.footer-bottom {
+  text-align: center;   /* center both lines */
+  padding: 15px 0 0;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  color: #888;
+}
+
+.footer-bottom .designed-by {
+  margin-top: 6px;      /* small gap between lines */
+  font-size: 13px;      /* slightly smaller for elegance */
+  color: #aaa;          /* lighter shade than main text */
+}
+
+
+/* Desktop only: shift Admissions + Courses + Useful Links right */
+@media (min-width: 1080px) {
+  .footer-container .footer-col:nth-child(2)
+  {
+	margin-left: 50px; /* adjust as needed */  
+  }
+  
+  .footer-container .footer-col:nth-child(3) {
+	margin-left: 25px; /* adjust as needed */
+	margin-right: 25px; /* adjust as needed */
+    }
+}
+
+
+/* Tablet */
+@media (max-width: 1080px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-left p,
+  .footer-col ul li a,
+  .footer-right p {
+    text-align: justify;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-left p,
+  .footer-col ul li a,
+  .footer-right p {
+    text-align: justify;
+  }
+
+  .footer-socials {
+    justify-content: justify;
+    display: flex;
+  }
+}
+
+
+/* Footer Section ends ----------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Animation Section ----------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Ensure animated elements start hidden for better effect */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+/* Fade-In Effects */
+[data-aos="fade-in"],
+[data-aos="fade-up"],
+[data-aos="fade-down"] {
+  transform: translateY(20px);
+}
+[data-aos="zoom-in"] {
+  transform: scale(0.9);
+}
+[data-aos="flip-up"] {
+  transform: perspective(400px) rotateX(15deg);
+}
+
+/* AOS “after” state */
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translate(0, 0) scale(1) rotateX(0);
+}
+
+
+/* Animation Section ends ----------------------------------------------------------------------------------------------------------------------------- */

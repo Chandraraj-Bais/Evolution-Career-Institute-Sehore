@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Evolution Institute - Home</title>
+		<link rel="stylesheet" href="home.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		
+		<!-- AOS CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	</head>
+	
+<body>
+
+<!-- Scroll to Top Button ---------------------------------------------------------------------------------------------------------------------------->
+	<button id="scrollToTopBtn" title="Go to top" style="display: none;">↑</button>
+	<script>
+		
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	
+			// Show or hide the button on scroll
+			window.addEventListener("scroll", function () 
+			{
+				if (window.scrollY > 300) 
+				{
+					scrollToTopBtn.style.display = "flex"; // Using flex, not block (as our CSS uses flexbox)
+				} 
+				else 
+				{
+					scrollToTopBtn.style.display = "none";
+				}
+			});
+
+			// Scroll to top on button click
+			scrollToTopBtn.addEventListener("click", function () 
+			{
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		});
+	
+	</script>
+
+
+<!-- Scroll to Top Button ends ----------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Top Bar ----------------------------------------------------------------------------------------------------------------------------------------->
+	
+	<div class="top-bar">  <!--  data-aos="fade-up" --> 
+		
+		<!-- Left Section -->
+		<div class="top-left">
+			
+			<span>
+				<i class="fas fa-clock"></i> Open 24/7
+			</span>
+			
+			<!-- Email block -->
+			<span class="email-wrap">
+			
+				<!-- Desktop email text -->
+				<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="email-link desktop-email">
+					<i class="fas fa-envelope"></i>
+					evolutioncareerinstitute2024@gmail.com
+				</a>
+			</span>
+
+		</div>
+
+		<!-- Center Section -->
+		<div class="top-center">			
+			<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://wa.me/919685336065" target="_blank" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+			<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+			<a href="Evolution-brochure.pdf" class="download-icon" target="_blank">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+					<path d="M12 16a1 1 0 0 1-.707-.293l-5-5a1 1 0 1 1 1.414-1.414L11 12.586V3a1 1 0 1 1 2 0v9.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-5 5A1 1 0 0 1 12 16ZM4 20a1 1 0 1 1 0-2h16a1 1 0 1 1 0 2H4Z"/>
+				</svg>
+				<span class="tooltip-text">Evolution institute brochure</span>
+			</a>
+
+			<!-- Mobile/Tablet icon-only email -->
+			<a href="mailto:evolutioncareerinstitute2024@gmail.com" class="icon gmail-icon-link desktop-hidden">
+				<svg class="gmail-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+					<path fill="#f1f1f1" d="M4 12a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+					<path fill="#d93025" d="M44 12v2.3L24 26.5 4 14.3V12a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4z"/>
+					<path fill="#a50e0e" d="M4 14.3l20 12.2 20-12.2v21.7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+				</svg>
+			</a>
+		</div>
+
+		<!-- Right Section -->
+		<div class="top-right">
+			<a href="tel:+919685336065" class="call-btn"><i class="fas fa-phone"></i> Call Us</a>
+		</div>
+	
+	</div>
+
+	<script>
+	  document.addEventListener("DOMContentLoaded", function () {
+		const downloadIcon = document.querySelector(".download-icon");
+		const tooltip = downloadIcon.querySelector(".tooltip-text");
+		const fileURL = downloadIcon.getAttribute("href");
+
+		// For mobile/touch and desktop click
+		downloadIcon.addEventListener("click", function (e) {
+		  // Stop instant download
+		  e.preventDefault();
+
+		  // Show tooltip text
+		  tooltip.classList.add("show");
+
+		  // After 1s → hide tooltip & auto-download file
+		  setTimeout(() => {
+			tooltip.classList.remove("show");
+
+			// Force file download
+			const tempLink = document.createElement("a");
+			tempLink.href = fileURL;
+			tempLink.setAttribute("download", "");
+			document.body.appendChild(tempLink);
+			tempLink.click();
+			document.body.removeChild(tempLink);
+		  }, 1000);
+		});
+	  });
+	</script>
+
+	<script>
+	const downloadLink = document.querySelector('.download-icon');
+
+	downloadLink.addEventListener('click', function(e) {
+	  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+		// Mobile: open in new tab
+		e.preventDefault();
+		window.open(downloadLink.href, '_blank');
+	  }
+	  // Desktop: let the download attribute work normally
+	});
+	</script>
+
+
+<!-- Top Bar ends ------------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Header ------------------------------------------------------------------------------------------------------------------------------------------>
+	<header class="header-container">   <!-- data-aos="fade-up" data-aos-delay="100"  -->
+	
+		<div class="logo-nav-wrapper">
+		
+			<div class="logo">
+
+				<img src="logo.jpg" alt="Evolution Logo" />			
+				<div class="logo-text">
+					<div class="evolution-word">Evolution</div>
+					<div class="career-word">Career Institute Pvt. Ltd.</div>
+				</div>
+			
+			</div>
+
+			<!-- Hamburger Icon -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">☰</button>
+
+			<!-- Desktop Nav -->
+			<nav class="desktop-nav">
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="gallery.html">Gallery</a>
+			
+				<!-- Admissions Dropdown -->
+				<div class="dropdown">
+					<a href="#" class="dropbtn" id="admissionsDropdown">
+						<span class="dropbtn-text">Admissions</span>
+						<span class="arrow-down desktop-arrow"></span>
+					</a>
+					<div class="dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				
+				<a href="contact.html">Contact Us</a>
+			
+			</nav>
+		
+		</div>
+
+		<!-- Mobile Sidebar Nav -->
+		<div class="mobile-nav-overlay" id="mobileNav">
+			
+			<div class="mobile-header">
+
+				<!-- Top row: logo/title (left) and close button (right) -->
+				<div class="top-row">
+					
+					<div class="left-logo-title">
+						<img src="logo.jpg" alt="Logo" />
+					
+						<div class="mobile-title">
+							<div class="evolution-word">Evolution</div>
+							<div class="career-word">Career Institute Pvt. Ltd.</div>
+						</div>
+
+					</div>
+					<button class="close-btn" id="closeBtn">X</button>
+				
+				</div>
+
+				<!-- Centered social icons below -->
+				<div class="center-icons">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" class="icon instagram"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" class="icon youtube"><i class="fab fa-youtube"></i></a>
+					<a href="https://wa.me/919685336065" target="_blank" class="icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+				</div>
+
+			</div>
+
+			<nav class="mobile-nav">
+				
+				<a href="index.html">Home</a>
+				<a href="features.html">Features</a>
+				<a href="courses.html">Courses</a>
+				<a href="about.html">About Us</a>
+				<a href="gallery.html">Gallery</a>
+				
+				<!-------		Admissions		------->
+				<div class="mobile-dropdown">	
+					<button id="mobileDropdownToggle" class="mobile-dropbtn">
+						Admissions <span class="arrow-down rotate-arrow">▼</span>
+
+					</button>
+
+					<div id="mobileDropdownMenu" class="mobile-dropdown-content">
+						<a href="how-to-apply.html">How to apply</a>
+						<a href="scholarship.html">Scholarship</a>
+						<a href="faq.html">FAQ's</a>
+						<a href="t&c.html">Terms & Conditions</a>
+					</div>
+				</div>
+				<!-------		Admissions ends		------->
+				
+				<a href="contact.html">Contact Us</a>
+				
+				<a href="tel:+919685336065" class="apply-btn"><i class="fas fa-phone"></i> Call Us</a>
+				
+				<div class="contact-info">
+					<h2> Contact Info </h2><br>
+					<p>
+						<strong>“BHOPAL NAKA”</strong>, in front of P.G College Bhopal road, Sehore, Madhya Pradesh
+					</p>
+					<p class="phone-row">
+						📞 <a href="tel:9685336065&nbsp;" class="phone-link">96853 36065</a>, 
+						📞 <a href="tel:9131386065" class="phone-link">91313 86065</a>
+						<br>
+						<br>
+					</p>
+				</div>
+
+			</nav>
+
+		</div>
+	
+	</header>
+
+	<!-- JavaScript to toggle the hamburger menu -->
+	<script>
+	
+		// Grab elements
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const mobileNav = document.getElementById("mobileNav");
+		const closeBtn = document.getElementById("closeBtn");
+
+		// Track menu state
+		let isMenuOpen = false;
+
+		// Toggle mobile menu when hamburger is clicked
+		hamburgerBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = !isMenuOpen;
+			mobileNav.classList.toggle("show", isMenuOpen);
+			document.body.classList.toggle("menu-open", isMenuOpen);
+		});
+
+		// Close mobile menu on close (X) button
+		closeBtn.addEventListener("click", () => 
+		{
+			isMenuOpen = false;
+			mobileNav.classList.remove("show");
+			document.body.classList.remove("menu-open");
+		});
+
+		// Close mobile menu when a link is clicked
+		const mobileLinks = document.querySelectorAll(".mobile-nav a");
+		mobileLinks.forEach(link => 
+		{
+			link.addEventListener("click", () => 
+			{
+				isMenuOpen = false;
+				mobileNav.classList.remove("show");
+				document.body.classList.remove("menu-open");
+			});
+		});
+
+		// Highlight current page in both navs
+		const currentPage = location.pathname.split("/").pop();
+
+		document.querySelectorAll(".desktop-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+
+		document.querySelectorAll(".mobile-nav a").forEach(link => 
+		{
+			if (link.getAttribute("href") === currentPage) 
+			{
+				link.classList.add("active");
+			}
+		});
+	
+
+		// Mobile dropdown toggle  
+		document.addEventListener("DOMContentLoaded", () => 
+		{
+			// for Admissions
+			const mobileToggle = document.getElementById("mobileDropdownToggle");
+			const mobileMenu = document.getElementById("mobileDropdownMenu");
+			const arrowSpan = mobileToggle.querySelector(".arrow-down");
+
+			if (mobileMenu) 
+			{
+				mobileMenu.classList.remove("open");
+			}
+
+			if (mobileToggle && mobileMenu) 
+			{
+				mobileToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					// Toggle submenu
+					mobileMenu.classList.toggle("open");
+
+					// Toggle arrow direction
+					if (mobileMenu.classList.contains("open")) 
+					{
+						arrowSpan.textContent = "►"; // Right arrow
+					} 
+					else 
+					{
+						arrowSpan.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+	
+			// for Courses
+			const coursesToggle = document.getElementById("coursesDropdownToggle");
+			const coursesMenu = document.getElementById("coursesDropdownMenu");
+			const coursesArrow = coursesToggle.querySelector(".arrow-down");
+
+			if (coursesMenu) 
+			{
+			  coursesMenu.classList.remove("open");
+			}
+
+			if (coursesToggle && coursesMenu) 
+			{
+				coursesToggle.addEventListener("click", (e) => 
+				{
+					e.preventDefault();
+					e.stopImmediatePropagation();
+
+					coursesMenu.classList.toggle("open");
+
+					if (coursesMenu.classList.contains("open")) 
+					{
+						coursesArrow.textContent = "►"; // Right arrow
+					} 
+					else
+					{
+						coursesArrow.textContent = "▼"; // Down arrow
+					}
+				});
+			}
+		});
+
+	</script>
+
+
+<!-- Header ends ------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Carousel Section -------------------------------------------------------------------------------------------------------------------------------->
+<!-- Carousel Container -->
+	<div class="carousel-container" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="700">
+
+		
+		<div class="carousel-wrapper" id="carousel">
+			<img src="cr-img4.jpg" class="carousel-slide active" alt="Slide 1" data-aos="fade" data-aos-delay="300"/>
+
+			<img src="cr-img2.jpg" class="carousel-slide" alt="Slide 2" />
+			<img src="cr-img3.jpg" class="carousel-slide" alt="Slide 3" />
+			<!--
+				<img src="cr-img1.jpg" class="carousel-slide" alt="Slide 4" />
+			-->
+		</div>
+
+		<!-- Arrows -->
+		<button class="arrow left" onclick="prevSlide()">&#10094;</button>
+		<button class="arrow right" onclick="nextSlide()">&#10095;</button>
+	
+
+	
+	</div>
+
+	<!-- Bottom Section -->
+	<div class="bottom-section">
+		
+		<div class="dot-bar"  data-aos="zoom-in">
+			<span class="dot active" onclick="goToSlide(0)"></span>
+			<span class="dot" onclick="goToSlide(1)"></span>
+			<span class="dot" onclick="goToSlide(2)"></span>
+			<span class="dot" onclick="goToSlide(3)"></span>
+		</div>
+			
+		<div class="carousel-card" data-aos="fade-up">
+			Top Rated Medical Exam Institute
+		</div>
+
+	</div>
+
+	<script>
+		
+		let currentSlide = 0;
+		const slides = document.querySelectorAll('.carousel-slide');
+		const dots = document.querySelectorAll('.dot');
+
+		function showSlide(index, direction = 'right') 
+		{
+			slides.forEach((slide, i) => {
+			slide.classList.remove('active', 'slide-left', 'slide-right');
+			if (i === index) {
+			  slide.classList.add('active');
+			  slide.classList.add(direction === 'left' ? 'slide-left' : 'slide-right');
+			}
+			});
+
+			dots.forEach((dot, i) => {
+			dot.classList.toggle('active', i === index);
+			});
+
+			currentSlide = index;
+		}
+
+		function nextSlide() 
+		{
+			let next = (currentSlide + 1) % slides.length;
+			showSlide(next, 'right');
+		}
+
+		function prevSlide() 
+		{
+			let prev = (currentSlide - 1 + slides.length) % slides.length;
+			showSlide(prev, 'left');
+		}
+
+		function goToSlide(index) {
+		  let direction = index > currentSlide ? 'right' : 'left';
+		  showSlide(index, direction);
+		}
+
+		setInterval(nextSlide, 4000);
+	
+	</script>
+
+
+<!-- Carousel Section ends --------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Video Section ----------------------------------------------------------------------------------------------------------------------------------->
+	<section class="video-section" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+		
+		<video class="bg-video" autoplay muted loop playsinline>
+			<source src="video.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+
+		<div class="video-overlay">
+			
+			<div class="video-content">
+			
+				<div class="content-block fade-in" id="textBlock">		
+					<h2>Unleash Your Potential with Evolution Institute</h2>
+					<p>Step into a new era of academic excellence and focused career growth.</p>
+				</div>
+				<a href="#features" class="rotating-button" id="rotatingBtn" style="display: none;">Features</a>
+		
+			</div>
+		
+		</div>
+	
+	</section>
+
+	<script>
+		const rotatingBtn = document.getElementById("rotatingBtn");
+		const textBlock = document.getElementById("textBlock");
+
+		const textData = [
+			{
+				heading: "Unleash Your Potential with Evolution Institute",
+				paragraph: "Step into a new era of academic excellence and focused career growth.",
+				showButton: false,
+				buttonText: "",
+				buttonLink: ""
+			},
+			
+			{
+				heading: "Features That Set Us Apart",
+				paragraph: "Personalized mentorship, small batches, daily doubt clearing, and consistent performance tracking.",
+				showButton: true,
+				buttonText: "Features",
+				buttonLink: "features.html"
+			},
+			
+			{
+				heading: "Courses Crafted for Top Results",
+				paragraph: "Expert-led programs for PNST, CUET (Biology), and NEET UG — designed to help you succeed.",
+				showButton: true,
+				buttonText: "Courses",
+				buttonLink: "neet_course.html"
+			},
+		 
+			{
+				heading: "A Legacy of Academic Excellence",
+				paragraph: "Evolution Institute has been guiding medical aspirants with dedication, trust, and proven results.",
+				showButton: true,
+				buttonText: "About Us",
+				buttonLink: "about.html"
+			},
+		 
+			{
+				heading: "A Legacy of Academic Excellence",
+				paragraph: "From classroom to exam hall, our students shine with top results in PNST and NEET UG. Selections at Evolution are not just numbers — they’re milestones of hard work and expert mentorship.",
+				showButton: true,
+				buttonText: "Gallery",
+				buttonLink: "gallery.html"
+			},
+		 
+			{
+				heading: "Join Our Learning Community – Admissions Open",
+				paragraph: "Learn, grow, and excel with expert mentors, peer support, and a roadmap to medical success.",
+				showButton: true,
+				buttonText: "Admissions",
+				buttonLink: "how-to-apply.html"
+			},
+			
+			{
+				heading: "Join Our Learning Community – Admissions Open",
+				paragraph: "Learn, grow, and excel with expert mentors, peer support, and a roadmap to medical success.",
+				showButton: true,
+				buttonText: "Scholarship",
+				buttonLink: "scholarship.html"
+			},
+		 
+			{
+				heading: "Need Guidance? Let's Talk.",
+				paragraph: "Reach out to our expert counselors for batch schedules, fees, and study plans.",
+				showButton: true,
+				buttonText: "Contact Us",
+				buttonLink: "contact.html"
+			}
+		];
+
+		let index = 0;
+
+		function updateContent() 
+		{
+			textBlock.classList.remove("fade-in");
+			textBlock.classList.add("fade-out");
+			rotatingBtn.style.display = "none";
+
+			setTimeout(() => {
+			textBlock.innerHTML = `
+				<h2>${textData[index].heading}</h2>
+				<p>${textData[index].paragraph}</p>
+			`;
+			textBlock.classList.remove("fade-out");
+			textBlock.classList.add("fade-in");
+
+			if (textData[index].showButton) 
+			{
+				rotatingBtn.textContent = textData[index].buttonText;
+				rotatingBtn.href = textData[index].buttonLink;
+				rotatingBtn.style.display = "inline-block";
+			}
+
+			index = (index + 1) % textData.length;
+		  }, 500);
+		
+		}
+
+		updateContent(); // Initial call
+		setInterval(updateContent, 4500); // Every 4.5 seconds
+	
+	</script>
+
+
+<!-- Video Section ends ------------------------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Call Us Section --------------------------------------------------------------------------------------------------------------------------------->
+	<section class="contact-us" data-aos="fade-up">
+		
+		<div class="contact-content" data-aos="fade-up">
+			<h3>Need More Enquiry</h3>
+			<p>We’re here to help you with AIIMS, NEET, PNST Exam & more.</p>
+		</div>
+
+		<a href="tel:+919685336065" class="call-now" data-aos="fade-up">
+			<i class="fas fa-phone"></i> Call Us Now
+		</a>
+		
+	</section>
+<!-- Call Us Section ends ---------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Courses Section --------------------------------------------------------------------------------------------------------------------------------->
+	<section class="courses">
+		
+		<div class="courses-intro" data-aos="fade-up">
+			
+			<h2 class="courses-title" data-aos="fade-up">
+				<span class="theme-text">Courses We Offer </span> 
+				<span class="black-text">at</span>
+				<span style="color: #fbc02d; font-weight: 800;">Evolution</span>
+			</h2>
+			
+			<p class="courses-subtitle" data-aos="fade-up">NEET Coaching Programs Offered in Sehore</p>
+		
+			<p class="courses-paragraph" data-aos="fade-up">
+				At <strong>Evolution Sehore</strong>, we believe in nurturing brilliance. Our coaching programs are crafted with precision, dedication, and deep academic insight. 
+				From beginners to advanced learners, we offer tailored learning journeys that focus on concept clarity, rigorous practice, and strategic guidance.
+				Whether you're preparing for NEET, PNST, CUET, or Para-Medical fields, Evolution Sehore stands as your partner in success, empowering you to rise, excel, and lead with confidence.
+			</p>
+		
+		</div>
+		
+		<!-- Background Image Behind Cards --------------------------->
+		<div class="courses-bg"></div>
+		
+		<!-- Courses Grid Overlapping Between White and Blue --------------------------->
+		<div class="course-grid">
+			
+			<div class="course-box" data-aos="fade-up">
+				<img src="neet.jpg" alt="NEET Exam" class="course-icon" />
+				<h3 data-aos="fade-up">NEET UG</h3>
+				<p data-aos="fade-up">NEET UG coaching from foundational to advanced level.</p>
+				<a href="courses.html" class="view-btn" data-aos="fade-up">View Details</a>
+			</div>
+
+			<div class="course-box" data-aos="fade-up">
+				<img src="pnst.jpg" alt="PNST Bio" class="course-icon" />
+				<h3 data-aos="fade-up">PNST (Nursing)</h3>
+				<p data-aos="fade-up">Expert-led PNST program for aspiring nursing professionals in MP.</p>
+				<a href="courses.html" class="view-btn" data-aos="fade-up">View Details</a>
+			</div>
+
+			<div class="course-box" data-aos="fade-up">
+				<img src="cuet.jpg" alt="CUET Bio" class="course-icon" />
+				<h3 data-aos="fade-up">CUET (Biology)</h3>
+				<p data-aos="fade-up">Crack CUET with focused Biology preparation for top universities.</p>
+				<a href="courses.html" class="view-btn" data-aos="fade-up">View Details</a>
+			</div>
+
+			<div class="course-box" data-aos="fade-up">
+				<img src="Para-Medical.jpg" alt="Para-Medical" class="course-icon" />
+				<h3 data-aos="fade-up">Para-Medical</h3>
+				<p data-aos="fade-up">Prepare your Para-Medical journey with experts.</p>
+				<a href="courses.html" class="view-btn" data-aos="fade-up">View Details</a>
+			</div>
+		
+		</div>
+
+		<!-- Explore Button BELOW background image --------------------------->
+		<div class="more-link-wrapper" >
+			<a href="courses.html" class="read-more-center-btn" data-aos="fade-up">Explore All Courses</a>
+		</div>
+
+	</section>
+
+
+<!-- Courses Section ends ---------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- About Us ---------------------------------------------------------------------------------------------------------------------------------------->
+	<!-- White Strip (Top) -->
+	<div class="white-strip"></div>
+
+<section class="about-section" data-aos="fade-up">
+  <div class="about-container" data-aos="fade-up">
+    <!-- Left Image Box -->
+    <div class="about-image-box">
+      <div class="about-rectangle" data-aos="fade-up"  data-aos-duration="1200" data-aos-once="false"></div>
+      <img src="founders_img.jpg" alt="Founder" class="about-image" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1200" data-aos-once="false"/>
+    </div>
+
+    <!-- Right Content -->
+    <div class="about-content">
+      <h2 data-aos="fade-up">A Few Words About Evolution</h2>
+      <p data-aos="fade-up">
+        Evolution Institute stands as a leading hub for NEET, PNST, and CUET (Bio) preparation in Sehore,
+        offering a result-driven academic environment guided by experienced mentors and a structured learning
+        approach.
+      </p>
+      <p data-aos="fade-up">
+        We are committed to nurturing every student with clarity of concepts, unwavering confidence,
+        and consistent performance throughout their medical entrance journey. With a legacy of excellence and
+        personalized guidance, Evolution Institute ensures that every aspirant moves forward with purpose and precision.
+      </p>
+      <a href="about.html" class="btn" data-aos="fade-up">Know More ➞</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  AOS.init({
+    duration: 10,  // animation speed
+    once: false,     //  allow repeat animation
+    mirror: true     //  triggers animation when scrolling up
+  });
+</script>
+
+
+<!-- About us ends ----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Features Section -------------------------------------------------------------------------------------------------------------------------------->
+	<section class="features-section">
+	
+		<div class="features-container">
+			
+			<div class="features-layout" data-aos="fade-up">
+			
+				<!-- Left Side: Heading + Paragraph -->
+				<div class="features-left" data-aos="fade-up">	
+					<h2 data-aos="fade-up">
+						<span class="black-text">Key Features</span>
+						<span class="theme-text">of</span>
+						<span style="color: #fbc02d; font-weight: 800;">Evolution</span>
+					</h2>
+
+					<hr class="heading-divider" data-aos="fade-up">
+
+					<p>
+						Evolution Institute delivers a transformative academic journey through essential offerings 
+						like structured test series, personalized doubt-clearing sessions, a well-equipped library, 
+						and expertly crafted study materials to empower students for competitive success.
+					</p>
+				</div>
+
+				<!-- Top Row of Features -->
+				<div class="features-top-row">
+					
+					<div class="feature-card" data-aos="fade-up">
+						<i class="fas fa-clipboard-check" data-aos="fade-up"></i>
+						<h3 data-aos="fade-up">Test Series</h3>
+						<p data-aos="fade-up">Boost confidence with regular mock tests, structured evaluations, and time-based competitive assessments.</p>
+					</div>
+			
+					<div class="feature-card" data-aos="fade-up">
+						<i class="fas fa-chalkboard-teacher" data-aos="fade-up"></i>
+						<h3 data-aos="fade-up">Smart Classes</h3>
+						<p data-aos="fade-up">Immersive learning with digital boards, visual aids, and conceptual clarity through engaging smart sessions.</p>
+					</div>
+			
+					<div class="feature-card" data-aos="fade-up">
+						<i class="fas fa-layer-group" data-aos="fade-up"></i>
+						<h3 data-aos="fade-up">Study Package</h3>
+						<p data-aos="fade-up">Well-organized theory, solved examples, and practice modules designed by top experts to guide your prep.</p>
+					</div>
+				
+				</div>
+			
+			</div>
+
+			<!-- Bottom Row of Features -->
+			<div class="features-bottom-row">
+		
+				<div class="feature-card" data-aos="fade-up">
+					<i class="fas fa-book" data-aos="fade-up"></i>
+					<h3 data-aos="fade-up">Library</h3>
+					<pdata-aos="fade-up">Peaceful self-study zone equipped with the latest books, past papers, and expert-curated reference materials.</p>
+				</div>
+		
+				<div class="feature-card" data-aos="fade-up">
+					<i class="fas fa-question-circle" data-aos="fade-up"></i>
+					<h3 data-aos="fade-up">Doubt Classes</h3>
+					<pdata-aos="fade-up">One-on-one and batch doubt clearing with personalized support for total concept resolution and clarity.</p>
+				</div>
+		
+				<div class="feature-card" data-aos="fade-up">
+					<i class="fas fa-award" data-aos="fade-up"></i>
+					<h3 data-aos="fade-up">Scholarship</h3>
+					<p data-aos="fade-up">Financial rewards and fee waivers for deserving students through merit-based evaluations and entrance tests.</p>
+				</div>
+		
+				<div class="feature-card" data-aos="fade-up">
+					<i class="fas fa-user-graduate" data-aos="fade-up"></i>
+					<h3 data-aos="fade-up">Mentorship</h3>
+					<p data-aos="fade-up">Personal mentors who track your progress, provide goal-based feedback, and support academic success planning.</p>
+				</div>
+		
+			</div>
+
+			<!-- Read More -->
+			<div class="read-more-btn" data-aos="fade-up">
+				<a href="features.html">
+					<button>Read More</button>
+				</a>
+			</div>
+
+		</div>
+	
+	</section>
+
+
+<!-- Features Section ends --------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Callback Section -------------------------------------------------------------------------------------------------------------------------------->
+
+	<!-- Section 1: Enquiry Form -->
+<!-- Section 1: Enquiry Form -->
+<div class="form-container">
+	<div class="form-box" data-aos="fade-up">
+		<h2>Unlock Your Potential – One Step at a Time</h2>
+
+		<form id="enquiryForm" data-aos="fade-up">
+			<label for="enquiry-name">Name</label>
+			<input type="text" id="enquiry-name" placeholder="Enter your Full Name" />
+			<div id="enquiry-name-error" class="error-message"></div>
+
+			<label for="enquiry-email">Email</label>
+			<input type="email" id="enquiry-email" placeholder="Enter your email address" />
+			<div id="enquiry-email-error" class="error-message"></div>
+
+			<label for="enquiry-phone">Phone Number</label>
+			<input type="tel" id="enquiry-phone" placeholder="Enter your phone number" />
+			<div id="enquiry-phone-error" class="error-message"></div>
+
+			<label>Course</label>
+			<div class="course-options">
+				<button type="button" class="course-btn" onclick="selectCourse(this)">NEET</button>
+				<button type="button" class="course-btn" onclick="selectCourse(this)">PNST</button>
+				<button type="button" class="course-btn" onclick="selectCourse(this)">CUET (Bio)</button>
+				<button type="button" class="course-btn" onclick="selectCourse(this)">Para-Medical</button>
+			</div>
+			<div id="enquiry-course-error" class="error-message"></div>
+
+			<button type="submit" id="enquiry-submit" class="submit-btn" data-aos="fade-up">Enquire Now</button>
+			<div id="enquiry-success" class="success-message"></div>
+		</form>
+	</div>
+		<div class="image-box">
+			<img src="girl.jpg" alt="Student" data-aos="fade-up">
+		</div>
+	
+	</div>
+
+	<!-- Section 2: Scholarship form-->
+	<div class="scholarship-container" data-aos="fade-up">
+		
+		<div class="left-section" data-aos="fade-up">
+		
+			<h1 data-aos="fade-up">🎓 Find Out<br /><span>Which Scholarships You're Eligible For Today!</span></h1>
+			<p data-aos="fade-up">
+				Take the first step toward funding your future. Share a few details and uncover scholarships tailored just for you.
+				No stress, no guesswork — just real opportunities waiting for you. By providing simple information like your name and phone number, 
+				you can discover scholarship opportunities available in your field of interest. Whether you're applying for NEET, PNST, CUET, 
+				or Para-medical courses, there’s a chance for you to secure funding for your education. Don't wait – start the application process now!
+			</p>
+		
+		</div>
+
+<div class="right-section" data-aos="fade-up">
+		<form id="scholarshipForm" data-aos="fade-up">
+			<label for="scholar-name">Name</label>
+			<input type="text" id="scholar-name" placeholder="Enter Your Full Name" />
+			<div id="scholar-name-error" class="error-message"></div>
+
+			<label for="scholar-phone">Phone Number</label>
+			<input type="tel" id="scholar-phone" placeholder="Enter your phone number" />
+			<div id="scholar-phone-error" class="error-message"></div>
+
+			<p>I'm applying for</p>
+			<div class="options">
+				<button type="button" class="option" onclick="selectScholarCourse(this)">NEET</button>
+				<button type="button" class="option" onclick="selectScholarCourse(this)">PNST</button>
+				<button type="button" class="option" onclick="selectScholarCourse(this)">CUET (Bio)</button>
+				<button type="button" class="option" onclick="selectScholarCourse(this)">Para-medical</button>
+			</div>
+			<div id="scholar-course-error" class="error-message"></div>
+
+			<button type="submit" id="scholar-submit" class="submit-btn" data-aos="fade-up">Submit</button>
+			<div id="scholar-success" class="success-message"></div>
+		</form>
+	</div>
+	
+	</div>
+<script>
+	let selectedCourse = "";
+	let selectedScholarCourse = "";
+
+	const namePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+	const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+	const phonePattern = /^[6-9][0-9]{9}$/;
+
+	function showError(id, message) {
+		document.getElementById(id).innerText = message;
+	}
+
+	function clearError(id) {
+		document.getElementById(id).innerText = "";
+	}
+
+	function showSuccess(id, message) {
+		document.getElementById(id).innerText = message;
+		setTimeout(() => document.getElementById(id).innerText = "", 4000);
+	}
+
+	function validateEnquiryForm(showErrors = true) {
+		let isValid = true;
+
+		const name = document.getElementById("enquiry-name").value.trim();
+		const email = document.getElementById("enquiry-email").value.trim();
+		const phone = document.getElementById("enquiry-phone").value.trim();
+
+		if (!name || !namePattern.test(name) || name.length < 2 || name.length > 20) {
+			if (showErrors) showError("enquiry-name-error", "Valid name (2-20 chars, letters & spaces).");
+			isValid = false;
+		} else {
+			clearError("enquiry-name-error");
+		}
+
+		if (!email || !emailPattern.test(email)) {
+			if (showErrors) showError("enquiry-email-error", "Must be a valid Gmail address ending with @gmail.com.");
+			isValid = false;
+		} else {
+			clearError("enquiry-email-error");
+		}
+
+		if (!phone || !phonePattern.test(phone)) {
+			if (showErrors) showError("enquiry-phone-error", "Enter valid 10-digit number starting with 6-9.");
+			isValid = false;
+		} else {
+			clearError("enquiry-phone-error");
+		}
+
+		if (!selectedCourse) {
+			if (showErrors) showError("enquiry-course-error", "Please select a course.");
+			isValid = false;
+		} else {
+			clearError("enquiry-course-error");
+		}
+
+		document.getElementById("enquiry-submit").disabled = !isValid;
+		return isValid;
+	}
+
+	function validateScholarshipForm(showErrors = true) {
+		let isValid = true;
+
+		const name = document.getElementById("scholar-name").value.trim();
+		const phone = document.getElementById("scholar-phone").value.trim();
+
+		if (!name || !namePattern.test(name) || name.length < 2 || name.length > 20) {
+			if (showErrors) showError("scholar-name-error", "Valid name (2-20 chars, letters & spaces).");
+			isValid = false;
+		} else {
+			clearError("scholar-name-error");
+		}
+
+		if (!phone || !phonePattern.test(phone)) {
+			if (showErrors) showError("scholar-phone-error", "Valid 10-digit phone starting with 6-9.");
+			isValid = false;
+		} else {
+			clearError("scholar-phone-error");
+		}
+
+		if (!selectedScholarCourse) {
+			if (showErrors) showError("scholar-course-error", "Please select a course.");
+			isValid = false;
+		} else {
+			clearError("scholar-course-error");
+		}
+
+		document.getElementById("scholar-submit").disabled = !isValid;
+		return isValid;
+	}
+
+	function selectCourse(button) {
+		document.querySelectorAll(".course-btn").forEach(btn => btn.classList.remove("selected"));
+		button.classList.add("selected");
+		selectedCourse = button.innerText;
+		clearError("enquiry-course-error");
+		validateEnquiryForm(true);
+	}
+
+	function selectScholarCourse(button) {
+		document.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
+		button.classList.add("selected");
+		selectedScholarCourse = button.innerText;
+		clearError("scholar-course-error");
+		validateScholarshipForm(false);
+	}
+
+	document.addEventListener("DOMContentLoaded", () => {
+		// Real-time input validation
+		document.getElementById("enquiry-name").addEventListener("input", () => validateEnquiryForm(true));
+document.getElementById("enquiry-email").addEventListener("input", () => validateEnquiryForm(true));
+document.getElementById("enquiry-phone").addEventListener("input", (e) => {
+	e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+	validateEnquiryForm(true);
+});
+
+	document.getElementById("scholar-name").addEventListener("input", () => validateScholarshipForm(true));
+document.getElementById("scholar-phone").addEventListener("input", (e) => {
+	e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+	validateScholarshipForm(true);
+});
+
+		// Disable buttons initially
+		document.getElementById("enquiry-submit").disabled = true;
+		document.getElementById("scholar-submit").disabled = true;
+
+		// Submit handlers
+		document.getElementById("enquiryForm").addEventListener("submit", function (e) {
+			e.preventDefault();
+			if (validateEnquiryForm()) {
+				showSuccess("enquiry-success", "✅ Enquiry submitted successfully!");
+				this.reset();
+				selectedCourse = "";
+				document.querySelectorAll(".course-btn").forEach(btn => btn.classList.remove("selected"));
+				document.getElementById("enquiry-submit").disabled = true;
+			}
+		});
+
+		document.getElementById("scholarshipForm").addEventListener("submit", function (e) {
+			e.preventDefault();
+			if (validateScholarshipForm()) {
+				showSuccess("scholar-success", "✅ Scholarship form submitted successfully!");
+				this.reset();
+				selectedScholarCourse = "";
+				document.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
+				document.getElementById("scholar-submit").disabled = true;
+			}
+		});
+	});
+</script>
+
+
+
+<!-- Callback Section ends --------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Google Map Section ------------------------------------------------------------------------------------------------------------------------------>
+	<section class="google-map-section" data-aos="fade-up" style="padding: 10px 20px; background: white; text-align: center" >
+		
+		<h1 
+			<span class="theme-text" style="margin-bottom: 20px; font-size: 35px"> Discover </span>
+			<span class="theme-text" style="margin-bottom: 20px; font-size: 35px">Our 
+			<span style="color: #fbc02d; margin-bottom: 20px; font-size: 35px " >Campus</span>
+			
+		</h1>
+		
+		<iframe data-aos="fade-up"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.8224749350177!2d77.0929653!3d23.2054062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397cf300222b9bbb%3A0x31f6a66e053e12a4!2sEvolution%20career%20institute%20sehore!5e0!3m2!1sen!2sin!4v1721129472020!5m2!1sen!2sin"
+			width="100%"
+			height="400"
+			style="border: 0; border-radius: 12px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)"
+			allowfullscreen=""
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+		></iframe>
+		
+		<p style="margin-top: 15px; color: #555" data-aos="fade-up"> 📍 Bhopal Naka, In front of PG College, Sehore, Madhya Pradesh 466001 </p>
+		
+	</section>
+
+
+<!-- Google Map Section ends ------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Admissions Process Section ---------------------------------------------------------------------------------------------------------------------->
+	<div class="admission-container" data-aos="fade-up">
+		
+		<h2>
+			Step confidently into excellence with our
+			<span class="highlight">expert mentorship and structured</span>
+			<span class="highlight-black">support system.</span>
+		</h2>
+   
+
+		<div class="sub-and-button">
+			
+			<div class="subtext">
+				Ready to turn dedication into results? Apply now to Evolution Career Institute, the<br>
+				premier choice for Medical coaching in Sehore.
+			</div>
+			<a href="how-to-apply.html" class="btn-admission" data-aos="fade-up">Admission Process</a>
+		
+		</div>
+	
+	</div>
+
+
+<!-- Admissions Process Section ends ----------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Reviews Section --------------------------------------------------------------------------------------------------------------------------------->
+	<section class="testimonial-section">
+		
+		<h2 class="heading" data-aos="fade-up">What Our Students Say</h2>
+		<p class="subheading" data-aos="fade-up">Real experiences from learners of Evolution Career Institute</p>
+
+		<div class="carousel-container">
+			<div class="carousel-track">
+			
+				<!-- Testimonial cards -------------------------------------------------------------------------------------->
+				<div class="testimonial-card" data-aos="fade-up">
+					<h3>Nitya Patel</h3>
+					<div class="stars">★★★★☆</div>
+					
+					
+						The study material is detailed and the teachers explain concepts clearly. However, the pace
+						could be slightly faster. I still improved a lot due to regular practice and doubt-clearing sessions.
+					
+				</div>
+
+				<div class="testimonial-card" data-aos="fade-up">	
+					<h3>Amit Singh</h3>
+					<div class="stars">★★★★★</div>
+					
+						Regular tests and personalized feedback helped me identify weak areas quickly. The
+						supportive mentors gave me the confidence to perform well in exams.
+					
+				</div>
+
+				<div class="testimonial-card" data-aos="fade-up">
+					<h3>Priya Mehta</h3>
+					<div class="stars">★★★☆☆</div>
+			
+						Friendly mentors and a positive environment. The course material is good, but I wish there
+						were more advanced problem sets for extra practice.
+				</div>
+
+				<div class="testimonial-card" data-aos="fade-up">
+					<h3>Ravi Sharma</h3>
+					<div class="stars">★★★★★</div>
+					
+				
+						The practical guidance and mock tests were extremely helpful. My scores improved
+						significantly thanks to targeted practice and expert advice.
+				
+				</div>
+
+				<div class="testimonial-card" data-aos="fade-up">
+					<h3>Kajal Verma</h3>
+					<div class="stars">★★★★☆</div>
+					
+						Supportive faculty and a friendly atmosphere made learning enjoyable. They helped me
+						tackle difficult topics step by step and boost my confidence.
+					
+				</div>
+
+				<div class="testimonial-card" data-aos="fade-up">					
+					<h3>Sonal Yadav</h3>
+					<div class="stars">★★★★★</div>
+					
+						Test series and thorough classroom notes provided clarity for exams. The structured
+						curriculum and consistent performance tracking were beneficial.
+					
+				</div>
+
+				<div class="testimonial-card" data-aos="fade-up">
+					<h3>Ankit Tiwari</h3>
+					<div class="stars">★★★★☆</div>
+					
+						Great teaching and continuous guidance helped me stay motivated. There were occasional
+						extra doubt sessions which were very helpful.
+					
+				</div>
+
+				<div class="testimonial-card" data-aos="fade-up">
+					<h3>Ruchi Desai</h3>
+					<div class="stars">★★★★★</div>
+					
+							Highly recommended! The supportive staff, regular assessments, and detailed feedback
+						helped me perform better than ever before.
+				</div>
+
+				<div class="testimonial-card" data-aos="fade-up">
+					<h3>Vikram Chauhan</h3>
+					<div class="stars">★★★★☆</div>
+						The personalized mentoring and focus on weak areas made a big difference. I appreciated
+						the commitment of teachers to my success.
+					
+				</div>
+				
+				<!-- Testimonial cards ends --------------------------------------------------------------------------------->
+				
+			</div>
+		</div>
+		   
+		<div class="review-us">
+			<a
+				href="https://www.google.com/search?q=evolution+career+institute+sehore&ludocid=3578533281007005460#lrd=0x397cf300222b9bbb:0x31f6a66e053e12a4,1"
+				target="_blank"
+				class="review-button" data-aos="fade-up"
+			>
+			Review Us on Google
+			</a>
+		</div>
+  
+	</section>
+
+
+<!-- Reviews Section ends ---------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Footer Section ---------------------------------------------------------------------------------------------------------------------------------->
+	<footer class="footer" data-aos="fade-up">
+		
+		<div class="footer-container">
+
+			<!-- Left: Logo + Name -->
+			<div class="footer-col footer-left">
+				<div class="footer-brand" data-aos="fade-up">
+					
+					<img src="logo-footer.png" alt="Institute Logo" class="footer-logo" data-aos="fade-up"/>
+					<h2>
+						<span class="brand-main" data-aos="fade-up">Evolution</span>
+						<span class="brand-sub" data-aos="fade-up">Career Institute Pvt. Ltd.</span>
+					</h2>
+				
+				</div>
+				<p data-aos="fade-up">
+					Evolution Institute is dedicated to providing quality education and fostering innovation.
+					Join us in shaping the future through knowledge and growth.
+				</p>
+			</div>
+
+			<!-- Admissions -->
+			<div class="footer-col" data-aos="fade-up">
+				<h3 data-aos="fade-up">Admissions</h3>
+					
+				<ul data-aos="fade-up">
+					<li data-aos="fade-up"><a href="how-to-apply.html">How to Apply</a></li>
+					<li data-aos="fade-up"><a href="faq.html">FAQs</a></li>
+				</ul>
+				<br>
+			
+				<h3 data-aos="fade-up">Courses</h3>
+				
+				<ul>
+					<li data-aos="fade-up"><a href="neet_course.html">NEET</a></li>
+					<li data-aos="fade-up"><a href="cuet_course.html">CUET</a></li>
+					<li data-aos="fade-up"><a href="pnst_course.html">PNST</a></li>
+					<li data-aos="fade-up"><a href="para-medical_course.html">Para-Medical</a></li>
+				</ul>
+			</div>
+	
+			<!-- Useful Links -->
+			<div class="footer-col" data-aos="fade-up">
+			
+				<h3 data-aos="fade-up">Useful Links</h3>
+				<ul data-aos="fade-up">
+					<li data-aos="fade-up"><a href="tel:+919999999999">Get Enquiry</a></li>
+					<li data-aos="fade-up"><a href="admission-enquiry.html">Join Now</a></li>
+					<li data-aos="fade-up"><a href="features.html">Why Evolution</a></li>
+					<li data-aos="fade-up"><a href="scholarship.html">Scholarship</a></li>
+					<li data-aos="fade-up"><a href="t&c.html">Terms & Conditions</a></li>
+					<li data-aos="fade-up"><a href="gallery.html">Gallery</a></li>
+				</ul>
+			
+			</div>
+
+			<!-- Address / Contact -->
+			<div class="footer-col footer-right" data-aos="fade-up">
+				
+				<h3 data-aos="fade-up">Address</h3>
+				<p data-aos="fade-up">
+					<a href="https://www.google.com/maps?q=Evolution+career+institute+sehore+In+Front+of+P.G.+College+Bhopal+Naka,+Sehore,+Madhya+Pradesh+466001" target="_blank" style="color: inherit; text-decoration: none;">
+						Evolution career institute In Front of P.G. College Bhopal Naka
+						Sehore, Madhya Pradesh - 466001
+					</a>
+				</p>
+
+				<p>
+					<i class="fas fa-phone" data-aos="fade-up"></i>
+					<a href="tel:+919685336065" style="color: inherit; text-decoration: none;">
+						Admission Support: +91 96853 36065
+					</a>
+				</p>
+
+				<p>
+					<i class="fas fa-globe" data-aos="fade-up"></i>
+					<a href="https://evolutioncareerinstitute.in" target="_blank" style="color: inherit; text-decoration: none;">
+						info@evolutioncareerinstitute.in
+					</a>
+				</p>
+
+				<div class="footer-socials" data-aos="fade-up">
+					<a href="https://www.facebook.com/share/1BC3oGU62u/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/evolution_career_institute_seh?utm_source=qr&igsh=YXVoejFyNzJlMXNi" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://youtube.com/@parmarclasses1981?si=9LxMieaLAbIPqFxR" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://wa.me/919685336065" target="_blank"><i class="fab fa-whatsapp"></i></a>
+					<a href="mailto:evolutioncareerinstitute2024@gmail.com"><i class="fas fa-envelope"></i></a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Bottom -->
+		<div class="footer-bottom" data-aos="fade-up">
+			<p data-aos="fade-up">&copy; 2025 Evolution Institute. All Rights Reserved.</p>
+			<p class="designed-by" data-aos="fade-up">Designed and powered by Chandraraj Bais</p>
+		</div>
+
+	</footer>
+
+
+<!-- Footer Section ends ----------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- Animation Section js part  ---------------------------------------------------------------------------------------------------------------------->
+
+<!-- Initialize AOS -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+ <script>
+    AOS.init({
+      offset: 120, // trigger animation after scrolling this far (px)
+      duration: 600, // default animation duration
+      easing: 'ease-in-out', // easing function
+      once: true, // ensure animation triggers only once per element
+      mirror: false, // repeat animation on scroll up
+      //disable: 'mobile', // optional: disables animations on mobile if performance is of concern
+    });
+  </script>
+
+
+<!-- Animation Section js part ends ------------------------------------------------------------------------------------------------------------------>
+
+
+	<script src="home.js"></script>
+
+</body>
+</html>
